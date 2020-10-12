@@ -2,11 +2,15 @@ package seedu.address.model;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javafx.collections.ObservableList;
 import seedu.address.model.client.Client;
 import seedu.address.model.client.UniqueClientList;
+import seedu.address.model.tag.Tag;
+import seedu.address.model.tag.UniqueTagSet;
 
 /**
  * Wraps all data at the address-book level
@@ -15,6 +19,7 @@ import seedu.address.model.client.UniqueClientList;
 public class AddressBook implements ReadOnlyAddressBook {
 
     private final UniqueClientList clients;
+    private final UniqueTagSet tags;
 
     /*
      * The 'unusual' code block below is a non-static initialization block, sometimes used to avoid duplication
@@ -25,6 +30,7 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     {
         clients = new UniqueClientList();
+        tags = new UniqueTagSet();
     }
 
     public AddressBook() {}
@@ -40,11 +46,21 @@ public class AddressBook implements ReadOnlyAddressBook {
     //// list overwrite operations
 
     /**
-     * Replaces the contents of the client list with {@code clients}.
+     * Replaces the contents of the client list with {@code clients} and the contents of the tag set with
+     * the union over all client tags, then update client tag sets with unique tags.
      * {@code clients} must not contain duplicate clients.
      */
     public void setClients(List<Client> clients) {
         this.clients.setClients(clients);
+
+        Set<Tag> allClientTags = new HashSet<>();
+        for (Client client : clients) {
+            allClientTags.addAll(client.getTags());
+        }
+        this.tags.setTags(allClientTags);
+        for (Client client : clients) {
+            replaceClientTagSet(client);
+        }
     }
 
     /**
@@ -52,7 +68,6 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public void resetData(ReadOnlyAddressBook newData) {
         requireNonNull(newData);
-
         setClients(newData.getClientList());
     }
 
@@ -67,21 +82,32 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
-     * Adds a client to the address book.
+     * Replaces the client tag set with a set of matching unique tag objects.
+     */
+    private void replaceClientTagSet(Client client) {
+        Set<Tag> clientLocalTags = client.getTags();
+        tags.addAll(clientLocalTags);
+        client.replaceTags(tags.getTags(clientLocalTags));
+    }
+
+    /**
+     * Replaces client tag set and adds the client to the address book.
      * The client must not already exist in the address book.
      */
     public void addClient(Client client) {
+        replaceClientTagSet(client);
         clients.add(client);
     }
 
     /**
-     * Replaces the given client {@code target} in the list with {@code editedClient}.
+     * Replaces {@code editedClient} tag set and then replaces the given client {@code target} in the list
+     * with {@code editedClient}.
      * {@code target} must exist in the address book.
      * The client identity of {@code editedClient} must not be the same as another existing client in the address book.
      */
     public void setClient(Client target, Client editedClient) {
         requireNonNull(editedClient);
-
+        replaceClientTagSet(editedClient);
         clients.setClient(target, editedClient);
     }
 

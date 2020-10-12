@@ -1,5 +1,6 @@
 package seedu.address.logic.parser;
 
+import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_COUNTRY;
 
 import seedu.address.logic.commands.CountryFilterCommand;
@@ -25,7 +26,7 @@ public class CountryFilterCommandParser implements Parser<CountryFilterCommand> 
                 ArgumentTokenizer.tokenize(args, PREFIX_COUNTRY);
 
         if (argMultimap.getValue(PREFIX_COUNTRY).isEmpty()) {
-            throw new ParseException("invalid message"); // TODO: better messages
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, CountryFilterCommand.MESSAGE_USAGE));
         }
         String countryCode = argMultimap.getValue(PREFIX_COUNTRY).get();
 

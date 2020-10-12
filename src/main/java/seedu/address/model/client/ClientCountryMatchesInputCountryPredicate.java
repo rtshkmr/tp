@@ -25,6 +25,15 @@ public class ClientCountryMatchesInputCountryPredicate implements Predicate<Clie
         return client.getCountry().equals(country);
     }
 
+    /**
+     * Returns string representation of user-input country.
+     *
+     * @return The string representation of the user-input country.
+     */
+    public String getInputCountryStringRepresentation() {
+        return country.toString();
+    }
+
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object

@@ -28,6 +28,7 @@ public class CountryManagerTest {
         assertFalse(CountryManager.isValidCountryCode("12"));
         assertFalse(CountryManager.isValidCountryCode("az"));
         assertFalse(CountryManager.isValidCountryCode("bd"));
+        assertFalse(CountryManager.isValidCountryCode("bdc"));
     }
 
     @Test
@@ -81,13 +82,17 @@ public class CountryManagerTest {
             assertEquals(0, countryFirstRef.getCountryNotes().size());
             assertEquals(0, countrySecondRef.getCountryNotes().size());
 
-            countryFirstRef.addCountryNote(new NoteStub("something"));
+            countryFirstRef.addCountryNote(new NoteStub("something1"));
             assertEquals(1, countryFirstRef.getCountryNotes().size());
             assertEquals(1, countrySecondRef.getCountryNotes().size());
 
-            countrySecondRef.addCountryNote(new NoteStub("something else"));
+            countrySecondRef.addCountryNote(new NoteStub("something2"));
             assertEquals(2, countryFirstRef.getCountryNotes().size());
             assertEquals(2, countrySecondRef.getCountryNotes().size());
+
+            countryManager.addCountryNote(countryFirstRef, new NoteStub("something3"));
+            assertEquals(3, countryFirstRef.getCountryNotes().size());
+            assertEquals(3, countrySecondRef.getCountryNotes().size());
         }
     }
 

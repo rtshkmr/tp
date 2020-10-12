@@ -50,6 +50,12 @@ public class Country {
         this.countryNotes.add(countryNote);
     }
 
+    /**
+     * Checks whether given country note has been added for this country.
+     *
+     * @param countryNote The given country note.
+     * @return True if given country note has been added for this country, false otherwise.
+     */
     protected boolean hasCountryNote(Note countryNote) {
         return countryNotes.contains(countryNote);
     }
@@ -97,7 +103,7 @@ public class Country {
 
     @Override
     public String toString() {
-        return countryCode;
+        return countryName + " (" + countryCode + ")";
     }
 
 }

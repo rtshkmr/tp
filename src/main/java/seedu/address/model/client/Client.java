@@ -78,6 +78,13 @@ public class Client {
         return Collections.unmodifiableSet(tags);
     }
 
+    /**
+     * Replace current tag objects with tag objects from {@code UniqueTagSet}.
+     */
+    public void replaceTags(Set<Tag> uniqueTags) {
+        tags.clear();
+        tags.addAll(uniqueTags);
+    }
 
     /**
      * Gets the list of client notes associated with this client.

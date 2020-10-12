@@ -1,8 +1,8 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_COUNTRY;
 
-import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.client.ClientCountryMatchesInputCountryPredicate;
 
@@ -12,6 +12,11 @@ import seedu.address.model.client.ClientCountryMatchesInputCountryPredicate;
 public class CountryFilterCommand extends Command {
 
     public static final String COMMAND_WORD = "country filter";
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all clients whose country matches "
+            + "the specified country-code and displays them as a list with index numbers.\n"
+            + "Parameters: " + PREFIX_COUNTRY + "COUNTRY_CODE\n"
+            + "Example: " + COMMAND_WORD + " c/SG";
+    public static final String MESSAGE_FILTER_CLIENT_BY_COUNTRY_SUCCESS = "Showing %1$s clients that are from: %2$s";
 
     private final ClientCountryMatchesInputCountryPredicate predicate;
 
@@ -26,10 +31,12 @@ public class CountryFilterCommand extends Command {
     }
 
     @Override
-    public CommandResult execute(Model model) throws CommandException {
+    public CommandResult execute(Model model) {
         requireNonNull(model);
         model.updateFilteredClientList(predicate);
-        return new CommandResult("filtered according to country"); //TODO: add better msg
+        return new CommandResult(
+                String.format(MESSAGE_FILTER_CLIENT_BY_COUNTRY_SUCCESS, model.getFilteredClientList().size(),
+                        predicate.getInputCountryStringRepresentation()));
     }
 
     @Override

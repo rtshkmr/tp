@@ -23,10 +23,13 @@ public class CountryFilterCommandParserTest {
     @Test
     public void parse_invalidCountryCode_throwsParseException() {
         assertThrows(ParseException.class, () -> parser.parse(" c/ZZ"));
+        assertThrows(ParseException.class, () -> parser.parse(" c/123"));
+        assertThrows(ParseException.class, () -> parser.parse(" c/a b"));
+        assertThrows(ParseException.class, () -> parser.parse(" c/c/ "));
     }
 
     @Test
-    public void parse_validCountryCode_throwsParseException() {
+    public void parse_validCountryCode_returnsExpected() {
         try {
             CountryFilterCommand expected = new CountryFilterCommand(
                     new ClientCountryMatchesInputCountryPredicate(new Country("SG")));

@@ -216,24 +216,26 @@ Notes:
 
 Filters the list of clients by a specified country.
 
-Format: `country filter [c/COUNTRY]`
+Format: `country filter [c/COUNTRY_CODE]`
 
-* COUNTRY follows the ISO3166 Format, which can be in the form of a 2, 3 or 4 letter country code. [List of country codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
+* COUNTRY_CODE is a 2-letter country code that follows the ISO3166 specification. [List of country codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
 
 Examples: 
 
-* `country filter c/SG` or `filter c/SGP` Filters by contacts in Singapore
-* `country filter c/RU` or `filter c/RUS` Filters by contacts in Russia
+* `country filter c/SG` Filters by contacts in Singapore
+* `country filter c/RU` Filters by contacts in Russia
 
 ### Adding notes for a country: `country note`
 
-Format: `country note c/COUNTRY NOTE_STRING`
+Format: `country note c/COUNTRY_CODE nt/NOTE_STRING`
 
-* COUNTRY follows the ISO3166 Format, which can be in the form of a 2, 3 or 4 letter country code. [List of country codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
+* COUNTRY_CODE is a 2-letter country code that follows the ISO3166 specification. [List of country codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
 
 Examples:
 
-* `country note c/SG people love to queue for things`
+* `country note c/SG nt/has one of the lowest coporate taxes in the world`
+* `country note c/CN nt/building good relations (guanxi) is important when conducting business here`
+* `country note c/IN nt/is world's fastest growing economy`
 
 ### Clearing all entries: `clear`
 
