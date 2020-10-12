@@ -32,7 +32,6 @@ public class AddressBookParser {
      */
     private static final String CLIENT_TYPE = "client";
     private static final String COUNTRY_TYPE = "country";
-    private static final String CLIENT_NOTE_TYPE = "client note";
 
     /**
      * Used for initial separation of command type and rest of command.
