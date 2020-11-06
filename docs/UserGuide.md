@@ -633,3 +633,19 @@ Here are the alternative stylistic choices that you might make when writing out 
    <strong><i>{End of Appendix B, please return to the <a href="#table-of-contents">Table of Contents</a>}</i></strong> 
 </p>
 --------------------------------------------------------------------------------------------------------------------
+
+## Appendix C: Expected Command Behaviour Screenshots
+
+We've added screenshots for you to refer to, to determine easily what the output should be upon issuing a particular command.  
+
+## Dummy Command 
+
+before ss and after ss 
+
+each ss window  size to be 800x600px
+
+link the command description above to this section so users can navigate to here easily 
+link a return link back to the description as well
+
+
+
