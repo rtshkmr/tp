@@ -96,6 +96,7 @@ public class WidgetViewBox extends UiPart<Region> {
      */
     public void updateClientDisplay(Client client) {
         widgetScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        widgetScrollPane.setVmax(1.0);
         tbmLogoContainer.getChildren().clear();
         tbmLogoContainer.setStyle("-fx-padding: 0 0 0 0; -fx-spacing: 0;");
         displayedClient = client;
@@ -121,7 +122,7 @@ public class WidgetViewBox extends UiPart<Region> {
         drawPaneBorder();
     }
 
-    /**client
+    /**
      * Static factory for use in GUI testing.
      *
      * @return WidgetViewBox
@@ -136,6 +137,7 @@ public class WidgetViewBox extends UiPart<Region> {
     public void setToDefaultView() {
         //TODO: Some better information
         widgetScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        widgetScrollPane.setVmax(0.0);
         tbmLogoContainer.getChildren().clear();
         tbmLogoContainer.getChildren().add(tbmLogo);
         tbmLogoContainer.setStyle("-fx-padding: 20 0 25 0; -fx-spacing: 10");

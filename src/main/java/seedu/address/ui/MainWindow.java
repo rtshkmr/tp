@@ -9,6 +9,7 @@ import javafx.scene.control.TextInputControl;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import seedu.address.MainApp;
 import seedu.address.commons.core.GuiSettings;
@@ -128,15 +129,43 @@ public class MainWindow extends UiPart<Stage> {
     }
 
     /**
-     * Sets the default size based on {@code guiSettings}.
+     * Sets the default size based on {@code guiSettings}, truncating the width, height, and position of the window
+     * to some bounded values to ensure that the display of our application does not get messed up.
      */
     private void setWindowDefaultSize(GuiSettings guiSettings) {
-        primaryStage.setHeight(guiSettings.getWindowHeight());
-        primaryStage.setWidth(guiSettings.getWindowWidth());
+        double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+        double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+        double minY = 0;
+        double maxY = screenHeight / 2;
+        double minX = 0;
+        double maxX = screenWidth / 2;
+        double truncatedHeight = Math.min(guiSettings.getWindowHeight(), screenHeight);
+        double truncatedWidth = Math.min(guiSettings.getWindowWidth(), screenWidth);
+        primaryStage.setHeight(truncatedHeight);
+        primaryStage.setWidth(truncatedWidth);
+        logger.info(String.format("Window width set to: %.2f", truncatedWidth));
+        logger.info(String.format("Window height set to: %.2f", truncatedHeight));
         if (guiSettings.getWindowCoordinates() != null) {
-            primaryStage.setX(guiSettings.getWindowCoordinates().getX());
-            primaryStage.setY(guiSettings.getWindowCoordinates().getY());
+            double truncatedX = truncateDouble(guiSettings.getWindowCoordinates().getX(), minX, maxX);
+            double truncatedY = truncateDouble(guiSettings.getWindowCoordinates().getY(), minY, maxY);
+            primaryStage.setX(truncatedX);
+            primaryStage.setY(truncatedY);
+            logger.info(String.format("Window x-position set to: %.2f", truncatedX));
+            logger.info(String.format("Window y-position set to: %.2f", truncatedY));
         }
+    }
+
+    /**
+     * Truncates the given double value to be at least the lower bound and at most the upper bound.
+     */
+    private double truncateDouble(double value, double lowerBound, double upperBound) {
+        double truncatedValue = value;
+        if (value < lowerBound) {
+            truncatedValue = lowerBound;
+        } else if (value > upperBound) {
+            truncatedValue = upperBound;
+        }
+        return truncatedValue;
     }
 
     /**

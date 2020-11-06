@@ -23,8 +23,11 @@ import guitests.guihandles.HelpWindowHandle;
 import guitests.guihandles.MainWindowHandle;
 import javafx.scene.control.TextInputControl;
 import javafx.scene.input.KeyCode;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import seedu.address.MainApp;
+import seedu.address.commons.core.GuiSettings;
+import seedu.address.logic.Logic;
 import seedu.address.logic.LogicManager;
 import seedu.address.logic.commands.ClientViewCommand;
 import seedu.address.logic.commands.CountryNoteAddCommand;
@@ -32,6 +35,7 @@ import seedu.address.model.ModelManager;
 import seedu.address.storage.JsonTbmManagerStorage;
 import seedu.address.storage.JsonUserPrefsStorage;
 import seedu.address.storage.StorageManager;
+
 /**
  * This test class does not conduct a unit test.
  */
@@ -41,6 +45,7 @@ public class MainWindowTest extends GuiUnitTest {
     private MainWindow mainWindow;
     private MainWindowHandle mainWindowHandle;
     private Stage stage;
+    private Logic logic;
 
     @BeforeEach
     public void setup() throws Exception {
@@ -48,14 +53,28 @@ public class MainWindowTest extends GuiUnitTest {
                 new JsonTbmManagerStorage(temporaryFolder.resolve("tbmManager.json"));
         JsonUserPrefsStorage jsonUserPrefsStorage = new JsonUserPrefsStorage(temporaryFolder.resolve("userPrefs.json"));
         StorageManager storageManager = new StorageManager(jsonTbmManagerStorage, jsonUserPrefsStorage);
+        logic = new LogicManager(new ModelManager(), storageManager);
+        logic.setGuiSettings(new GuiSettings(100000000.0, 20000000.0, -200, -300));
         FxToolkit.setupStage(stage -> {
             this.stage = stage;
-            mainWindow = new MainWindow(stage, new LogicManager(new ModelManager(), storageManager), new MainApp());
+            mainWindow = new MainWindow(stage, logic, new MainApp());
             mainWindow.fillInnerParts();
             mainWindowHandle = new MainWindowHandle(stage);
             mainWindowHandle.focus();
         });
         FxToolkit.showStage();
+    }
+
+    @Test
+    public void setWindowDefaultSize_windowTruncatedProperly() {
+        int screenHeight = (int) Screen.getPrimary().getVisualBounds().getHeight();
+        int screenWidth = (int) Screen.getPrimary().getVisualBounds().getWidth();
+        int minY = 0;
+        int minX = 0;
+        assertEquals(screenHeight, (int) mainWindow.getPrimaryStage().getHeight());
+        assertEquals(screenWidth, (int) mainWindow.getPrimaryStage().getWidth());
+        assertEquals(minX, (int) mainWindow.getPrimaryStage().getX());
+        assertEquals(minY, (int) mainWindow.getPrimaryStage().getY());
     }
 
     @Test
@@ -74,6 +93,7 @@ public class MainWindowTest extends GuiUnitTest {
 
         // help window tests
         guiRobot.clickOn("#help");
+        guiRobot.sleep(200);
         guiRobot.clickOn("#helpMenuItem");
         guiRobot.pauseForHuman();
         assertTrue(guiRobot.isWindowShown(HelpWindowHandle.HELP_WINDOW_TITLE));
