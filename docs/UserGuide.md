@@ -66,11 +66,12 @@ Now that you have started **_TBM_**,
 
 ## Features
 
-The following section outlines the commands supported by **_TBM_**. A short description is given for each command along with the format that they should be executed with. Complex commands also come with examples to demonstrate the purpose that the command serve.
+The following section outlines the commands supported by **_TBM_**. A short description is given for each command along with the format that they should be executed with. Complex commands also come with examples to demonstrate the purpose that the command serves.
 
-Certain commands require parameters and the summary of these parameters as well as their prefixes and constraints can be found in our [parameters summary table](#parameter-constraints-summary). **Note that parameter prefixes such as `t/` and `nt/` are special keywords and you should not use them for any other purposes except for indicating the start of a parameter.**
+Certain commands require parameters. A quick summary of these parameters as well as their prefixes and constraints can be found in our [parameters summary table](#parameter-constraints-summary). **Note that parameter prefixes such as `t/` and `nt/` are special keywords and you should not use them for any other purposes except for indicating the start of a parameter.**
 
-A summary of all commands can be found in our [command summary table](#command-summary)
+A summary of all commands can be found in our [command summary table](#command-summary).
+
 <div markdown="block" class="alert alert-info">
 
 **:information_source: Notes about the command format:**<br>
@@ -79,7 +80,7 @@ A summary of all commands can be found in our [command summary table](#command-s
   e.g. in `client add n/NAME`, `NAME` is a parameter which can be used as `client add n/John Doe`.
 
 * Items in square brackets are optional.<br>
-  e.g `n/NAME [ce/CONTRACT_EXPIRY_DATE]` can be used as `n/John Doe ce/2-3-2020`(both supplied) or as `n/John Doe`(optional parameter missing).
+  e.g `n/NAME [ce/CONTRACT_EXPIRY_DATE]` can be used as `n/John Doe ce/2-3-2020` (both supplied) or as `n/John Doe` (optional parameter missing).
 
 * Items in round brackets mean that you have to supply at least one of them.<br>
   e.g. `INDEX (n/NAME) (n/PHONE_NUMBER)` can be used as `1 n/John Doe` or `1 p/98899889` or `1 n/John Doe p/98899889`, but not as `1` (i.e. both items are not supplied).
@@ -248,13 +249,16 @@ The location for this file is `./data/tbmManager.json` (indicated at the bottom 
 ```
 
 <div markdown="block" class="alert alert-info">
-**:information_source:** Tweaking this file should be done <strong><i>only</i></strong> if you're familiar with JSON
-. If you're new to JSON, <a href="https://www.json.org/json-en.html">here's</a> a good place to learn more.
+**:information_source:** Tweaking this file should be done <strong><i>only</i></strong> if you're familiar with JSON. If you're new to JSON, <a href="https://www.json.org/json-en.html">here's</a> a good place to learn more.
 </div>
 
 ### Adding client notes: `client note add`
 
 Adds a note to the client at the specified index in the list view. If a note with the exact same content and tags already exists, a "duplicate note" error will be displayed.
+
+<div markdown="block" class="alert alert-info">
+**:information_source:** Even if the client is not currently being displayed in the left display panel, client notes for that client can still be added, as long as that client is present in the client list view.
+</div>
 
 Format: `client note add CLIENT_INDEX nt/NOTE_STRING [t/TAG]...`
 
