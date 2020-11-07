@@ -26,14 +26,14 @@ title: User Guide
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Table of Contents
+## **Table of Contents**
 
 * Table of Contents
 {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Quickstart
+## **Quickstart**
 
 <div markdown="block" class="alert alert-info">
 
@@ -64,13 +64,14 @@ Now that you have started **_TBM_**,
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Features
+## **TBM's Features**
 
-The following section outlines the commands supported by **_TBM_**. A short description is given for each command along with the format that they should be executed with. Complex commands also come with examples to demonstrate the purpose that the command serves.
+**_TBM_**'s key features revolve around **_Managing your Clients_** and **_Keeping Track of Important Information_**. The following sections outline the commands that **_TBM_** supports. 
+For each command, a short description of its intended use is followed by the _format_ that you should follow to execute the command correctly. Examples have been provided for the more complex commands. Should you need a **pictorial reference** on the before and after state of issuing these commands, links to the relevant sections within Appendix C have been provided for these commands.
 
-Certain commands require parameters. A quick summary of these parameters as well as their prefixes and constraints can be found in our [parameters summary table](#parameter-constraints-summary). **Note that parameter prefixes such as `t/` and `nt/` are special keywords and you should not use them for any other purposes except for indicating the start of a parameter.**
+A summary of all the commands can be found in our [command summary table](#command-summary).
 
-A summary of all commands can be found in our [command summary table](#command-summary).
+Certain commands require parameters. A quick summary of these parameters as well as their prefixes and constraints can be found in our [parameters summary table](#parameter-constraints-summary).
 
 <div markdown="block" class="alert alert-info">
 
@@ -88,12 +89,14 @@ A summary of all commands can be found in our [command summary table](#command-s
 * Items with `…`​ after them can be used multiple times including zero times.<br>
   e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
 
-* Parameters can be in any order.<br>
+* Parameters can be supplied in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
+
+*  **Parameter prefixes such as `t/` and `nt/` are *special keywords* and you should not use them for any other purposes except for indicating the start of a parameter.**
 
 </div>
 
-### 0. Viewing help: `help`
+### **0. Viewing help: `help`**
 
 **_TBM_**'s commands are easy to use and remember, but in the case you need to see a list of commonly used commands, simply type `help` or press the `F1` key to access this list in the [new help window](#help-window). Pressing the `Esc` key will close this window.
 
@@ -102,7 +105,7 @@ Format: `help`
 
 --------------------------------------------------------------------------------------------------------------------
 
-### 1. Managing your Clients 
+### **1. Managing your Clients** 
 
 To do your ** _business in bliss_** , you need to keep track of a multitude of clients and, you need to do it quickly. **Adding**, **Deleting**, **Editing**, **Viewing** and **Finding** your clients can be done in a mere _handful of keystrokes_ that make the most out of your fast typing speeds.
 
@@ -244,13 +247,15 @@ Examples:
 
 --------------------------------------------------------------------------------------------------------------------
 
-### 2. Keeping Track of Important Information via Notes and Tags
+### **2. Keeping Track of Important Information via Notes and Tags**
 
--- insert description--
+Managing your relationships with your Clients is quick and easy thanks to **_TBM_**'s Notes and Tags. You can write notes about your Clients or Countries to help you remember the nuances that you need to be mindful of. You can tag these notes for easy reference as well. 
+
+<div markdown="block" class="alert alert-info">
+**:information_source:** We treat "untagged" as a special tag. In the case that your note doesn't have a tag when you're creating it, we'll auto-add this special tag for you so that you don't have to. Subsequently you may choose to attach a proper tag to it when you've thought of one. Therefore, there is no need for you to tag any note as "untagged". In the case that you forget our auto-adding feature, we'll still let your command work but this special tag will not be added if your note already has other tags.
+</div>
 
 #### 2.1: Client Notes
-
-
 
 ##### 2.1.1: Adding client notes: `client note add`
 
@@ -442,7 +447,7 @@ Example:
 
     Deletes the country note at index 1 of the country notes list panel.
 
-### 3. Getting Suggested Clients
+### **3. Getting Suggested Clients**
 
 Obtains a list of clients based on the suggestion type(s) passed in. This command will also reset the left display panel to its default view.
 
@@ -466,19 +471,19 @@ Examples:
 
     Obtains a list of clients based on their current contract details but only clients who are available will be shown. Clients whose contracts are expiring will be shown first.
 
-### 4. Clearing All your Entries
+### **4. Clearing All your Entries**
 
 Deletes all existing information from the application. The end result will be an application with no client/note/country data. The left display panel will be reset to its default view.
 
 Format: `clear`
 
-### 5. Exiting the Program
+### **5. Exiting the Program**
 
 Exits the program.
 
 Format: `exit`
 
-### 6. Saving your Data
+### **6. Saving your Data**
 
 Your data is automatically saved after every command you enter. The file is saved in the ubiquitous `.json` format, which
 allows you to edit the file manually without even opening **_TBM_** up.
@@ -514,7 +519,7 @@ The location for this file is `./data/tbmManager.json` (indicated at the bottom 
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Glossary
+## **Glossary**
 
 * **Business Contact**: Synonymous with **Client**
 * **Client**: Refers to a person whom the user is conducting his/her business with
@@ -522,14 +527,14 @@ The location for this file is `./data/tbmManager.json` (indicated at the bottom 
 * **Mainstream OS**: Windows, Linux, Unix, macOS
 * **_TBM_**: Initialism for Travelling BusinessMan
 
-## FAQ
+## **Frequently Asked Questions (FAQ)**
 
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous **_TBM_** home folder.<br>
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Command summary
+## **Command Summary**
 
 Action | Format, Examples
 --------|------------------
@@ -552,7 +557,7 @@ Action | Format, Examples
 **Exit** | `exit`
 **Help** | `help`
 
-## Parameter constraints summary
+## **Parameter Constraints Summary**
 
 Parameter | Prefix | Constraints, Examples
 --------|------------------| ----------
@@ -570,9 +575,9 @@ Parameter | Prefix | Constraints, Examples
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Appendix A - Introduction to the UI
+## **Appendix A - Introduction to the UI**
 
-### Start Page
+### **Start Page**
 
 The diagram below shows the key UI elements of **_TBM_** upon first start-up.
 
@@ -596,7 +601,7 @@ never have to worry about not being able to see all your important clients at a 
      
 * **Display Panel** shall render *Client Cards* or *Country Cards* when relevant commands are sent. The default view shows you your local time to the precise second, as well as your current location.
    
-### UI when Viewing Clients
+### **UI when Viewing Clients**
 
 The diagram below is what you should see upon viewing a particular client (i.e. firing up the command `client view 1
 `). It shows how to identify a particular client's `CLIENT_INDEX`, and an associated note's `CLIENT_NOTE_INDEX`.
@@ -608,14 +613,14 @@ Here, the **Client Note Card** displaying the note that's tagged as `hobbies` is
 
 Being able to identify these is key to adding, deleting and editing client notes as well as editing clients.
 
-### UI when Viewing Country
+### **UI when Viewing Country**
 
 Similarly, `COUNTRY_NOTE_INDEX` can be identified like so by referring to the index indicated on the **Country Note Card**:
 
   ![Annotated Country Note View UI Layout](images/command-screenshots/country_note_view_annotated.png)
   <p align="center"><i>Figure 5. Country Note View</i></p>
 
-### Help Window
+### **Help Window**
 
 This is what to expect when you type in the `help` command or press `F1`: 
 
@@ -628,13 +633,13 @@ This is what to expect when you type in the `help` command or press `F1`:
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Appendix B: International Standards Followed 
+## **Appendix B: International Standards Followed** 
 
-### ISO Country Codes
+### **ISO Country Codes**
 
 **_TBM_** utilizes 2-letter country codes that follow the **_ISO3166_** specification. This [finding tool](https://www.countrycode.org/) can be used.
 
-### Phone Numbers
+### **Phone Numbers**
 
 **_TBM_**'s format for phone numbers is **_based_** on the [E.164 standard](https://en.wikipedia.org/wiki/E.164) as recommended by the _ITU Telecommunication Standardization Sector (ITU-T)_.
 **_However_**, **_TBM_** doesn't allow for spaces in between phone number fields. For example, `+65 8186 7742` may follow this international standard, but **_TBM_ requires you to remove spacing within the phone number field** so the correct way to input it would be `+65 81867742`. 
@@ -660,11 +665,11 @@ Here are the alternative stylistic choices that you might make when writing out 
 </p>
 --------------------------------------------------------------------------------------------------------------------
 
-## Appendix C: Expected Command Behaviour Screenshots
+## **Appendix C: Expected Command Behaviour Screenshots**
 
 We've added screenshots for you to refer to, to determine easily what the output should be upon issuing a particular command.  
 
-### Dummy Command Template 
+### **Dummy Command Template **
 
 before ss and after ss 
 
