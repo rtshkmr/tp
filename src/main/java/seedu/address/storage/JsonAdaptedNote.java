@@ -88,6 +88,9 @@ class JsonAdaptedNote {
         for (JsonAdaptedTag tag : this.tags) {
             tags.add(tag.toModelType());
         }
+        if (tags.size() > 1) {
+            tags.remove(Tag.UNTAGGED);
+        }
 
         if (isClientNote()) {
             Note clientNote = new Note(contents);

@@ -150,6 +150,20 @@ class ClientNoteEditCommandTest {
         assertCommandFailure(clientNoteEditCommand, model, MESSAGE_NOT_REAL_EDIT);
     }
 
+    @Test
+    public void execute_editedClientNoteAlreadyInModel_commandFailure() {
+        Index clientIdx = Index.fromOneBased(1);
+        Index clientNoteIdx = Index.fromOneBased(1);
+        Note clientNote1 = new Note(NOTE_CONTENT_1);
+        Client client1 = new ClientBuilder().withName("client1").build();
+        model.addClient(client1);
+        model.addClientNote(client1, clientNote1);
+        Note clientNote2 = new Note(NOTE_CONTENT_2);
+        model.addClientNote(client1, clientNote2);
+        ClientNoteEditCommand clientNoteEditCommand = new ClientNoteEditCommand(clientIdx, clientNoteIdx, clientNote2);
+        assertCommandFailure(clientNoteEditCommand, model,
+                ClientNoteEditCommand.MESSAGE_DUPLICATE_CLIENT_NOTE_AFTER_EDIT);
+    }
 
     @Test
     public void execute_editExistingUntaggedNoteToAddTag_discardsDefaultUntaggedTag() {

@@ -27,11 +27,15 @@ public class CountryNoteEditCommand extends Command {
             + "Parameters: INDEX "
             + "(" + PREFIX_NOTE + "NOTE_STRING )"
             + " (" + PREFIX_TAG + "TAG)...\n"
-            + "Example: " + COMMAND_WORD + " 1 " + PREFIX_NOTE + "better government stability in recent months";
+            + "Example: " + COMMAND_WORD + " 1 " + PREFIX_NOTE
+            + "better government stability in recent months";
     public static final String MESSAGE_SUCCESS = "Edited country note at index %1$s: %2$s";
-    public static final String MESSAGE_COUNTRY_NOTES_NOT_VISIBLE = "Country notes are not currently being displayed,"
-            + " thus this command will not be executed so as to prevent accidental modification of country notes.\n"
+    public static final String MESSAGE_COUNTRY_NOTES_NOT_VISIBLE = "Country notes are not "
+            + "currently being displayed, thus this command will not be executed "
+            + "so as to prevent accidental modification of country notes.\n"
             + "Please use the " + CountryNoteViewCommand.COMMAND_WORD + " command before using this command.";
+    public static final String MESSAGE_DUPLICATE_COUNTRY_NOTE_AFTER_EDIT = "The country note "
+            + "after editing already exists in TBM!";
     private final Index targetIndex;
     private final CountryNote countryNote;
     private final Set<Tag> tags;
@@ -88,6 +92,10 @@ public class CountryNoteEditCommand extends Command {
                 countryNote.equals(CountryNote.NULL_COUNTRY_NOTE)
                         ? countryNoteToEdit.getNoteContent() : countryNote.getNoteContent(),
                 countryNoteToEdit.getCountry(), tags);
+
+        if (model.hasCountryNote(newCountryNote)) {
+            throw new CommandException(MESSAGE_DUPLICATE_COUNTRY_NOTE_AFTER_EDIT);
+        }
 
         model.setCountryNote(countryNoteToEdit, newCountryNote);
 

@@ -23,8 +23,7 @@ public class CountryNoteEditCommandParserTest {
             + "Parameters: INDEX (nt/NOTE_STRING ) (t/TAG)...\n"
             + "Example: country note edit 1 nt/better government stability in recent months";
     private static final String INVALID_INDEX_ERROR = "Index is not a non-zero unsigned integer.";
-    private static final String INVALID_TAG_ERROR = "Tags names should be alphanumeric "
-            + "and have a maximum of 45 characters";
+    private static final String INVALID_TAG_ERROR = Tag.MESSAGE_CONSTRAINTS;
     private static final String INVALID_NOTE_ERROR = "Notes should not be blank";
     private final TagNoteMap tagNoteMap = new TagNoteMap();
     private final CountryNoteEditCommandParser parser = new CountryNoteEditCommandParser(tagNoteMap);

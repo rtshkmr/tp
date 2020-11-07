@@ -32,6 +32,9 @@ public class ClientNoteEditCommand extends Command {
     public static final String MESSAGE_EDIT_CLIENT_NOTE_SUCCESS = "Successfully edited note for %1$s: \n Before: "
             + "%2$s\n After: %3$s";
     public static final String MESSAGE_NOT_REAL_EDIT = "New edit doesn't value-add anything!";
+    public static final String MESSAGE_DUPLICATE_CLIENT_NOTE_AFTER_EDIT = "The client note after editing "
+            + "already exists in TBM!";
+
     private final Index targetClientIndex;
     private final Index targetClientNoteIndex;
     private final Note parsedNewNote;
@@ -86,6 +89,11 @@ public class ClientNoteEditCommand extends Command {
         if (existingNote.equals(editedNote)) {
             throw new CommandException(MESSAGE_NOT_REAL_EDIT);
         }
+
+        if (model.hasClientNote(associatedClient, editedNote)) {
+            throw new CommandException(MESSAGE_DUPLICATE_CLIENT_NOTE_AFTER_EDIT);
+        }
+
         model.editClientNote(associatedClient, existingNote, editedNote);
         return new CommandResult(String.format(MESSAGE_EDIT_CLIENT_NOTE_SUCCESS, associatedClient.getName(),
                 existingNote, editedNote));
