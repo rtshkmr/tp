@@ -11,7 +11,7 @@ import seedu.address.model.Model;
 import seedu.address.model.note.CountryNote;
 
 /**
- * A class that encapsulates the logic for deleting country notes.
+ * Deletes a CountryNote.
  */
 public class CountryNoteDeleteCommand extends Command {
 
@@ -27,7 +27,7 @@ public class CountryNoteDeleteCommand extends Command {
     private final Index targetIndex;
 
     /**
-     * Initializes a CountryNoteDeleteCommand with the given targetIndex.
+     * Initializes a CountryNoteDeleteCommand with the given {@code targetIndex}.
      *
      * @param targetIndex The given targetIndex.
      */

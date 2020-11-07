@@ -11,7 +11,7 @@ import seedu.address.model.Model;
 import seedu.address.model.client.Client;
 
 /**
- * Deletes a client identified using it's displayed index from the address book.
+ * Deletes a client identified by the index used in the displayed client list.
  */
 public class ClientDeleteCommand extends Command {
 
@@ -26,6 +26,10 @@ public class ClientDeleteCommand extends Command {
 
     private final Index targetIndex;
 
+    /**
+     * Creates a ClientDeleteCommand to delete the client at the specified {@code targetIndex} in the displayed client
+     * list.
+     */
     public ClientDeleteCommand(Index targetIndex) {
         this.targetIndex = targetIndex;
     }

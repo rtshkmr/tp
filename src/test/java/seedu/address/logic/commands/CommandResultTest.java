@@ -16,7 +16,7 @@ public class CommandResultTest {
     @Test
     public void constructor() {
         CommandResult defaultCommandResult = new CommandResult("test");
-        assertFalse(defaultCommandResult.isResetWidget());
+        assertFalse(defaultCommandResult.shouldResetWidget());
         assertFalse(defaultCommandResult.isShowHelp());
         assertFalse(defaultCommandResult.isExit());
         assertEquals("NONE", defaultCommandResult.getWidgetViewOptionAsString());
@@ -25,7 +25,7 @@ public class CommandResultTest {
 
         CommandResult customCommandResult = new CommandResult("test", false, true, false,
                 WidgetViewOption.generateClientWidgetOption());
-        assertFalse(customCommandResult.isResetWidget());
+        assertFalse(customCommandResult.shouldResetWidget());
         assertTrue(customCommandResult.isShowHelp());
         assertFalse(customCommandResult.isExit());
         assertEquals("CLIENT", customCommandResult.getWidgetViewOptionAsString());
@@ -35,7 +35,7 @@ public class CommandResultTest {
 
         customCommandResult = new CommandResult("test", false, false, true,
                 WidgetViewOption.generateCountryNoteWidgetOption(Country.NULL_COUNTRY));
-        assertFalse(customCommandResult.isResetWidget());
+        assertFalse(customCommandResult.shouldResetWidget());
         assertFalse(customCommandResult.isShowHelp());
         assertTrue(customCommandResult.isExit());
         assertEquals("COUNTRY_NOTE", customCommandResult.getWidgetViewOptionAsString());
@@ -43,7 +43,7 @@ public class CommandResultTest {
         assertTrue(customCommandResult.shouldDisplayCountryNote());
 
         customCommandResult = new CommandResult("test", true, false, false);
-        assertTrue(customCommandResult.isResetWidget());
+        assertTrue(customCommandResult.shouldResetWidget());
         assertFalse(customCommandResult.isShowHelp());
         assertFalse(customCommandResult.isExit());
 

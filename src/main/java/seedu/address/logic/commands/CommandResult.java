@@ -15,7 +15,7 @@ public class CommandResult {
 
     private final String feedbackToUser;
 
-    /** The widget display should be reset to normal */
+    /** The widget display should be reset to normal. */
     private final boolean resetWidget;
 
     /** Help information should be shown to the user. */
@@ -28,7 +28,7 @@ public class CommandResult {
     private final WidgetViewOption widgetViewOption;
 
     /**
-     * Constructs a {@code CommandResult} with the specified fields
+     * Constructs a {@code CommandResult} with the specified fields.
      */
     public CommandResult(String feedbackToUser, boolean resetWidget, boolean showHelp, boolean exit,
             WidgetViewOption widgetViewOption) {
@@ -56,26 +56,29 @@ public class CommandResult {
         this(feedbackToUser, false, false, false);
     }
 
+    /**
+     * Returns the feedback that should be shown to the user.
+     */
     public String getFeedbackToUser() {
         return feedbackToUser;
     }
 
-    public boolean isResetWidget() {
-        return resetWidget;
-    }
-
+    /**
+     * Returns true if the help window should be shown to the user.
+     */
     public boolean isShowHelp() {
         return showHelp;
     }
 
+    /**
+     * Returns true if the application should exit.
+     */
     public boolean isExit() {
         return exit;
     }
 
     /**
      * Returns the string representation of the widget view.
-     *
-     * @return The string representation of the widget view.
      */
     public String getWidgetViewOptionAsString() {
         return widgetViewOption.toString();
@@ -83,8 +86,6 @@ public class CommandResult {
 
     /**
      * Returns true if the UI should display the client view.
-     *
-     * @return True if the UI should display the client view.
      */
     public boolean shouldDisplayClient() {
         return widgetViewOption.isClient();
@@ -92,17 +93,20 @@ public class CommandResult {
 
     /**
      * Returns true if the UI should display the country notes view.
-     *
-     * @return True if the UI should display the country notes view.
      */
     public boolean shouldDisplayCountryNote() {
         return widgetViewOption.isCountryNote();
     }
 
     /**
-     * Gets the country that is associated with the widget view.
-     *
-     * @return The country that is associated with the widget view.
+     * Returns true if the widget view box should be reset to its default view.
+     */
+    public boolean shouldResetWidget() {
+        return resetWidget;
+    }
+
+    /**
+     * Returns the country that is associated with the widget view.
      */
     public Country getCountry() {
         return widgetViewOption.getCountry();

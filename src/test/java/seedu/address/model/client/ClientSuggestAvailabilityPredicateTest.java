@@ -8,49 +8,54 @@ import org.junit.jupiter.api.Test;
 
 import seedu.address.testutil.ClientBuilder;
 
-public class SuggestAvailabilityPredicateTest {
+public class ClientSuggestAvailabilityPredicateTest {
 
     @Test
     public void test_clientAt17_false() {
         TimezoneStub fivePm = new TimezoneStub("GMT+8", 17);
         Client client = new ClientBuilder().withTimezone(fivePm).build();
-        SuggestAvailabilityPredicate suggestAvailabilityPredicate = new SuggestAvailabilityPredicate();
-        assertFalse(suggestAvailabilityPredicate.test(client));
+        ClientSuggestAvailabilityPredicate clientSuggestAvailabilityPredicate =
+                new ClientSuggestAvailabilityPredicate();
+        assertFalse(clientSuggestAvailabilityPredicate.test(client));
     }
 
     @Test
     public void test_clientAt18_true() {
         TimezoneStub sixPm = new TimezoneStub("GMT+8", 18);
         Client client = new ClientBuilder().withTimezone(sixPm).build();
-        SuggestAvailabilityPredicate suggestAvailabilityPredicate = new SuggestAvailabilityPredicate();
-        assertTrue(suggestAvailabilityPredicate.test(client));
+        ClientSuggestAvailabilityPredicate clientSuggestAvailabilityPredicate =
+                new ClientSuggestAvailabilityPredicate();
+        assertTrue(clientSuggestAvailabilityPredicate.test(client));
     }
 
     @Test
     public void test_clientAt21_true() {
         TimezoneStub tenPm = new TimezoneStub("GMT+8", 21);
         Client client = new ClientBuilder().withTimezone(tenPm).build();
-        SuggestAvailabilityPredicate suggestAvailabilityPredicate = new SuggestAvailabilityPredicate();
-        assertTrue(suggestAvailabilityPredicate.test(client));
+        ClientSuggestAvailabilityPredicate clientSuggestAvailabilityPredicate =
+                new ClientSuggestAvailabilityPredicate();
+        assertTrue(clientSuggestAvailabilityPredicate.test(client));
     }
 
     @Test
     public void test_clientAt22_false() {
         TimezoneStub elevenPm = new TimezoneStub("GMT+8", 22);
         Client client = new ClientBuilder().withTimezone(elevenPm).build();
-        SuggestAvailabilityPredicate suggestAvailabilityPredicate = new SuggestAvailabilityPredicate();
-        assertFalse(suggestAvailabilityPredicate.test(client));
+        ClientSuggestAvailabilityPredicate clientSuggestAvailabilityPredicate =
+                new ClientSuggestAvailabilityPredicate();
+        assertFalse(clientSuggestAvailabilityPredicate.test(client));
     }
 
     @Test
     public void equals() {
-        SuggestAvailabilityPredicate suggestAvailabilityPredicate = new SuggestAvailabilityPredicate();
+        ClientSuggestAvailabilityPredicate clientSuggestAvailabilityPredicate =
+                new ClientSuggestAvailabilityPredicate();
 
         // basic equals tests
-        basicEqualsTests(suggestAvailabilityPredicate);
+        basicEqualsTests(clientSuggestAvailabilityPredicate);
 
         // different object, same fields -> true
-        assertTrue(suggestAvailabilityPredicate.equals(new SuggestAvailabilityPredicate()));
+        assertTrue(clientSuggestAvailabilityPredicate.equals(new ClientSuggestAvailabilityPredicate()));
     }
 
     private static class TimezoneStub extends Timezone {

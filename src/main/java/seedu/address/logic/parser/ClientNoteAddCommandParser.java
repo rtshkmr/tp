@@ -23,7 +23,7 @@ public class ClientNoteAddCommandParser implements Parser<ClientNoteAddCommand> 
     private final TagNoteMap tagNoteMap;
 
     /**
-     * Initializes a {@code CLientNoteAddCommandParser} with the {@code tagNoteMap} object.
+     * Initializes a {@code ClientNoteAddCommandParser} with the supplied {@code tagNoteMap} object.
      */
     public ClientNoteAddCommandParser(TagNoteMap tagNoteMap) {
         requireNonNull(tagNoteMap);
@@ -31,15 +31,16 @@ public class ClientNoteAddCommandParser implements Parser<ClientNoteAddCommand> 
     }
 
     /**
-     * @param userInput The user input String.
-     * @return A ClientNoteAddCommand corresponding to the input string.
-     * @throws ParseException If user input is invalid.
+     * Parses the given {@code args} in the context of the ClientNoteAddCommand and returns a ClientNoteAddCommand
+     * object for execution.
+     *
+     * @throws ParseException If the user input does not conform to the expected format.
      */
     @Override
-    public ClientNoteAddCommand parse(String userInput) throws ParseException {
-        requireNonNull(userInput);
+    public ClientNoteAddCommand parse(String args) throws ParseException {
+        requireNonNull(args);
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(userInput, PREFIX_TAG, PREFIX_NOTE);
+                ArgumentTokenizer.tokenize(args, PREFIX_TAG, PREFIX_NOTE);
         if (!arePrefixesPresent(argMultimap, PREFIX_NOTE) || argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ClientNoteAddCommand.MESSAGE_USAGE));
         }

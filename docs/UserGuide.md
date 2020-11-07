@@ -449,25 +449,26 @@ Example:
 
 ### **3. Getting Suggested Clients**
 
-Obtains a list of clients based on the suggestion type(s) passed in. This command will also reset the left display panel to its default view.
 
-Format: `suggest by/SUGGESTION_TYPE [by/SUGGESTION_TYPE]...`
+Obtains a list of clients based on the client suggestion type(s) passed in. This command will also reset the left display panel to its default view.
+
+Format: `client suggest by/SUGGESTION_TYPE [by/SUGGESTION_TYPE]...`
 
 Examples:
 
-* Command: `suggest by/available`
+* Command: `client suggest by/available`
 
     Obtains a list of clients where the time is 1800-2200 in the client's timezone (off work hours).
 
-* Command: `suggest by/frequency`
+* Command: `client suggest by/frequency`
 
     Obtains a list of clients based on the last time their details were edited in **_TBM_**. Clients who have not been contacted for a longer period will be the first in the list.
 
-* `suggest by/contract`
+* `client suggest by/contract`
 
     Obtains a list of clients based on their current contract details. Clients whose contracts are expiring will be shown first.
 
-* `suggest by/contract by/available`
+* `client suggest by/contract by/available`
 
     Obtains a list of clients based on their current contract details but only clients who are available will be shown. Clients whose contracts are expiring will be shown first.
 
@@ -552,7 +553,7 @@ Action | Format, Examples
 **Add country note** | `country note add c/COUNTRY_CODE nt/NOTE_STRING [t/TAG]...` <br> e.g., `country note add c/SG nt/has one of the lowest coporate taxes in the world t/tax`
 **Edit country note** | `country note edit INDEX (nt/NOTE_STRING) (t/TAG)...` <br> e.g., `country note edit 1 nt/has one of the lowest coporate taxes in the world t/tax`
 **Delete country note** | `country note delete INDEX` <br> e.g., `country note delete 1`
-**Get suggestions** | `suggest by/SUGGESTION_TYPE [by/SUGGESTION_TYPE]...` <br> e.g., `suggest by/available by/frequency`
+**Get suggestions** | `client suggest by/SUGGESTION_TYPE [by/SUGGESTION_TYPE]...` <br> e.g., `client suggest by/available by/frequency`
 **Clear** | `clear`
 **Exit** | `exit`
 **Help** | `help`

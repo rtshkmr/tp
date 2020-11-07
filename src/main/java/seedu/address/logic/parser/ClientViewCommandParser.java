@@ -7,18 +7,19 @@ import seedu.address.logic.commands.ClientViewCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
 /**
- * Parses input arguments and creates a new ClientViewCommand object
+ * Parses input arguments and creates a new ClientViewCommand object.
  */
 public class ClientViewCommandParser implements Parser<ClientViewCommand> {
     /**
-     * Parses the given {@code String} of arguments in the context of the ClientViewCommand
+     * Parses the given {@code args} in the context of the ClientViewCommand
      * and returns a ClientViewCommand object for execution.
-     * @throws ParseException if the user input does not conform the expected format
+     *
+     * @throws ParseException If the user input does not conform to the expected format.
      */
     @Override
-    public ClientViewCommand parse(String userInput) throws ParseException {
+    public ClientViewCommand parse(String args) throws ParseException {
         try {
-            Index index = ParserUtil.parseIndex(userInput);
+            Index index = ParserUtil.parseIndex(args);
             return new ClientViewCommand(index);
         } catch (ParseException pe) {
             throw new ParseException(

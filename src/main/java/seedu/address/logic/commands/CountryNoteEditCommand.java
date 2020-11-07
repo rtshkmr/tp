@@ -17,7 +17,7 @@ import seedu.address.model.note.CountryNote;
 import seedu.address.model.tag.Tag;
 
 /**
- * A class that encapsulates the logic for editing country notes.
+ * Edits a CountryNote.
  */
 public class CountryNoteEditCommand extends Command {
 
@@ -41,7 +41,7 @@ public class CountryNoteEditCommand extends Command {
     private final Set<Tag> tags;
 
     /**
-     * Initializes a CountryNoteEditCommand with the given targetIndex.
+     * Initializes a CountryNoteEditCommand with the given {@code targetIndex} and {@code countryNote}.
      *
      * @param targetIndex The given targetIndex.
      * @param countryNote The country note that contains the new note content.
@@ -54,7 +54,7 @@ public class CountryNoteEditCommand extends Command {
     }
 
     /**
-     * Initializes a CountryNoteEditCommand with the given targetIndex.
+     * Initializes a CountryNoteEditCommand with the given {@code targetIndex} and {@code tags}.
      *
      * @param targetIndex The given targetIndex.
      * @param tags The new tags to add to the country note at the existing targetIndex.

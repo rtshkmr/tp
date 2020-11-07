@@ -16,8 +16,6 @@ import seedu.address.ui.WidgetViewOption;
  */
 public class ClientViewCommand extends Command {
 
-    /** Client command in the form client view index, where index points to the index of the client at current location
-    of the rendered */
     public static final String COMMAND_WORD = "client view";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
@@ -29,17 +27,13 @@ public class ClientViewCommand extends Command {
 
     private final Index targetIndex;
 
+    /**
+     * Creates a ClientVewCommand to view the client at the specified {@code targetIndex} in the displayed client list.
+     */
     public ClientViewCommand(Index targetIndex) {
         this.targetIndex = targetIndex;
     }
 
-    /**
-     * Executes the command and returns the result message.
-     *
-     * @param model {@code Model} which the command should operate on.
-     * @return feedback message of the operation result for display
-     * @throws CommandException If an error occurs during command execution.
-     */
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);

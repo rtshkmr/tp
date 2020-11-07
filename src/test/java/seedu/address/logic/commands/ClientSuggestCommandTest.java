@@ -20,11 +20,11 @@ import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.client.Client;
+import seedu.address.model.client.ClientSuggestionType;
 import seedu.address.model.client.ContractExpiryDate;
-import seedu.address.model.client.SuggestionType;
 import seedu.address.testutil.ClientBuilder;
 
-public class SuggestCommandTest {
+public class ClientSuggestCommandTest {
 
     private Model model;
 
@@ -35,20 +35,21 @@ public class SuggestCommandTest {
 
     @Test
     public void constructor_null_throwsNullPointerException() {
-        assertThrows(NullPointerException.class, () -> new SuggestCommand(null));
+        assertThrows(NullPointerException.class, () -> new ClientSuggestCommand(null));
     }
 
     @Test
     public void execute_null_throwsNullPointerException() {
-        assertThrows(NullPointerException.class, () -> new SuggestCommand(Collections.emptySet()).execute(null));
+        assertThrows(NullPointerException.class, () -> new ClientSuggestCommand(Collections.emptySet()).execute(null));
     }
 
     @Test
     public void execute_emptySet_success() {
         List<Client> beforeClientList = new ArrayList<>(model.getSortedFilteredClientList());
-        SuggestCommand suggestCommand = new SuggestCommand(Collections.emptySet());
-        CommandResult expectedResult = new CommandResult(SuggestCommand.MESSAGE_SUGGEST_SUCCESS, true, false, false);
-        assertEquals(suggestCommand.execute(model), expectedResult);
+        ClientSuggestCommand clientSuggestCommand = new ClientSuggestCommand(Collections.emptySet());
+        CommandResult expectedResult = new CommandResult(ClientSuggestCommand.MESSAGE_SUGGEST_SUCCESS,
+                true, false, false);
+        assertEquals(clientSuggestCommand.execute(model), expectedResult);
         List<Client> afterClientList = new ArrayList<>(model.getSortedFilteredClientList());
         assertEquals(beforeClientList, afterClientList);
     }
@@ -70,42 +71,44 @@ public class SuggestCommandTest {
         newModel.addClient(client4);
         assertEquals(newModel.getSortedFilteredClientList().size(), 4);
 
-        Set<SuggestionType> suggestionTypes = new LinkedHashSet<>();
-        suggestionTypes.add(new SuggestionType(SuggestionType.BY_CONTRACT));
-        SuggestCommand suggestCommand1 = new SuggestCommand(suggestionTypes);
-        CommandResult expectedResult1 = new CommandResult(SuggestCommand.MESSAGE_SUGGEST_SUCCESS
-                + SuggestionType.CONTRACT_DESCRIPTION, true, false, false);
-        assertEquals(suggestCommand1.execute(newModel), expectedResult1);
+        Set<ClientSuggestionType> clientSuggestionTypes = new LinkedHashSet<>();
+        clientSuggestionTypes.add(new ClientSuggestionType(ClientSuggestionType.BY_CONTRACT));
+        ClientSuggestCommand clientSuggestCommand1 = new ClientSuggestCommand(clientSuggestionTypes);
+        CommandResult expectedResult1 = new CommandResult(ClientSuggestCommand.MESSAGE_SUGGEST_SUCCESS
+                + ClientSuggestionType.CONTRACT_DESCRIPTION, true, false, false);
+        assertEquals(clientSuggestCommand1.execute(newModel), expectedResult1);
         assertEquals(newModel.getSortedFilteredClientList().size(), 3);
         assertEquals(newModel.getSortedFilteredClientList().get(0), client3);
 
-        suggestionTypes = new LinkedHashSet<>();
-        suggestionTypes.add(new SuggestionType(SuggestionType.BY_FREQUENCY));
-        suggestionTypes.add(new SuggestionType(SuggestionType.BY_CONTRACT));
-        SuggestCommand suggestCommand2 = new SuggestCommand(suggestionTypes);
-        CommandResult expectedResult2 = new CommandResult(SuggestCommand.MESSAGE_SUGGEST_SUCCESS
-                + SuggestionType.FREQUENCY_DESCRIPTION + "\n" + SuggestionType.CONTRACT_DESCRIPTION,
+        clientSuggestionTypes = new LinkedHashSet<>();
+        clientSuggestionTypes.add(new ClientSuggestionType(ClientSuggestionType.BY_FREQUENCY));
+        clientSuggestionTypes.add(new ClientSuggestionType(ClientSuggestionType.BY_CONTRACT));
+        ClientSuggestCommand clientSuggestCommand2 = new ClientSuggestCommand(clientSuggestionTypes);
+        CommandResult expectedResult2 = new CommandResult(ClientSuggestCommand.MESSAGE_SUGGEST_SUCCESS
+                + ClientSuggestionType.FREQUENCY_DESCRIPTION + "\n" + ClientSuggestionType.CONTRACT_DESCRIPTION,
                 true, false, false);
-        assertEquals(suggestCommand2.execute(newModel), expectedResult2);
+        assertEquals(clientSuggestCommand2.execute(newModel), expectedResult2);
         assertEquals(newModel.getSortedFilteredClientList().size(), 3);
         assertEquals(newModel.getSortedFilteredClientList().get(0), client2);
     }
 
     @Test
     public void equals() {
-        Set<SuggestionType> suggestionTypeSet = Set.of(new SuggestionType(SuggestionType.BY_FREQUENCY),
-                new SuggestionType(SuggestionType.BY_CONTRACT), new SuggestionType(SuggestionType.BY_AVAILABLE));
-        SuggestCommand suggestCommand = new SuggestCommand(suggestionTypeSet);
+        Set<ClientSuggestionType> clientSuggestionTypeSet = Set.of(
+                new ClientSuggestionType(ClientSuggestionType.BY_FREQUENCY),
+                new ClientSuggestionType(ClientSuggestionType.BY_CONTRACT),
+                new ClientSuggestionType(ClientSuggestionType.BY_AVAILABLE));
+        ClientSuggestCommand clientSuggestCommand = new ClientSuggestCommand(clientSuggestionTypeSet);
 
         // basic equals tests
-        basicEqualsTests(suggestCommand);
+        basicEqualsTests(clientSuggestCommand);
 
         // same values -> returns true
-        SuggestCommand suggestCommandCopy = new SuggestCommand(suggestionTypeSet);
-        assertTrue(suggestCommand.equals(suggestCommandCopy));
+        ClientSuggestCommand clientSuggestCommandCopy = new ClientSuggestCommand(clientSuggestionTypeSet);
+        assertTrue(clientSuggestCommand.equals(clientSuggestCommandCopy));
 
         // different suggestion type set -> returns false
-        assertFalse(suggestCommand.equals(new SuggestCommand(Collections.emptySet())));
+        assertFalse(clientSuggestCommand.equals(new ClientSuggestCommand(Collections.emptySet())));
     }
 
 }

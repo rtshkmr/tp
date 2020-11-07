@@ -7,14 +7,21 @@ package seedu.address.logic.parser;
 public class Prefix {
     private final String prefix;
 
+    /**
+     * Initializes a {@code Prefix} with the given {@code String prefix}.
+     */
     public Prefix(String prefix) {
         this.prefix = prefix;
     }
 
+    /**
+     * Returns the {@code String prefix} of this {@code Prefix} object.
+     */
     public String getPrefix() {
         return prefix;
     }
 
+    @Override
     public String toString() {
         return getPrefix();
     }

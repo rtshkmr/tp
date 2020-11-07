@@ -25,7 +25,7 @@ import seedu.address.model.client.Client;
  */
 public class ClientDeleteCommandTest {
 
-    private Model model = new ModelManager(getTypicalTbmManager(), new UserPrefs());
+    private final Model model = new ModelManager(getTypicalTbmManager(), new UserPrefs());
 
     @Test
     public void execute_validIndexUnfilteredList_success() {

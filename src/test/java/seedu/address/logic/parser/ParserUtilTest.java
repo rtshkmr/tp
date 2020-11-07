@@ -15,11 +15,11 @@ import org.junit.jupiter.api.Test;
 
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.client.Address;
+import seedu.address.model.client.ClientSuggestionType;
 import seedu.address.model.client.ContractExpiryDate;
 import seedu.address.model.client.Email;
 import seedu.address.model.client.Name;
 import seedu.address.model.client.Phone;
-import seedu.address.model.client.SuggestionType;
 import seedu.address.model.client.Timezone;
 import seedu.address.model.country.Country;
 import seedu.address.model.note.Note;
@@ -35,7 +35,7 @@ public class ParserUtilTest {
     private static final String INVALID_COUNTRY_CODE = "ZZ";
     private static final String INVALID_TIMEZONE = "GT+8";
     private static final String INVALID_NOTE_STRING = " ";
-    private static final String INVALID_SUGGESTION_TYPE = "name";
+    private static final String INVALID_CLIENT_SUGGESTION_TYPE = "name";
 
     private static final String VALID_NAME = "Rachel Walker";
     private static final String VALID_PHONE = "123456";
@@ -46,9 +46,9 @@ public class ParserUtilTest {
     private static final String VALID_COUNTRY_CODE = "SG";
     private static final String VALID_TIMEZONE = "GMT+8";
     private static final String VALID_NOTE_STRING = "likes cats";
-    private static final String VALID_SUGGESTION_TYPE_1 = "available";
-    private static final String VALID_SUGGESTION_TYPE_2 = "frequency";
-    private static final String VALID_SUGGESTION_TYPE_3 = "contract";
+    private static final String VALID_CLIENT_SUGGESTION_TYPE_1 = "available";
+    private static final String VALID_CLIENT_SUGGESTION_TYPE_2 = "frequency";
+    private static final String VALID_CLIENT_SUGGESTION_TYPE_3 = "contract";
 
     private static final String WHITESPACE = " \t\r\n";
 
@@ -281,52 +281,55 @@ public class ParserUtilTest {
 
     @Test
     public void parseSuggestionType_null_throwsNullPointerException() {
-        assertThrows(NullPointerException.class, () -> ParserUtil.parseSuggestionType(null));
+        assertThrows(NullPointerException.class, () -> ParserUtil.parseClientSuggestionType(null));
     }
 
     @Test
     public void parseSuggestionType_invalidValue_throwsParseException() {
-        assertThrows(ParseException.class, () -> ParserUtil.parseSuggestionType(INVALID_SUGGESTION_TYPE));
+        assertThrows(ParseException.class, () -> ParserUtil.parseClientSuggestionType(INVALID_CLIENT_SUGGESTION_TYPE));
     }
 
     @Test
     public void parseSuggestionType_validValueWithoutWhitespace_returnsSuggestionType() throws Exception {
-        SuggestionType expectedSuggestionType = new SuggestionType(VALID_SUGGESTION_TYPE_1);
-        assertEquals(expectedSuggestionType, ParserUtil.parseSuggestionType(VALID_SUGGESTION_TYPE_1));
+        ClientSuggestionType expectedClientSuggestionType = new ClientSuggestionType(VALID_CLIENT_SUGGESTION_TYPE_1);
+        assertEquals(expectedClientSuggestionType,
+                ParserUtil.parseClientSuggestionType(VALID_CLIENT_SUGGESTION_TYPE_1));
     }
 
     @Test
     public void parseSuggestionType_validValueWithWhitespace_returnsTrimmedSuggestionType() throws Exception {
-        String suggestionTypeWithWhitespace = WHITESPACE + VALID_SUGGESTION_TYPE_1 + WHITESPACE;
-        SuggestionType expectedSuggestionType = new SuggestionType(VALID_SUGGESTION_TYPE_1);
-        assertEquals(expectedSuggestionType, ParserUtil.parseSuggestionType(suggestionTypeWithWhitespace));
+        String suggestionTypeWithWhitespace = WHITESPACE + VALID_CLIENT_SUGGESTION_TYPE_1 + WHITESPACE;
+        ClientSuggestionType expectedClientSuggestionType = new ClientSuggestionType(VALID_CLIENT_SUGGESTION_TYPE_1);
+        assertEquals(expectedClientSuggestionType, ParserUtil.parseClientSuggestionType(suggestionTypeWithWhitespace));
     }
 
     @Test
     public void parseSuggestionTypes_null_throwsNullPointerException() {
-        assertThrows(NullPointerException.class, () -> ParserUtil.parseSuggestionTypes(null));
+        assertThrows(NullPointerException.class, () -> ParserUtil.parseClientSuggestionTypes(null));
     }
 
     @Test
     public void parseSuggestionTypes_collectionWithInvalidSuggestionTypes_throwsParseException() {
-        assertThrows(ParseException.class, () -> ParserUtil.parseSuggestionTypes(Arrays.asList(VALID_SUGGESTION_TYPE_1,
-                INVALID_SUGGESTION_TYPE)));
+        assertThrows(ParseException.class, () ->
+                ParserUtil.parseClientSuggestionTypes(Arrays.asList(VALID_CLIENT_SUGGESTION_TYPE_1,
+                INVALID_CLIENT_SUGGESTION_TYPE)));
     }
 
     @Test
     public void parseSuggestionTypes_emptyCollection_returnsEmptySet() throws Exception {
-        assertTrue(ParserUtil.parseSuggestionTypes(Collections.emptyList()).isEmpty());
+        assertTrue(ParserUtil.parseClientSuggestionTypes(Collections.emptyList()).isEmpty());
     }
 
     @Test
     public void parseSuggestionTypes_collectionWithValidSuggestionTypes_returnsSuggestionTypeSet() throws Exception {
-        Set<SuggestionType> actualSuggestionTypeSet = ParserUtil.parseSuggestionTypes(Arrays.asList(
-                VALID_SUGGESTION_TYPE_1, VALID_SUGGESTION_TYPE_2, VALID_SUGGESTION_TYPE_3));
-        Set<SuggestionType> expectedSuggestionTypeSet = new HashSet<>(Arrays.asList(
-                new SuggestionType(VALID_SUGGESTION_TYPE_1), new SuggestionType(VALID_SUGGESTION_TYPE_2),
-                new SuggestionType((VALID_SUGGESTION_TYPE_3))));
+        Set<ClientSuggestionType> actualClientSuggestionTypeSet = ParserUtil.parseClientSuggestionTypes(Arrays.asList(
+                VALID_CLIENT_SUGGESTION_TYPE_1, VALID_CLIENT_SUGGESTION_TYPE_2, VALID_CLIENT_SUGGESTION_TYPE_3));
+        Set<ClientSuggestionType> expectedClientSuggestionTypeSet = new HashSet<>(Arrays.asList(
+                new ClientSuggestionType(VALID_CLIENT_SUGGESTION_TYPE_1),
+                new ClientSuggestionType(VALID_CLIENT_SUGGESTION_TYPE_2),
+                new ClientSuggestionType((VALID_CLIENT_SUGGESTION_TYPE_3))));
 
-        assertEquals(expectedSuggestionTypeSet, actualSuggestionTypeSet);
+        assertEquals(expectedClientSuggestionTypeSet, actualClientSuggestionTypeSet);
     }
 
     @Test

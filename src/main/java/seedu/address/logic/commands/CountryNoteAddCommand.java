@@ -10,7 +10,7 @@ import seedu.address.model.Model;
 import seedu.address.model.note.CountryNote;
 
 /**
- * Adds a Country-specific Note.
+ * Adds a CountryNote.
  */
 public class CountryNoteAddCommand extends Command {
 

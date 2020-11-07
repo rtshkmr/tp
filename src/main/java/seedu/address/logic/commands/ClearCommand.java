@@ -19,4 +19,5 @@ public class ClearCommand extends Command {
         model.setTbmManager(new TbmManager());
         return new CommandResult(MESSAGE_SUCCESS, true, false, false);
     }
+
 }

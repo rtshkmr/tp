@@ -17,13 +17,13 @@ import seedu.address.model.note.TagNoteMap;
 import seedu.address.model.tag.Tag;
 
 /**
- * Parses input arguments and creates a new CountryNoteCommand object.
+ * Parses input arguments and creates a new CountryNoteAddCommand object.
  */
 public class CountryNoteAddCommandParser implements Parser<CountryNoteAddCommand> {
     private final TagNoteMap tagNoteMap;
 
     /**
-     * Initializes a {@code CLientNoteAddCommandParser} with the {@code tagNoteMap} object.
+     * Initializes a {@code CountryNoteAddCommandParser} with the {@code tagNoteMap} object.
      */
     public CountryNoteAddCommandParser(TagNoteMap tagNoteMap) {
         requireNonNull(tagNoteMap);
@@ -31,12 +31,10 @@ public class CountryNoteAddCommandParser implements Parser<CountryNoteAddCommand
     }
 
     /**
-     * Parses the given {@code arg} of arguments in the context of the CountryNoteAddCommand and returns a
-     * CountryNoteAddCommand object for execution.
+     * Parses the given {@code args} in the context of the CountryNoteAddCommand and returns a CountryNoteAddCommand
+     * object for execution.
      *
-     * @param args The user input string.
-     * @return A CountryNoteAddCommand object which corresponds to the user input string.
-     * @throws ParseException If user input string is invalid.
+     * @throws ParseException If the user input does not conform to the expected format.
      */
     public CountryNoteAddCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap =

@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 /**
  * Predicate to check if client contains a contract expiry date.
  */
-public class SuggestContractPredicate implements Predicate<Client> {
+public class ClientSuggestContractPredicate implements Predicate<Client> {
     private static final int SUGGEST_CONTRACT_PREDICATE_HASHCODE = 2;
 
     @Override
@@ -16,7 +16,7 @@ public class SuggestContractPredicate implements Predicate<Client> {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof SuggestContractPredicate); // instanceof handles nulls
+                || (other instanceof ClientSuggestContractPredicate); // instanceof handles nulls
     }
 
     @Override

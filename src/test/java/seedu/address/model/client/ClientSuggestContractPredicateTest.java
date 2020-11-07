@@ -10,9 +10,9 @@ import org.junit.jupiter.api.Test;
 
 import seedu.address.testutil.ClientBuilder;
 
-public class SuggestContractPredicateTest {
+public class ClientSuggestContractPredicateTest {
 
-    private final SuggestContractPredicate predicate = new SuggestContractPredicate();
+    private final ClientSuggestContractPredicate predicate = new ClientSuggestContractPredicate();
 
     @Test
     public void test_clientWithNullContractExpiryDate_returnsFalse() {
@@ -32,21 +32,21 @@ public class SuggestContractPredicateTest {
         basicEqualsTests(predicate);
 
         // same values -> returns true
-        SuggestContractPredicate predicateCopy = new SuggestContractPredicate();
+        ClientSuggestContractPredicate predicateCopy = new ClientSuggestContractPredicate();
         assertTrue(predicate.equals(predicateCopy));
 
         // different predicate -> returns false
-        assertFalse(predicate.equals(new SuggestAvailabilityPredicate()));
+        assertFalse(predicate.equals(new ClientSuggestAvailabilityPredicate()));
     }
 
     @Test
     public void hashCode_test() {
-        SuggestContractPredicate predicateCopy = new SuggestContractPredicate();
+        ClientSuggestContractPredicate predicateCopy = new ClientSuggestContractPredicate();
         // same predicate -> same hashCode
         assertEquals(predicate.hashCode(), predicateCopy.hashCode());
 
         // different predicate -> different hashCode
-        assertNotEquals(predicate.hashCode(), new SuggestAvailabilityPredicate().hashCode());
+        assertNotEquals(predicate.hashCode(), new ClientSuggestAvailabilityPredicate().hashCode());
     }
 
 }

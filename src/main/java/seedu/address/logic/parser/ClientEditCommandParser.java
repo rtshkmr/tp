@@ -21,9 +21,10 @@ import seedu.address.logic.parser.exceptions.ParseException;
 public class ClientEditCommandParser implements Parser<ClientEditCommand> {
 
     /**
-     * Parses the given {@code String} of arguments in the context of the ClientEditCommand
-     * and returns an ClientEditCommand object for execution.
-     * @throws ParseException if the user input does not conform the expected format
+     * Parses the given {@code args} in the context of the ClientEditCommand and returns a ClientEditCommand
+     * object for execution.
+     *
+     * @throws ParseException If the user input does not conform to the expected format.
      */
     public ClientEditCommand parse(String args) throws ParseException {
         requireNonNull(args);

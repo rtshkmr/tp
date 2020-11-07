@@ -30,6 +30,7 @@ import seedu.address.logic.commands.ClientListCommand;
 import seedu.address.logic.commands.ClientNoteAddCommand;
 import seedu.address.logic.commands.ClientNoteDeleteCommand;
 import seedu.address.logic.commands.ClientNoteEditCommand;
+import seedu.address.logic.commands.ClientSuggestCommand;
 import seedu.address.logic.commands.ClientViewCommand;
 import seedu.address.logic.commands.CountryFilterCommand;
 import seedu.address.logic.commands.CountryNoteAddCommand;
@@ -38,12 +39,11 @@ import seedu.address.logic.commands.CountryNoteEditCommand;
 import seedu.address.logic.commands.CountryNoteViewCommand;
 import seedu.address.logic.commands.ExitCommand;
 import seedu.address.logic.commands.HelpCommand;
-import seedu.address.logic.commands.SuggestCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.client.Client;
 import seedu.address.model.client.ClientCountryMatchesInputCountryPredicate;
+import seedu.address.model.client.ClientSuggestionType;
 import seedu.address.model.client.NameContainsKeywordsPredicate;
-import seedu.address.model.client.SuggestionType;
 import seedu.address.model.country.Country;
 import seedu.address.model.note.CountryNote;
 import seedu.address.model.note.Note;
@@ -262,13 +262,14 @@ public class MainParserTest {
     }
 
     @Test
-    public void parseCommand_suggest() throws Exception {
-        final String commandString = SuggestCommand.COMMAND_WORD + " " + PREFIX_SUGGEST + SuggestionType.BY_AVAILABLE;
-        Set<SuggestionType> suggestionTypeSet = new LinkedHashSet<>();
-        suggestionTypeSet.add(new SuggestionType(SuggestionType.BY_AVAILABLE));
+    public void parseCommand_clientSuggest() throws Exception {
+        final String commandString = ClientSuggestCommand.COMMAND_WORD + " " + PREFIX_SUGGEST
+                + ClientSuggestionType.BY_AVAILABLE;
+        Set<ClientSuggestionType> clientSuggestionTypeSet = new LinkedHashSet<>();
+        clientSuggestionTypeSet.add(new ClientSuggestionType(ClientSuggestionType.BY_AVAILABLE));
 
-        SuggestCommand command = (SuggestCommand) parser.parseCommand(commandString);
-        assertEquals(new SuggestCommand(suggestionTypeSet), command);
+        ClientSuggestCommand command = (ClientSuggestCommand) parser.parseCommand(commandString);
+        assertEquals(new ClientSuggestCommand(clientSuggestionTypeSet), command);
     }
 
     @Test

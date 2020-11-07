@@ -41,8 +41,9 @@ public class ClientNoteEditCommand extends Command {
 
     /**
      * Initializes a ClientNoteEditCommand.
-     *  @param targetClientIndex The index of the client whom the clientNote is associated to.
-     * @param targetClientNoteIndex  The index of the clientNote to be edited.
+     *
+     * @param targetClientIndex The index of the client whom the clientNote is associated to.
+     * @param targetClientNoteIndex The index of the clientNote to be edited.
      * @param parsedNewNote The newly edited note.
      */
     public ClientNoteEditCommand(Index targetClientIndex, Index targetClientNoteIndex, Note parsedNewNote) {
@@ -64,11 +65,11 @@ public class ClientNoteEditCommand extends Command {
         if (targetClientNoteIndex.getZeroBased() >= notesList.size()) {
             throw new CommandException(MESSAGE_INVALID_CLIENT_NOTE_DISPLAYED_INDEX);
         }
+
         Client associatedClient = lastShownClientList.get(targetClientIndex.getZeroBased());
         Note existingNote = associatedClient.getClientNotesAsUnmodifiableList()
                 .get(targetClientNoteIndex.getZeroBased());
-        assert associatedClient.hasClientNote(existingNote) : "attempting to edit client"
-                + " note that doesn't exist";
+        assert associatedClient.hasClientNote(existingNote) : "attempting to edit client note that doesn't exist";
         String existingNoteContent = existingNote.getNoteContent();
         Set<Tag> accumulatedTags = new HashSet<>();
         Note editedNote;
@@ -77,10 +78,12 @@ public class ClientNoteEditCommand extends Command {
         } else {
             editedNote = parsedNewNote;
         }
-        // add the previous tags, because we want to retain history of tags
+
+        // Add the previous tags, because we want to retain history of tags
         accumulatedTags.addAll(existingNote.getTags());
         accumulatedTags.addAll(parsedNewNote.getTags());
-        // because parser used tagNoteMap#getUniqueTags, it is okay for there to be duplicates in previous tags and
+
+        // Because parser used tagNoteMap#getUniqueTags, it is okay for there to be duplicates in previous tags and
         // new Note's tags. Overwriting will keep one of the two duplicates, and they are the same object reference.
         if (accumulatedTags.size() > 1) {
             accumulatedTags.remove(Tag.UNTAGGED);

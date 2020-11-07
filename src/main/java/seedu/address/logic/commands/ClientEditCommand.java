@@ -52,21 +52,23 @@ public class ClientEditCommand extends Command {
 
     public static final String MESSAGE_EDIT_CLIENT_SUCCESS = "Edited Client: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
-    public static final String MESSAGE_DUPLICATE_CLIENT = "This client already exists in the address book.";
+    public static final String MESSAGE_DUPLICATE_CLIENT = "This client already exists!";
 
-    private final Index index;
+    private final Index clientIndex;
     private final EditClientDescriptor editClientDescriptor;
 
     /**
-     * @param index of the client in the filtered client list to edit
+     * Creates a ClientEditCommand to edit the client at the specified {@code clientIndex} in the displayed client list,
+     * using details from the supplied {@code editClientDescriptor}.
+     *
+     * @param clientIndex of the client in the displayed client list to edit
      * @param editClientDescriptor details to edit the client with
      */
-
-    public ClientEditCommand(Index index, EditClientDescriptor editClientDescriptor) {
-        requireNonNull(index);
+    public ClientEditCommand(Index clientIndex, EditClientDescriptor editClientDescriptor) {
+        requireNonNull(clientIndex);
         requireNonNull(editClientDescriptor);
 
-        this.index = index;
+        this.clientIndex = clientIndex;
         this.editClientDescriptor = new EditClientDescriptor(editClientDescriptor);
     }
 
@@ -75,11 +77,11 @@ public class ClientEditCommand extends Command {
         requireNonNull(model);
         List<Client> lastShownList = model.getSortedFilteredClientList();
 
-        if (index.getZeroBased() >= lastShownList.size()) {
+        if (clientIndex.getZeroBased() >= lastShownList.size()) {
             throw new CommandException(Messages.MESSAGE_INVALID_CLIENT_DISPLAYED_INDEX);
         }
 
-        Client clientToEdit = lastShownList.get(index.getZeroBased());
+        Client clientToEdit = lastShownList.get(clientIndex.getZeroBased());
         Client editedClient = createEditedClient(clientToEdit, editClientDescriptor);
 
         if (!clientToEdit.isSameClient(editedClient) && model.hasClient(editedClient)) {
@@ -98,6 +100,7 @@ public class ClientEditCommand extends Command {
     private static Client createEditedClient(Client clientToEdit, EditClientDescriptor editClientDescriptor) {
         assert clientToEdit != null;
 
+        // Update the changed client fields, and transfer over the unchanged ones
         Name updatedName = editClientDescriptor.getName().orElse(clientToEdit.getName());
         Phone updatedPhone = editClientDescriptor.getPhone().orElse(clientToEdit.getPhone());
         Email updatedEmail = editClientDescriptor.getEmail().orElse(clientToEdit.getEmail());
@@ -108,9 +111,12 @@ public class ClientEditCommand extends Command {
                 editClientDescriptor.getContractExpiryDate().orElse(clientToEdit.getContractExpiryDate());
         LastModifiedInstant updatedLastModifiedInstant = new LastModifiedInstant();
         ArrayList<Note> retainedClientNotes = new ArrayList<>(clientToEdit.getClientNotesAsUnmodifiableList());
+
+        // Create the new, edited client
         Client newClient = new Client(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedCountry,
                 updatedTimezone, updatedContractExpiryDate, updatedLastModifiedInstant);
-        retainedClientNotes.forEach(clientNote -> newClient.addClientNote(clientNote));
+        retainedClientNotes.forEach(newClient::addClientNote);
+
         return newClient;
     }
 
@@ -128,7 +134,7 @@ public class ClientEditCommand extends Command {
 
         // state check
         ClientEditCommand e = (ClientEditCommand) other;
-        return index.equals(e.index)
+        return clientIndex.equals(e.clientIndex)
                 && editClientDescriptor.equals(e.editClientDescriptor);
     }
 
@@ -145,6 +151,9 @@ public class ClientEditCommand extends Command {
         private Timezone timezone;
         private ContractExpiryDate contractExpiryDate;
 
+        /**
+         * Constructs an EditClientDescriptor. It is an empty constructor that takes in no arguments.
+         */
         public EditClientDescriptor() {}
 
         /**
@@ -167,58 +176,101 @@ public class ClientEditCommand extends Command {
             return CollectionUtil.isAnyNonNull(name, phone, email, address, country, timezone, contractExpiryDate);
         }
 
+        /**
+         * Sets the name of this {@code EditClientDescriptor} to the supplied {@code name}.
+         */
         public void setName(Name name) {
             this.name = name;
         }
 
+        /**
+         * Returns the name of this {@code EditClientDescriptor}.
+         */
         public Optional<Name> getName() {
             return Optional.ofNullable(name);
         }
 
+        /**
+         * Sets the phone number of this {@code EditClientDescriptor} to the supplied {@code phone}.
+         */
         public void setPhone(Phone phone) {
             this.phone = phone;
         }
 
+        /**
+         * Returns the phone number of this {@code EditClientDescriptor}.
+         */
         public Optional<Phone> getPhone() {
             return Optional.ofNullable(phone);
         }
 
+        /**
+         * Sets the email address of this {@code EditClientDescriptor} to the supplied {@code email}.
+         */
         public void setEmail(Email email) {
             this.email = email;
         }
 
+        /**
+         * Returns the email address of this {@code EditClientDescriptor}.
+         */
         public Optional<Email> getEmail() {
             return Optional.ofNullable(email);
         }
 
+        /**
+         * Sets the address of this {@code EditClientDescriptor} to the supplied {@code address}.
+         */
         public void setAddress(Address address) {
             this.address = address;
         }
 
+        /**
+         * Returns the address of this {@code EditClientDescriptor}.
+         */
         public Optional<Address> getAddress() {
             return Optional.ofNullable(address);
         }
 
+        /**
+         * Sets the country of this {@code EditClientDescriptor} to the supplied {@code country}.
+         */
         public void setCountry(Country country) {
             this.country = country;
         }
 
+        /**
+         * Returns the country of this {@code EditClientDescriptor}.
+         */
         public Optional<Country> getCountry() {
             return Optional.ofNullable(country);
         }
 
+        /**
+         * Sets the timezone of this {@code EditClientDescriptor} to the supplied {@code timezone}.
+         */
         public void setTimezone(Timezone timezone) {
             this.timezone = timezone;
         }
 
+        /**
+         * Returns the timezone of this {@code EditClientDescriptor}.
+         */
         public Optional<Timezone> getTimezone() {
             return Optional.ofNullable(timezone);
         }
 
+        /**
+         * Sets the contract expiry date of this {@code EditClientDescriptor} to the supplied
+         * {@code contractExpiryDate}.
+         */
         public void setContractExpiryDate(ContractExpiryDate contractExpiryDate) {
             this.contractExpiryDate = contractExpiryDate;
         }
 
+        /**
+         * Returns the contract expiry date of this {@code EditClientDescriptor}.
+         */
         public Optional<ContractExpiryDate> getContractExpiryDate() {
             return Optional.ofNullable(contractExpiryDate);
         }

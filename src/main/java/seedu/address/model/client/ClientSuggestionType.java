@@ -7,10 +7,10 @@ import java.util.Comparator;
 import java.util.function.Predicate;
 
 /**
- * Represents a SuggestionType in the address book.
- * Guarantees: immutable; suggestion type is valid as declared in {@link #isValidSuggestionType(String)}
+ * Represents a ClientSuggestionType in the address book.
+ * Guarantees: immutable; client suggestion type is valid as declared in {@link #isValidClientSuggestionType(String)}
  */
-public class SuggestionType {
+public class ClientSuggestionType {
 
     public static final String BY_FREQUENCY = "frequency";
     public static final String BY_AVAILABLE = "available";
@@ -28,25 +28,25 @@ public class SuggestionType {
     public final String suggestionString;
 
     /**
-     * Constructs a {@code SuggestionType}.
+     * Constructs a {@code ClientSuggestionType}.
      *
-     * @param suggestionString A valid string representing one of the three suggestion types.
+     * @param suggestionString A valid string representing one of the three client suggestion types.
      */
-    public SuggestionType(String suggestionString) {
+    public ClientSuggestionType(String suggestionString) {
         requireNonNull(suggestionString);
-        checkArgument(isValidSuggestionType(suggestionString), MESSAGE_CONSTRAINTS);
+        checkArgument(isValidClientSuggestionType(suggestionString), MESSAGE_CONSTRAINTS);
         this.suggestionString = suggestionString;
     }
 
     /**
-     * Returns this suggestion type's predicate.
+     * Returns this client suggestion type's predicate.
      */
-    public Predicate<Client> getSuggestionPredicate() {
+    public Predicate<Client> getClientSuggestionPredicate() {
         switch (suggestionString) {
         case BY_AVAILABLE:
-            return new SuggestAvailabilityPredicate();
+            return new ClientSuggestAvailabilityPredicate();
         case BY_CONTRACT:
-            return new SuggestContractPredicate();
+            return new ClientSuggestContractPredicate();
         case BY_FREQUENCY:
             return client -> true;
         default:
@@ -56,9 +56,9 @@ public class SuggestionType {
     }
 
     /**
-     * Returns this suggestion type's comparator.
+     * Returns this client suggestion type's comparator.
      */
-    public Comparator<Client> getSuggestionComparator() {
+    public Comparator<Client> getClientSuggestionComparator() {
         switch (suggestionString) {
         case BY_AVAILABLE:
             return (client1, client2) -> 0;
@@ -73,7 +73,7 @@ public class SuggestionType {
     }
 
     /**
-     * Returns this suggestion type's description.
+     * Returns this client suggestion type's description.
      */
     public String getDescription() {
         switch (suggestionString) {
@@ -90,9 +90,9 @@ public class SuggestionType {
     }
 
     /**
-     * Returns true if a given string is a valid suggestion type name.
+     * Returns true if a given string is a valid client suggestion type name.
      */
-    public static boolean isValidSuggestionType(String test) {
+    public static boolean isValidClientSuggestionType(String test) {
         requireNonNull(test);
         return test.equals(BY_FREQUENCY) || test.equals(BY_AVAILABLE) || test.equals(BY_CONTRACT);
     }
@@ -100,8 +100,8 @@ public class SuggestionType {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof SuggestionType // instanceof handles nulls
-                && suggestionString.equals(((SuggestionType) other).suggestionString)); // state check
+                || (other instanceof ClientSuggestionType // instanceof handles nulls
+                && suggestionString.equals(((ClientSuggestionType) other).suggestionString)); // state check
     }
 
     @Override

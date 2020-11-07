@@ -35,9 +35,10 @@ public class ClientFindCommand extends Command {
     public CommandResult execute(Model model) {
         requireNonNull(model);
         model.updateFilteredClientList(predicate);
-        int listSize = model.getSortedFilteredClientList().size();
+        int clientListSize = model.getSortedFilteredClientList().size();
         return new CommandResult(
-                String.format(Messages.MESSAGE_CLIENTS_LISTED_OVERVIEW, listSize, Messages.appendPluralChar(listSize)));
+                String.format(Messages.MESSAGE_CLIENTS_LISTED_OVERVIEW, clientListSize,
+                        Messages.appendPluralChar(clientListSize)));
     }
 
     @Override

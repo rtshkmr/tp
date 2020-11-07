@@ -86,9 +86,8 @@ public interface Model {
     Client getWidgetClient();
 
     /**
-     * Adds the given client.
-     * <p>
-     * {@code client} must not already exist in TBM Manager.
+     * Adds the given {@code client}.
+     * The client must not already exist in TBM Manager.
      */
     void addClient(Client client);
 

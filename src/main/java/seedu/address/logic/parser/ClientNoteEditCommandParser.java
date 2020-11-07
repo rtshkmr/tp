@@ -31,10 +31,16 @@ public class ClientNoteEditCommandParser implements Parser<ClientNoteEditCommand
         this.tagNoteMap = tagNoteMap;
     }
 
+    /**
+     * Parses the given {@code args} in the context of the ClientNoteEditCommand and returns a ClientNoteEditCommand
+     * object for execution.
+     *
+     * @throws ParseException If the user input does not conform to the expected format.
+     */
     @Override
-    public ClientNoteEditCommand parse(String restOfCommand) throws ParseException {
-        requireNonNull(restOfCommand);
-        ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(restOfCommand, PREFIX_NOTE, PREFIX_TAG);
+    public ClientNoteEditCommand parse(String args) throws ParseException {
+        requireNonNull(args);
+        ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_NOTE, PREFIX_TAG);
         // NEED TO PASS IN NOTE STRING AT LEAST, TAGS ARE OPTIONAL
         if (argMultimap.getPreamble().isEmpty() || !anyPrefixesPresent(argMultimap, PREFIX_NOTE, PREFIX_TAG)) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
@@ -46,7 +52,7 @@ public class ClientNoteEditCommandParser implements Parser<ClientNoteEditCommand
         Note newNote = new Note("");
         try {
             String[] splitPreamble = argMultimap.getPreamble().split(" ");
-            if (splitPreamble.length != 2) { // restOfCommand: 1 1 all space delimited ==> 2 elems only
+            if (splitPreamble.length != 2) { // args: 1 1 all space delimited ==> 2 elems only
                 throw new ParseException(""); // empty string, will be caught in the catch block
             }
             targetClientIndex = ParserUtil.parseIndex(splitPreamble[splitPreamble.length - 2]);

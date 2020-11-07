@@ -230,27 +230,27 @@ The suggestion mechanism is facilitated by `filteredClients` in `ModelManager`. 
 
 These operations are exposed in the `Model` interface as `Model#updateFilteredClientList()` and `Model#sortFilteredClientList()` respectively.
 
-The following activity diagram summarizes what happens when a user inputs a `suggest` command.
+The following activity diagram summarizes what happens when a user inputs a `client suggest` command.
 
 ![Suggest Activity Diagram](images/SuggestActivityDiagram.png)
 
 Given below is an example usage scenario and how the suggestion mechanism behaves at each step.
 
-Step 1: The user executes `suggest by/contract` to list the suggested clients sorted by contract expiry dates. At this point, `filteredClients` is showing all clients.
+Step 1: The user executes `client suggest by/contract` to list the suggested clients sorted by contract expiry dates. At this point, `filteredClients` is showing all clients.
 
 ![SuggestState0](images/SuggestState0.png)
 
-Step 2: The `suggest` command calls `Model#updateFilteredClientList` with the contract expiry date predicate (which checks if a client has a contract expiry date). `Model` updates the `filteredClients` object with the contract expiry date predicate which filters out all clients without an existing contract expiry date.
+Step 2: The `client suggest` command calls `Model#updateFilteredClientList` with the contract expiry date predicate (which checks if a client has a contract expiry date). `Model` updates the `filteredClients` object with the contract expiry date predicate which filters out all clients without an existing contract expiry date.
 
 ![SuggestState1](images/SuggestState1.png)
 
-Step 3: The `suggest` command calls `Model#sortFilteredClientList` with the contract expiry date comparator (which sorts clients by earliest contract expiry date). `Model` updates the `filteredClients` object with the contract expiry date comparator which gives us clients in order of increasing contract expiry date.
+Step 3: The `client suggest` command calls `Model#sortFilteredClientList` with the contract expiry date comparator (which sorts clients by earliest contract expiry date). `Model` updates the `filteredClients` object with the contract expiry date comparator which gives us clients in order of increasing contract expiry date.
 
 ![SuggestState2](images/SuggestState2.png)
 
 Step 4: The change is then propagated to `Ui`, which updates the displayed clients in `ClientListPanel`.
 
-Step 5: The user decides to execute the command `list`, which resets the `filteredClients` objects to have all clients, and in turn resets the displayed clients in `ClientListPanel` as well.
+Step 5: The user decides to execute the command `client list`, which resets the `filteredClients` objects to have all clients, and in turn resets the displayed clients in `ClientListPanel` as well.
 
 The following sequence diagram shows how the suggest operation works:
 
