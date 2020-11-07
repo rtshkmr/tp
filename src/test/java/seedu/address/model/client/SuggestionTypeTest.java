@@ -35,6 +35,16 @@ public class SuggestionTypeTest {
     }
 
     @Test
+    public void getDescription_returnsCorrectDescription() {
+        assertEquals(new SuggestionType(SuggestionType.BY_CONTRACT).getDescription(),
+                SuggestionType.CONTRACT_DESCRIPTION);
+        assertEquals(new SuggestionType(SuggestionType.BY_FREQUENCY).getDescription(),
+                SuggestionType.FREQUENCY_DESCRIPTION);
+        assertEquals(new SuggestionType(SuggestionType.BY_AVAILABLE).getDescription(),
+                SuggestionType.AVAILABLE_DESCRIPTION);
+    }
+
+    @Test
     public void isValidSuggestionType_validSuggestionType_returnsTrue() {
         assertTrue(SuggestionType.isValidSuggestionType(SuggestionType.BY_AVAILABLE));
         assertTrue(SuggestionType.isValidSuggestionType(SuggestionType.BY_CONTRACT));

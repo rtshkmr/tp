@@ -11,6 +11,8 @@ public class Messages {
     public static final String MESSAGE_INVALID_COUNTRY_NOTE_DISPLAYED_INDEX =
             "The country note index provided is invalid";
     public static final String MESSAGE_CLIENTS_LISTED_OVERVIEW = "%1$d client%2$s listed!";
+    public static final String MESSAGE_INVALID_CLIENT_NOTE_DISPLAYED_INDEX = "The client note index provided is "
+            + "invalid";
 
     /**
      * Returns grammatically-correct character based on an input value.
