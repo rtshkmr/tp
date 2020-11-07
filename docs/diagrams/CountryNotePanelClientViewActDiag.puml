@@ -22,6 +22,17 @@ else ([else])
       Country Note Panel UI as a child component
       of the Display Panel Container;
   else ([else])
+    if () then ([commandResult.isResetWidget()])
+      :Remove all child components in
+      the Display Panel Container;
+      :Add the Container of the Client
+      View UI as a child component
+      of the Display Panel Container;
+      :Edit Text fields and add the
+      TBM logo as a child component
+      of the Client View UI;
+    else ([else])
+    endif
   endif
 endif
 stop

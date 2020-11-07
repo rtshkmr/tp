@@ -72,9 +72,9 @@ Model .right.> ObservableList
 ModelManager o--> "1" TbmManager
 ModelManager o-left-> "1" UserPrefs
 ModelManager *-right->"1" WidgetModel
-TbmManager *-right->"1" UniqueTagSet
+TbmManager *-right->"1" TagNoteMap
 TbmManager *-right-> "1" CountryNotesManager
-
+TagNoteMap *-->"1" UniqueTagSet
 
 UserPrefs .up.|> ReadOnlyUserPrefs
 
@@ -85,7 +85,6 @@ Client *--> Phone
 Client *--> Email
 Client *--> Address
 Client *--> ContractExpiryDate
-Client *-up-> "*" Tag
 Client -right-> Country
 Client --> Timezone
 Client -->"*" Note

@@ -227,6 +227,8 @@ public class MainWindow extends UiPart<Stage> {
             }
 
             if (commandResult.isResetWidget()) {
+                widgetPlaceholder.getChildren().clear();
+                widgetPlaceholder.getChildren().add(widgetViewBox.getRoot());
                 widgetViewBox.setToDefaultView();
             }
 
