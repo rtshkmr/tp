@@ -303,7 +303,7 @@ Notes:
 
 Edits a note of a client (denoted by that client's index) by the note's index. Supplying tags to the command will add the tags onto the current existing tags for that note.
 
-Format: `client note edit CLIENT_INDEX NOTE_INDEX nt/NOTE_STRING [t/TAG]...`
+Format: `client note edit CLIENT_INDEX NOTE_INDEX (nt/NOTE_STRING) (t/TAG)...`
 
 Examples:
 
@@ -515,7 +515,7 @@ Action | Format, Examples
 **Delete client** | `client delete INDEX`<br> e.g., `client delete 3`
 **Add client note** | `client note add CLIENT_INDEX nt/NOTE_STRING [t/TAG]...` <br> e.g., `client note add 4 t/meeting nt/need to slowly convince him to sign the contract`
 **Delete client note** | `client note delete CLIENT_INDEX NOTE_INDEX` <br> e.g., `client note delete 3 2`
-**Edit client note** | `client note edit CLIENT_INDEX NOTE_INDEX nt/NOTE_STRING [t/TAG]...` <br> e.g., `client note edit 3 2 nt/Loves cats`
+**Edit client note** | `client note edit CLIENT_INDEX NOTE_INDEX (nt/NOTE_STRING) (t/TAG)...` <br> e.g., `client note edit 3 2 nt/Loves cats t/pets`
 **Filter by country** | `country filter c/COUNTRY_CODE` <br> e.g., `country filter c/SG`
 **View country note** | `country note view [c/COUNTRY_CODE]` <br> e.g., `country note view c/SG`
 **Add country note** | `country note add c/COUNTRY_CODE nt/NOTE_STRING [t/TAG]...` <br> e.g., `country note add c/SG nt/has one of the lowest coporate taxes in the world t/tax`

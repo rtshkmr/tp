@@ -73,8 +73,9 @@ public class SuggestCommandTest {
         Set<SuggestionType> suggestionTypes = new LinkedHashSet<>();
         suggestionTypes.add(new SuggestionType(SuggestionType.BY_CONTRACT));
         SuggestCommand suggestCommand1 = new SuggestCommand(suggestionTypes);
-        CommandResult expectedResult = new CommandResult(SuggestCommand.MESSAGE_SUGGEST_SUCCESS, true, false, false);
-        assertEquals(suggestCommand1.execute(newModel), expectedResult);
+        CommandResult expectedResult1 = new CommandResult(SuggestCommand.MESSAGE_SUGGEST_SUCCESS
+                + SuggestionType.CONTRACT_DESCRIPTION, true, false, false);
+        assertEquals(suggestCommand1.execute(newModel), expectedResult1);
         assertEquals(newModel.getSortedFilteredClientList().size(), 3);
         assertEquals(newModel.getSortedFilteredClientList().get(0), client3);
 
@@ -82,7 +83,10 @@ public class SuggestCommandTest {
         suggestionTypes.add(new SuggestionType(SuggestionType.BY_FREQUENCY));
         suggestionTypes.add(new SuggestionType(SuggestionType.BY_CONTRACT));
         SuggestCommand suggestCommand2 = new SuggestCommand(suggestionTypes);
-        assertEquals(suggestCommand2.execute(newModel), expectedResult);
+        CommandResult expectedResult2 = new CommandResult(SuggestCommand.MESSAGE_SUGGEST_SUCCESS
+                + SuggestionType.FREQUENCY_DESCRIPTION + "\n" + SuggestionType.CONTRACT_DESCRIPTION,
+                true, false, false);
+        assertEquals(suggestCommand2.execute(newModel), expectedResult2);
         assertEquals(newModel.getSortedFilteredClientList().size(), 3);
         assertEquals(newModel.getSortedFilteredClientList().get(0), client2);
     }

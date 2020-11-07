@@ -15,7 +15,7 @@ import seedu.address.logic.commands.exceptions.CommandException;
 
 public class CommandBoxTest extends GuiUnitTest {
 
-    private static final String[] COMMANDS_THAT_SUCCEED = { "list", "client view 1", "client view 2" };
+    private static final String[] COMMANDS_THAT_SUCCEED = { "client list", "client view 1", "client view 2" };
     private static final String COMMAND_THAT_FAILS = "invalid command";
 
     private ArrayList<String> defaultStyleOfCommandBox;

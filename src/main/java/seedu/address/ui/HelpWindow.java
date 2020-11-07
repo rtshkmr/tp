@@ -34,7 +34,7 @@ public class HelpWindow extends UiPart<Stage> {
             + "* client delete INDEX\n"
             + "* client note add CLIENT_INDEX nt/NOTE_STRING [t/TAG]...\n"
             + "* client note delete CLIENT_INDEX NOTE_INDEX\n"
-            + "* client note edit CLIENT_INDEX NOTE_INDEX nt/NOTE_STRING [t/TAG]...\n"
+            + "* client note edit CLIENT_INDEX NOTE_INDEX (nt/NOTE_STRING) (t/TAG)...\n"
             + "* country filter c/COUNTRY_CODE\n"
             + "* country note view [c/COUNTRY_CODE]\n"
             + "* country note add c/COUNTRY_CODE nt/NOTE_STRING [t/TAG]...\n"

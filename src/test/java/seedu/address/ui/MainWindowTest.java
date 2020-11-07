@@ -86,6 +86,7 @@ public class MainWindowTest extends GuiUnitTest {
     public void main() throws Exception {
         guiRobot.pauseForHuman();
         assertTrue(mainWindowHandle.isShowing());
+        guiRobot.pauseForHuman();
         guiRobot.clickOn("#commandTextField");
         InteractionTerminal terminal = new InteractionTerminal(guiRobot.lookup("#commandTextField")
                 .queryTextInputControl());
@@ -167,7 +168,7 @@ public class MainWindowTest extends GuiUnitTest {
         checkLabel("#name", "Sim");
 
         // clearing display panel using list command
-        terminal.inputCommand("list");
+        terminal.inputCommand("client list");
         checkLabel("#name", "");
         checkLabel("#address", "");
 

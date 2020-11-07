@@ -3,7 +3,11 @@ package seedu.address.logic.commands;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static seedu.address.commons.core.Messages.MESSAGE_INVALID_CLIENT_DISPLAYED_INDEX;
+import static seedu.address.commons.core.Messages.MESSAGE_INVALID_CLIENT_NOTE_DISPLAYED_INDEX;
 import static seedu.address.logic.commands.ClientNoteEditCommand.MESSAGE_EDIT_CLIENT_NOTE_SUCCESS;
+import static seedu.address.logic.commands.ClientNoteEditCommand.MESSAGE_NOT_REAL_EDIT;
+import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TestUtil.basicEqualsTests;
@@ -57,6 +61,27 @@ class ClientNoteEditCommandTest {
     }
 
     @Test
+    public void execute_indicesOutOfRange_commandFailure() {
+        Index invalidClientIdx = Index.fromOneBased(99);
+        Index validClientIdx = Index.fromOneBased(1);
+        Index invalidClientNoteIdx = Index.fromOneBased(99);
+        Index validClientNoteIdx = Index.fromOneBased(1);
+        Note clientNote1 = new Note(NOTE_CONTENT_1);
+        Note clientNote2 = new Note(NOTE_CONTENT_2);
+        Note newEditNote = new Note("dummy note");
+        Client client1 = new ClientBuilder().withName("client1").build();
+        model.addClient(client1);
+        model.addClientNote(client1, clientNote1);
+        model.addClientNote(client1, clientNote2);
+        ClientNoteEditCommand invalidClientNoteEditCommand1 = new ClientNoteEditCommand(invalidClientIdx,
+                validClientNoteIdx, newEditNote);
+        ClientNoteEditCommand invalidClientNoteEditCommand2 = new ClientNoteEditCommand(validClientIdx,
+                invalidClientNoteIdx, newEditNote);
+        assertCommandFailure(invalidClientNoteEditCommand1, model, MESSAGE_INVALID_CLIENT_DISPLAYED_INDEX);
+        assertCommandFailure(invalidClientNoteEditCommand2, model, MESSAGE_INVALID_CLIENT_NOTE_DISPLAYED_INDEX);
+    }
+
+    @Test
     public void execute_validClientIdxValidNoteIdx_generatesClientNoteEditCommandSuccessfully() {
         Index clientIdx = Index.fromOneBased(1);
         Index clientNoteIdx = Index.fromOneBased(1);
@@ -79,6 +104,52 @@ class ClientNoteEditCommandTest {
         ClientNoteEditCommand clientNoteEditCommand = new ClientNoteEditCommand(clientIdx, clientNoteIdx, newEditNote);
         assertCommandSuccess(clientNoteEditCommand, model, expectedResult, expectedModel);
     }
+
+    @Test
+    public void execute_onlyEditTags_commandSuccess() {
+        Index clientIdx = Index.fromOneBased(1);
+        Index clientNoteIdx = Index.fromOneBased(1);
+        Note clientNote1 = new Note(NOTE_CONTENT_1);
+        Client client1 = new ClientBuilder().withName("client1").build();
+        model.addClient(client1);
+        model.addClientNote(client1, clientNote1);
+
+        Note parsedNote = new Note("");
+        Note expectedNote = new Note(NOTE_CONTENT_1);
+        Tag testTag = new Tag("testTag");
+        Set<Tag> expectedTagSet = new HashSet<>();
+        expectedTagSet.add(testTag);
+
+        parsedNote.setTags(expectedTagSet);
+        expectedNote.setTags(expectedTagSet);
+        Model expectedModel = new ModelManager();
+        Client client1Copy = new ClientBuilder().withName("client1").build();
+        expectedModel.addClient(client1Copy);
+        expectedModel.addClientNote(client1Copy, expectedNote);
+
+        CommandResult expectedResult = new CommandResult(String.format(MESSAGE_EDIT_CLIENT_NOTE_SUCCESS,
+                client1.getName(), clientNote1, expectedNote));
+        ClientNoteEditCommand clientNoteEditCommand = new ClientNoteEditCommand(clientIdx, clientNoteIdx, parsedNote);
+        assertCommandSuccess(clientNoteEditCommand, model, expectedResult, expectedModel);
+    }
+
+    @Test
+    public void execute_notLogicallyARealEdit_commandFailure() {
+        Tag testTag = new Tag("testTag");
+        Set<Tag> testTagSet = new HashSet<>();
+        testTagSet.add(testTag);
+        Index clientIdx = Index.fromOneBased(1);
+        Index clientNoteIdx = Index.fromOneBased(1);
+        Note clientNote1 = new Note(NOTE_CONTENT_1);
+        clientNote1.setTags(testTagSet);
+        Client client1 = new ClientBuilder().withName("client1").build();
+        model.addClient(client1);
+        model.addClientNote(client1, clientNote1);
+        Note parsedNote = new Note(NOTE_CONTENT_1);
+        ClientNoteEditCommand clientNoteEditCommand = new ClientNoteEditCommand(clientIdx, clientNoteIdx, parsedNote);
+        assertCommandFailure(clientNoteEditCommand, model, MESSAGE_NOT_REAL_EDIT);
+    }
+
 
     @Test
     public void execute_editExistingUntaggedNoteToAddTag_discardsDefaultUntaggedTag() {

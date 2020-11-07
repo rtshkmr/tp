@@ -13,7 +13,7 @@ import seedu.address.model.note.CountryNote;
 public class CountryNoteListPanelTest extends GuiUnitTest {
     //TODO: Add more tests
     private static final ObservableList<CountryNote> COUNTRY_NOTE_OBSERVABLE_LIST = FXCollections.observableArrayList();
-    private static final long CARD_CREATION_AND_DELETION_TIMEOUT = 2500;
+    private static final long CARD_CREATION_TIMEOUT = 2500;
 
     /**
      * Verifies that creating and deleting large number of notes in {@code CountryNoteListPanel} requires lesser than
@@ -21,10 +21,10 @@ public class CountryNoteListPanelTest extends GuiUnitTest {
      */
     @Test
     public void performanceTest() {
-        createBackingList(250);
+        createBackingList(220);
         CountryNoteListPanel countryNoteListPanel = new CountryNoteListPanel(COUNTRY_NOTE_OBSERVABLE_LIST);
         uiPartExtension.setUiPart(countryNoteListPanel);
-        assertTimeoutPreemptively(ofMillis(CARD_CREATION_AND_DELETION_TIMEOUT), () -> {
+        assertTimeoutPreemptively(ofMillis(CARD_CREATION_TIMEOUT), () -> {
             CountryNote countryNote = new CountryNote("final test", new Country("SG"));
             guiRobot.interact(() -> COUNTRY_NOTE_OBSERVABLE_LIST.add(countryNote));
         });

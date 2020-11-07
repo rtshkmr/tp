@@ -18,6 +18,13 @@ public class SuggestionType {
     public static final String MESSAGE_CONSTRAINTS = "Suggestion type can only be of the following: "
             + BY_FREQUENCY + ", " + BY_AVAILABLE + ", " + BY_CONTRACT;
 
+    public static final String FREQUENCY_DESCRIPTION = "Frequency: Clients who were edited more recently will appear "
+            + "higher up on list.";
+    public static final String AVAILABLE_DESCRIPTION = "Availability: Only clients whose current time is 1800-2200H in "
+            + "their time zone (off work hours) will be shown.";
+    public static final String CONTRACT_DESCRIPTION = "Contract expiry date: Clients whose contracts are expiring "
+            + "earlier will appear higher up on the list.";
+
     public final String suggestionString;
 
     /**
@@ -59,6 +66,23 @@ public class SuggestionType {
             return Comparator.comparing(Client::getContractExpiryDate);
         case BY_FREQUENCY:
             return Comparator.comparing(Client::getLastModifiedInstant);
+        default:
+            assert false; // code execution will never reach here
+            return null;
+        }
+    }
+
+    /**
+     * Returns this suggestion type's description.
+     */
+    public String getDescription() {
+        switch (suggestionString) {
+        case BY_AVAILABLE:
+            return AVAILABLE_DESCRIPTION;
+        case BY_CONTRACT:
+            return CONTRACT_DESCRIPTION;
+        case BY_FREQUENCY:
+            return FREQUENCY_DESCRIPTION;
         default:
             assert false; // code execution will never reach here
             return null;

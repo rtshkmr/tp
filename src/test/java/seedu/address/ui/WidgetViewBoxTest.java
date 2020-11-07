@@ -1,15 +1,20 @@
 package seedu.address.ui;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assumptions.assumeFalse;
 import static seedu.address.testutil.TestUtil.basicEqualsTests;
+import static seedu.address.testutil.TypicalClients.BENSON;
 
 import org.junit.jupiter.api.Test;
 
 import guitests.guihandles.WidgetViewBoxHandle;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import seedu.address.model.client.Client;
 import seedu.address.model.note.Note;
+import seedu.address.testutil.ClientBuilder;
 import seedu.address.testutil.TypicalClients;
 
 /**
@@ -17,34 +22,25 @@ import seedu.address.testutil.TypicalClients;
  * refactoring.
  */
 public class WidgetViewBoxTest extends GuiUnitTest {
+
     private static final Client AMY = TypicalClients.AMY;
-
-    @Test
-    public void display() {
-        WidgetViewBox widgetViewBox = WidgetViewBox.init();
-        widgetViewBox.updateClientDisplay(AMY);
-        AMY.addClientNote(new Note("Birthday TMR"));
-        uiPartExtension.setUiPart(widgetViewBox);
-
-        assertViewBoxDisplay(widgetViewBox, AMY);
-    }
 
     /**
      * This test checks your time, country and timezone.
-     * Since this is a manual eyeballing test. It will be skipped in headless.
+     * The main usage of this test is as a manual eyeballing test.
      */
     @Test
     public void displayDefault() {
-        /*
-        * A bug raised here https://bugs.java.com/bugdatabase/view_bug.do?bug_id=7082429.
-        */
-        assumeFalse(guiRobot.isHeadlessMode(), "Test skipped in headless mode.");
         WidgetViewBox widgetViewBox = WidgetViewBox.init();
 
         uiPartExtension.setUiPart(widgetViewBox);
 
-        // check if the country is correct
+        /*
+         * Check if the country is correct via eyeballing.
+         * A bug raised here https://bugs.java.com/bugdatabase/view_bug.do?bug_id=7082429.
+         */
         guiRobot.pauseForHuman();
+        assertDoesNotThrow(() -> guiRobot.lookup("#tbmLogo").query());
     }
 
     @Test
@@ -52,10 +48,72 @@ public class WidgetViewBoxTest extends GuiUnitTest {
         // This is primarily testing that the textclock does not show itself during an update.
         WidgetViewBox widgetViewBox = WidgetViewBox.init();
         widgetViewBox.updateClientDisplay(AMY);
-        Client benson = TypicalClients.BENSON;
+        Client benson = new ClientBuilder(BENSON).build();
         widgetViewBox.updateClientDisplay(benson);
         uiPartExtension.setUiPart(widgetViewBox);
 
+        assertViewBoxDisplay(widgetViewBox, benson);
+    }
+
+    @Test
+    public void observableListEditClient_updatesViewBoxDisplayToEditedClient() {
+        Client benson = new ClientBuilder(BENSON).build();
+        ObservableList<Client> clientList = FXCollections.observableArrayList(benson);
+        WidgetViewBox widgetViewBox = new WidgetViewBox(clientList);
+        widgetViewBox.updateClientDisplay(benson);
+        Client editedBenson = new ClientBuilder(benson).withName("newName").withEmail("new@email.com").build();
+        clientList.set(0, editedBenson);
+        uiPartExtension.setUiPart(widgetViewBox);
+        assertViewBoxDisplay(widgetViewBox, editedBenson);
+    }
+
+    @Test
+    public void observableListAddClientNote_updatesViewBoxDisplayToReflectAddedNote() {
+        Client benson = new ClientBuilder(BENSON).build();
+        ObservableList<Client> clientList = FXCollections.observableArrayList(client ->
+                new Observable[] { client.getClientNotesAsObservableList() });
+        clientList.add(benson);
+        WidgetViewBox widgetViewBox = new WidgetViewBox(clientList);
+        widgetViewBox.updateClientDisplay(benson);
+        benson.addClientNote(new Note("new note"));
+        benson.addClientNote(new Note("another new note"));
+        uiPartExtension.setUiPart(widgetViewBox);
+        guiRobot.pauseForHuman();
+        assertViewBoxDisplay(widgetViewBox, benson);
+    }
+
+    @Test
+    public void observableListDeleteClient_resetsViewBoxDisplayToDefault() {
+        Client benson = new ClientBuilder(BENSON).build();
+        ObservableList<Client> clientList = FXCollections.observableArrayList(benson);
+        WidgetViewBox widgetViewBox = new WidgetViewBox(clientList);
+        widgetViewBox.updateClientDisplay(benson);
+        clientList.remove(benson);
+        uiPartExtension.setUiPart(widgetViewBox);
+        assertDoesNotThrow(() -> guiRobot.lookup("#tbmLogo").query());
+    }
+
+    @Test
+    public void observableListAddClient_noChangeToViewBoxDisplay() {
+        Client benson = new ClientBuilder(BENSON).build();
+        ObservableList<Client> clientList = FXCollections.observableArrayList(benson);
+        WidgetViewBox widgetViewBox = new WidgetViewBox(clientList);
+        widgetViewBox.updateClientDisplay(benson);
+        clientList.add(0, new ClientBuilder().withName("another client").build());
+        uiPartExtension.setUiPart(widgetViewBox);
+        assertViewBoxDisplay(widgetViewBox, benson);
+    }
+
+    @Test
+    public void observableListPermutate_noChangeToViewBoxDisplay() {
+        Client benson = new ClientBuilder(BENSON).build();
+        ObservableList<Client> clientList = FXCollections.observableArrayList(benson);
+        WidgetViewBox widgetViewBox = new WidgetViewBox(clientList);
+        widgetViewBox.updateClientDisplay(benson);
+        clientList.add(0, new ClientBuilder().withName("another client").build());
+        clientList.add(new ClientBuilder().withName("third client").build());
+        FXCollections.reverse(clientList);
+        uiPartExtension.setUiPart(widgetViewBox);
         assertViewBoxDisplay(widgetViewBox, benson);
     }
 
@@ -66,7 +124,7 @@ public class WidgetViewBoxTest extends GuiUnitTest {
         WidgetViewBox obj2 = WidgetViewBox.init();
         obj2.updateClientDisplay(AMY);
         WidgetViewBox obj3 = WidgetViewBox.init();
-        obj3.updateClientDisplay(TypicalClients.BENSON);
+        obj3.updateClientDisplay(BENSON);
 
         // basic equals tests
         basicEqualsTests(obj1);
