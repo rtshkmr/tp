@@ -42,7 +42,7 @@ title: User Guide
 
 Before you start using **_TBM_**, 
 
-1. Ensure you have Java 11.
+1. Ensure you have Java 11. 
 
 1. Download the application file (.jar file) from [here](https://github.com/AY2021S1-CS2103T-F11-4/tp/releases).
 
@@ -93,20 +93,20 @@ A summary of all commands can be found in our [command summary table](#command-s
 
 </div>
 
-### Viewing help: `help`
+### 0. Viewing help: `help`
 
-Shows commonly used commands for **_TBM_** in a [new help window](#help-window). Pressing Esc will close this window.
+**_TBM_**'s commands are easy to use and remember, but in the case you need to see a list of commonly used commands, simply type `help` or press the `F1` key to access this list in the [new help window](#help-window). Pressing the `Esc` key will close this window.
+
 
 Format: `help`
 
-### Viewing all saved clients: `client list`
+--------------------------------------------------------------------------------------------------------------------
 
-Shows a list of all clients in **_TBM_**. If a client's data fields are too long, they may be cut off in the client card, but you can view them in full using the [`client view`](#viewing-a-client--client-view) command.
-This command will also reset the left display panel to its default view. 
+### 1. Managing your Clients 
 
-Format: `client list`
+To do your ** _business in bliss_** , you need to keep track of a multitude of clients and, you need to do it quickly. **Adding**, **Deleting**, **Editing**, **Viewing** and **Finding** your clients can be done in a mere _handful of keystrokes_ that make the most out of your fast typing speeds.
 
-### Adding a client: `client add`
+#### 1.1: Adding a client: `client add`
 
 Adds a new client to **_TBM_**.
 
@@ -119,50 +119,19 @@ Example:
 
   Adds a new client with name **Katya**, phone number **98123456**, email **katya@yahoo.com**, address **Vladivostok, Nevelskogo, bld. 15, appt. 256**, country **Russia**, timezone **GMT+3**, contract expiry date **2 Mar 2020**.
 
-### Viewing a client: `client view`
+#### 1.2: Deleting a client: `client delete`
 
-Views the client specified by the `INDEX` parameter.
-<div markdown="block" class="alert alert-info">
+Deletes a client by their index in the list view.
 
-**:information_source:** Please refer to [this](#ui-when-viewing-clients) if you need to be re-acquainted with the UI for client related commands
-</div>
-
-Format: `client view INDEX`
+Format: `client delete INDEX`
 
 Example:
 
-Given the current list of clients:
-```
-1. Katya
-2. Alex
-```
-Command: `client view 2`
+* Command: `client delete 5`
 
-The information for the client at index 2 of the list will be shown. In the example above, Alex's information will be displayed.
+    Deletes the client at index 5 of the list panel.
 
-### Finding clients: `client find`
-
-Finds clients whose names contain any of the given keywords.
-
-Format: `client find KEYWORD [MORE_KEYWORDS]`
-
-* The search is case-insensitive. e.g `hans` will match `Hans`.
-* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`.
-* Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`.
-* Clients matching at least one keyword will be returned (i.e. OR search). e.g. `Hans Bo` will return `Hans Gruber` and `Bo Yang`.
-
-Examples:
-
-* Command: `client find katya`
-
-   Finds all clients with names that matches **katya**.
-
-* Command: `client find Katya Hans`
-
-   Finds all clients whose names contain either **Katya** or **Hans**.
-
-### Editing a client: `client edit`
+#### 1.3: Editing a client: `client edit`
 
 Edits a client's information by their index in the list view. Only edits the fields that have been passed in as parameters.
 
@@ -206,53 +175,84 @@ Country: Japan
 Timezone: GMT+7
 ...(other fields omitted)
 ```
+#### 1.4: Viewing All your Clients: `client list`
 
-### Deleting a client: `client delete`
+Shows a list of all clients in **_TBM_**. If a client's data fields are too long, they may be cut off in the client card, but you can view them in full using the [`client view`](#viewing-a-client--client-view) command.
+This command will also reset the left display panel to its default view. 
 
-Deletes a client by their index in the list view.
+Format: `client list`
 
-Format: `client delete INDEX`
+#### 1.5: Viewing a Client: `client view`
+
+Views the client specified by the `INDEX` parameter.
+<div markdown="block" class="alert alert-info">
+
+**:information_source:** Please refer to [this](#ui-when-viewing-clients) if you need to be re-acquainted with the UI for client related commands
+</div>
+
+Format: `client view INDEX`
 
 Example:
 
-* Command: `client delete 5`
-
-    Deletes the client at index 5 of the list panel.
-
-### Saving data
-
-Your data is automatically saved after every command you enter. The file is saved in the ubiquitous `.json` format, which
-allows you to edit the file manually without even opening **_TBM_** up.
-
-The location for this file is `./data/tbmManager.json` (indicated at the bottom left of the application), where the
- `.` represents the directory where you have saved `TBM.jar`. Here's a snippet of this editable text file:
-
-```json5
-{
-  "clients" : [ {
-    "name" : "Alex Yeoh",
-    "phone" : "87438807",
-    "email" : "alexyeoh@example.com",
-    "address" : "Blk 30 Geylang Street 29, #06-40",
-    "country" : "SG",
-    "timezone" : "GMT+8",
-    "contractExpiryDate" : "21-4-2022",
-    "lastModifiedInstant" : "2020-01-01T00:00:00Z",
-    "clientNotes" : [ {
-      "contents" : "Wants to take his wife to Norway for New Years' Day",
-      "countryCode" : "NULL_CC",
-      "tags" : [ "romantic", "holidayPlans", "travel" ]
-    } ]
-  } ]
-  . . .
-}
+Given the current list of clients:
 ```
+1. Katya
+2. Alex
+```
+Command: `client view 2`
 
-<div markdown="block" class="alert alert-info">
-**:information_source:** Tweaking this file should be done <strong><i>only</i></strong> if you're familiar with JSON. If you're new to JSON, <a href="https://www.json.org/json-en.html">here's</a> a good place to learn more.
-</div>
+The information for the client at index 2 of the list will be shown. In the example above, Alex's information will be displayed.
 
-### Adding client notes: `client note add`
+#### 1.6: Finding clients: `client find`
+
+Finds clients whose names contain any of the given keywords.
+
+Format: `client find KEYWORD [MORE_KEYWORDS]`
+
+* The search is case-insensitive. e.g `hans` will match `Hans`.
+* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`.
+* Only the name is searched.
+* Only full words will be matched e.g. `Han` will not match `Hans`.
+* Clients matching at least one keyword will be returned (i.e. OR search). e.g. `Hans Bo` will return `Hans Gruber` and `Bo Yang`.
+
+Examples:
+
+* Command: `client find katya`
+
+   Finds all clients with names that matches **katya**.
+
+* Command: `client find Katya Hans`
+
+   Finds all clients whose names contain either **Katya** or **Hans**.
+
+
+#### 1.7: Filtering clients by country: `country filter`
+
+Filters the list of clients by the specified country.
+
+Format: `country filter c/COUNTRY_CODE`
+
+Examples:
+
+* Command: `country filter c/SG`
+
+    Filters by clients in Singapore.
+
+* Command: `country filter c/RU`
+
+    Filters by clients in Russia.
+
+--------------------------------------------------------------------------------------------------------------------
+
+### 2. Keeping Track of Important Information via Notes and Tags
+
+-- insert description--
+
+#### 2.1: Client Notes
+
+
+
+##### 2.1.1: Adding client notes: `client note add`
 
 Adds a note to the client at the specified index in the list view. If a note with the exact same content and tags already exists, a "duplicate note" error will be displayed.
 
@@ -276,7 +276,7 @@ Examples:
 
     Adds a **note** with a **tag** to the **fourth** client in the list.
 
-### Deleting client notes: `client note delete`
+##### 2.1.2: Deleting client notes: `client note delete`
 
 Deletes a note of a client (denoted by a client's index) by the note's index.
 
@@ -303,7 +303,7 @@ Notes:
 1. Loves dogs [tag: pref]
 ```
 
-### Editing client notes: `client note edit`
+##### 2.1.3: Editing client notes: `client note edit`
 
 Edits a note of a client (denoted by that client's index) by the note's index. Supplying tags to the command will add the tags onto the current existing tags for that note.
 
@@ -333,23 +333,10 @@ Notes:
 3. Apprehensive of resigning contract [tag: meeting]
 ```
 
-### Filtering clients by country: `country filter`
+#### 2.2: Country Notes
 
-Filters the list of clients by the specified country.
 
-Format: `country filter c/COUNTRY_CODE`
-
-Examples:
-
-* Command: `country filter c/SG`
-
-    Filters by contacts in Singapore.
-
-* Command: `country filter c/RU`
-
-    Filters by contacts in Russia.
-
-### Viewing notes for a country: `country note view`
+##### 2.2.1: Viewing notes for a country: `country note view`
 
 <div markdown="block" class="alert alert-info">
 
@@ -371,7 +358,7 @@ Examples:
 
     Only country notes for **Singapore** will be displayed.
 
-### Adding notes for a country: `country note add`
+##### 2.2.2: Adding notes for a country: `country note add`
 
 Adds a note that will be associated with the country corresponding to the country code supplied.
 
@@ -397,7 +384,7 @@ Examples:
     - Content: **_is world's fastest growing economy_** 
     - Tag: **_untagged_**
     
-### Editing notes for a country: `country note edit`
+##### 2.2.3: Editing notes for a country: `country note edit`
 
 Edits a note that is associated with a specific country at the given index based on the **current view** of the [list panel displaying country notes](#ui-when-viewing-country). Supplying tags to the command will add the tags onto the current existing tags for that note.
 
@@ -441,7 +428,7 @@ Thailand
 3. Political unrest in the capital [tag: politics]
 ```
 
-### Deleting notes for a country: `country note delete`
+##### 2.2.4: Deleting notes for a country: `country note delete`
 
 Deletes a note that is associated with a specific country at the given index based on the **current view** of the [list panel displaying country notes](#ui-when-viewing-country).
 
@@ -455,7 +442,7 @@ Example:
 
     Deletes the country note at index 1 of the country notes list panel.
 
-### Getting suggestions on clients: `suggest`
+### 3. Getting Suggested Clients
 
 Obtains a list of clients based on the suggestion type(s) passed in. This command will also reset the left display panel to its default view.
 
@@ -479,17 +466,51 @@ Examples:
 
     Obtains a list of clients based on their current contract details but only clients who are available will be shown. Clients whose contracts are expiring will be shown first.
 
-### Clearing all entries: `clear`
+### 4. Clearing All your Entries
 
 Deletes all existing information from the application. The end result will be an application with no client/note/country data. The left display panel will be reset to its default view.
 
 Format: `clear`
 
-### Exiting the program: `exit`
+### 5. Exiting the Program
 
 Exits the program.
 
 Format: `exit`
+
+### 6. Saving your Data
+
+Your data is automatically saved after every command you enter. The file is saved in the ubiquitous `.json` format, which
+allows you to edit the file manually without even opening **_TBM_** up.
+
+The location for this file is `./data/tbmManager.json` (indicated at the bottom left of the application), where the
+ `.` represents the directory where you have saved `TBM.jar`. Here's a snippet of this editable text file:
+
+```json5
+{
+  "clients" : [ {
+    "name" : "Alex Yeoh",
+    "phone" : "87438807",
+    "email" : "alexyeoh@example.com",
+    "address" : "Blk 30 Geylang Street 29, #06-40",
+    "country" : "SG",
+    "timezone" : "GMT+8",
+    "contractExpiryDate" : "21-4-2022",
+    "lastModifiedInstant" : "2020-01-01T00:00:00Z",
+    "clientNotes" : [ {
+      "contents" : "Wants to take his wife to Norway for New Years' Day",
+      "countryCode" : "NULL_CC",
+      "tags" : [ "romantic", "holidayPlans", "travel" ]
+    } ]
+  } ]
+  . . .
+}
+```
+
+<div markdown="block" class="alert alert-info">
+**:information_source:** Tweaking this file should be done <strong><i>only</i></strong> if you're familiar with JSON. If you're new to JSON, <a href="https://www.json.org/json-en.html">here's</a> a good place to learn more.
+</div>
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -643,7 +664,7 @@ Here are the alternative stylistic choices that you might make when writing out 
 
 We've added screenshots for you to refer to, to determine easily what the output should be upon issuing a particular command.  
 
-## Dummy Command 
+### Dummy Command Template 
 
 before ss and after ss 
 
