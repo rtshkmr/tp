@@ -1,0 +1,20 @@
+@startuml
+start
+:User tries to enter command;
+if () then ([input is valid command])
+  :input is added to CommandHistory;
+else ([else])
+  :input is not added to CommandHistory;
+endif;
+:User presses a button;
+if () then ([UP button is pressed])
+  :CommandHistory tries to retrieve the valid command entered previously;
+  :Display will show the retrieved command;
+else if () then ([DOWN button is pressed])
+  :CommandHistory tries to retrieve the next valid command entered;
+  :Display will show the retrieved command;
+else ([else])
+  :nothing happens;
+endif;
+stop
+@enduml

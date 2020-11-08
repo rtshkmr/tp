@@ -257,6 +257,32 @@ The following sequence diagram shows how the suggest operation works:
 
 ![Suggest Sequence Diagram](images/SuggestSequenceDiagram.png)
 
+### Command History
+
+A command history greatly optimises the user's productivity by removing the need to repetitively type out similar commands.
+Furthermore, it allows backwards viewing of previous commands given, which is similar to the CLI experience. 
+
+However, the difference between the traditional CLI history and TBM CLI history is that TBM's history only accepts valid commands. Invalid commands entered will not be included will not appear in the command history.
+Furthermore, the modification of previous commands in the history do not override the current command as well. The current input being edited is stored in a separate variable as the user scrolls through the command history. This is proposed upgrade for the CLI history feature.
+
+The implementation of command history is backed by a list of strings `history`. Upon the entering of a valid command, the command history, `CommandHistory`.
+
+![User Command History Activity](images/CommandHistoryActivity.png)
+
+Below is a step-by-step description of what CommandHistory does.
+
+Step 1: User enters a series of valid commands. `CommandHistory` saves all the commands.
+
+Step 2: User presses UP button.
+
+Step 3: `CommandHistory` **tries** to shift the pointer upwards, and retrieves the command string at `history[pointer]`.
+
+Step 4: User presses DOWN button.
+
+Step 5: `CommandHistory` **tries** to shift the pointer downwards, and retrieves the command string at `history[pointer]`.
+
+  - If it reaches the end of the history, the pointer in `CommandHistory` will be of value equal to the length of the history. And it will retrieve the current input being typed.
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
@@ -341,10 +367,6 @@ _{more aspects and alternatives to be added}_
 
 _{Explain here how the data archiving feature will be implemented}_
 
-### \[Proposed\] Command History
-
-A command history will greatly optimise the user's productivity by removing the need to repetitively type out similar commands.
-Furthermore, it allows backwards viewing of previous commands given, which is similar to the CLI experience.
 
 
 --------------------------------------------------------------------------------------------------------------------
