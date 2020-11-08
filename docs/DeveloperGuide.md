@@ -282,6 +282,26 @@ Step 4: User presses DOWN button.
 Step 5: `CommandHistory` **tries** to shift the pointer downwards, and retrieves the command string at `history[pointer]`.
 
   - If it reaches the end of the history, the pointer in `CommandHistory` will be of value equal to the length of the history. And it will retrieve the current input being typed.
+  
+### \[Proposed\] Modification to command history
+
+The current command history does not allow users to edit a previously entered command, and save it as teh current command being edited.
+
+A further, and closer to CLI implementation would be to support this feature. For example: 
+
+1. User enters a series of commands:
+
+    1. `client view 1`
+    1. `client view 2`
+    1. `client note add 1 nt/Errands`
+
+1. User presses up to a previous command (ii).
+
+1. User modifies the command to `client view 5`.
+
+1. User continues to navigate the history.
+
+1. User returns to the command he is modifying, which is `client view 5`.
 
 ### \[Proposed\] Undo/redo feature
 
