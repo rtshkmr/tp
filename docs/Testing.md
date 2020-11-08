@@ -37,7 +37,7 @@ This project has three types of tests:
 
     a. *Unit tests* that test the individual GUI components. These are in the `seedu.address.ui` package.
     
-    b. *System test* within `seedu.address.ui` package, the `MainWindowTest.java` simulates a full user interaction with the GUI of TBM.
+    b. *System test* within `seedu.address.ui` package, the `MainWindowTest.java` simulates user interaction with the full TBM GUI.
 
 1. ##### Non-GUI Tests
     These are tests not involving the GUI of TBM. They include,<br>
@@ -49,6 +49,6 @@ This project has three types of tests:
 
       e.g. `seedu.address.storage.StorageManagerTest`
 
-    c. Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together.<br>
+    c. Hybrids of unit and integration tests. These test are checking multiple code units as well as how they are connected together.<br>
 
       e.g. `seedu.address.logic.LogicManagerTest`
