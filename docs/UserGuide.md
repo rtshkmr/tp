@@ -590,6 +590,7 @@ Action | Format, Examples
 
 ## **Parameter Constraints Summary**
 
+
 Parameter | Prefix | Constraints, Examples
 --------|------------------| ----------
 **NAME** | `n/` | Names should only contain alphanumeric characters and spaces, and it should not be blank. <br> e.g. `n/John Doe`
@@ -762,7 +763,7 @@ Command: `client view 2`
 
 The client's information will appear in the display panel on the left where we can view more information regarding the client such as the time in his timezone as well as our notes for that client.
 
-[Back to command](#15-viewing-_a-particular_-client-client-view)
+[Back to command](#15-viewing-a-particular-client-client-view)
 
 ### **Filtering by country**
 
