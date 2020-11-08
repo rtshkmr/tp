@@ -265,6 +265,16 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public void refreshSortedFilteredClientListOrder() {
+        Predicate<? super Client> predicate = filteredClients.getPredicate();
+        Comparator<? super Client> comparator = sortedFilteredClients.getComparator();
+        sortedFilteredClients.setComparator(defaultClientListOrder);
+
+        filteredClients.setPredicate(predicate);
+        sortedFilteredClients.setComparator(comparator);
+    }
+
+    @Override
     public ObservableList<CountryNote> getSortedFilteredCountryNoteList() {
         return sortedFilteredCountryNotes;
     }

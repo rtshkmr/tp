@@ -30,7 +30,11 @@ public class Client {
     private final Timezone timezone;
     private final ContractExpiryDate contractExpiryDate;
     private final ObservableList<Note> clientNotes = FXCollections.observableArrayList(new ArrayList<>());
-    private final LastModifiedInstant lastModifiedInstant;
+
+    // Metadata field for client suggestions (not exposed to user).
+    // This field will be updated on every creation of a client instance.
+    // This field will also be updated on every mutable note update.
+    private LastModifiedInstant lastModifiedInstant;
 
     /**
      * Every field must be present and not null.
@@ -106,6 +110,7 @@ public class Client {
     public void addClientNote(Note clientNote) {
         requireNonNull(clientNote);
         this.clientNotes.add(clientNote);
+        this.lastModifiedInstant = new LastModifiedInstant();
     }
 
     /**
@@ -116,6 +121,7 @@ public class Client {
     public void deleteClientNote(Note clientNote) {
         requireNonNull(clientNote);
         this.clientNotes.remove(clientNote);
+        this.lastModifiedInstant = new LastModifiedInstant();
     }
 
     /**
@@ -129,6 +135,7 @@ public class Client {
         int targetIdx = clientNotes.indexOf(clientNote);
         clientNotes.set(targetIdx, newNote);
         assert !clientNotes.contains(clientNote);
+        this.lastModifiedInstant = new LastModifiedInstant();
     }
 
     /**

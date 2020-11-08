@@ -58,6 +58,7 @@ public class ClientNoteDeleteCommand extends Command {
                 .get(targetClientNoteIndex.getZeroBased());
         assert associatedClient.hasClientNote(noteToDelete) : "attempting to delete client note that doesn't exist";
         model.deleteClientNote(associatedClient, noteToDelete);
+        model.refreshSortedFilteredClientListOrder();
         return new CommandResult(MESSAGE_DELETED_CLIENT_NOTE_SUCCESS);
     }
 

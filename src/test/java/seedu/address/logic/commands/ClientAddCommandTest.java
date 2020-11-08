@@ -255,6 +255,11 @@ public class ClientAddCommandTest {
         }
 
         @Override
+        public void refreshSortedFilteredClientListOrder() {
+            throw new AssertionError("This method should not be called");
+        }
+
+        @Override
         public ObservableList<CountryNote> getSortedFilteredCountryNoteList() {
             throw new AssertionError("This method should not be called.");
         }

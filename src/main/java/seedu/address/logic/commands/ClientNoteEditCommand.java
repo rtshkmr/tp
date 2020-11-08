@@ -98,6 +98,7 @@ public class ClientNoteEditCommand extends Command {
         }
 
         model.editClientNote(associatedClient, existingNote, editedNote);
+        model.refreshSortedFilteredClientListOrder();
         return new CommandResult(String.format(MESSAGE_EDIT_CLIENT_NOTE_SUCCESS, associatedClient.getName(),
                 existingNote, editedNote));
     }

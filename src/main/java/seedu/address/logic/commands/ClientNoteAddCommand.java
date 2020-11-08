@@ -54,6 +54,7 @@ public class ClientNoteAddCommand extends Command {
             throw new CommandException(MESSAGE_DUPLICATE_CLIENT_NOTE);
         }
         model.addClientNote(clientToAddNoteTo, clientNote);
+        model.refreshSortedFilteredClientListOrder();
         return new CommandResult(MESSAGE_SUCCESS);
     }
 

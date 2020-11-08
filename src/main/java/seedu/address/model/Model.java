@@ -175,6 +175,13 @@ public interface Model {
     void resetSortedFilteredClientListOrder();
 
     /**
+     * Refreshes the order of the filtered client list to the existing order.
+     * Used in client note add/edit/delete where updates are mutable.
+     */
+    void refreshSortedFilteredClientListOrder();
+
+
+    /**
      * Returns an unmodifiable view of the filtered country notes list.
      */
     ObservableList<CountryNote> getSortedFilteredCountryNoteList();
