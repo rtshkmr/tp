@@ -583,3 +583,59 @@ testers are expected to do more *exploratory* testing.
    1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
 
 1. _{ more test cases …​ }_
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Effort**
+
+With an estimate value of **100** to be the level of effort required to develop **AB3**, we would place the effort required to deliver the current version of **TBM** at **205**.
+
+Major changes are changes that required a significant amount of effort (an estimate minimum of 68 man hours per change) from the team to coordinate, plan, implement, review, and optimize, while minor changes are changes that required a moderate amount of effort (an estimated minimum of 20 man hours per change).
+
+### Major Changes
+
+**1. Note Package**
+
+To give users the ability to write notes capable of being handled in a generic manner for the entities of `Client` and `Country`, a `Note` class was created and a `CountryNote` class extended from it. Client notes could be stored easily by allowing clients to contain client-specific notes and country notes had to be managed by the `CountryNotesManager` controller class to handle the mapping between unique `Country` objects and their associated Notes. 
+
+Unique`Tag` objects were implemented by having a `TagNoteMap` class that keeps track of the association between unique `Note` and `Tag` objects. Storage of this many-to-many relationship required effort in circumventing the no-DBMS constraint imposed by the module. We chose to programatically generate the `TagNoteMap` object upon TBM's start-up with the aim of reducing file-size of the JSON data files on the user's hard-drive.
+
+**2. Additional Client Fields**
+
+We refactored the codebase as well as the documentation from `Person` in AB3 to `Client` in TBM with additional fields to fit our target audience. Adding of simple tags were moved to a new note package that allowed more freedom and flexibility in adding data to clients. We added new fields in `Country`, `Timezone`, `ContractExpiryDate`, `LastModifiedInstant`. `Country` and `Timezone` required non-trivial validation and testing to verify their correctness. `Timezone`, `ContractExpiryDate` and `LastModifiedInstant` are necessary for suggestions. The `LastModifiedInstant` class serves as metadata that is not directly exposed to the user but is only updated upon any logical modifications to a client object.
+
+**3. Client Suggestion**
+
+A `ClientSuggestionType` class was created which acts as a controller class that generates the combined client predicate and comparator. For the three suggestion criteria, classes were created where necessary to encapsulate the filtering and sorting logic. The non-trivial implementation consisted of accounting for timezone differences, and the sorting and filtering of JavaFX's `ObservableList`. New classes like `Timezone`, `ContractExpiryDate`, and `LastModifiedInstant` were added to `Client` to facilitate prioritizing which clients to suggest to the user. 
+
+**4. GUI**
+
+In line with human-centric UX design, TBM's GUI was changed to be visually appealing, intuitive, informative, smooth, and have a flexible layout. We made effort to ensure that the layout was consistent and eliminated weird behaviours resulting from limitations of JavaFX. One challenge was that the client cards in **AB3** had an undefined behaviour where they changed sizes when being clicked on, even though there is no expected response upon clicking. We fixed this by setting `ListViewCell` to disabled.
+
+**5. Automated GUI Testing**
+
+As recommended by the reference book for CS2103T, we adopted the TestFX library for automated GUI testing. We modified the GUI to listen to the state of the application to achieve a dynamic display. TestFX provided a good testing framework to automate our GUI unit tests. We simulated user interactions with TestFX for our application's system testing.
+
+However, the implementation encountered many hiccups due to the limited amount of documentation available. Significant effort was taken to troubleshoot the implementation of the framework and to run it in headless mode, so that we could integrate it into our Github Continuous Integration workflow.
+
+**6. Non-GUI Testing**
+ 
+We made sure to write rigorous tests for every piece of code we added, expanded coverage, and tested for boundary cases. We also standardized and abstracted the testing code to make it more maintainable and readable. This, together with GUI testing, managed to increase code coverage from 72% (AB3) to 90%.
+
+### Minor Changes
+
+**1. Command Format**
+
+The command format of TBM had to be modified from AB3 to account for client-related, client-note-related and country-note-related commands.
+
+**2. Command Parsing**
+
+Extending on the original parsing of AB3, we modified the command parsing to accomodate our command format, and further modularized code in `MainParser` to make the codebase easier to read and test.
+
+**3. Command History**
+
+Keeping in line with TBM's time-conscious target users who prefer using CLIs, we implemented a command history to provide an authentic CLI experience and to increase user-friendliness.
+
+**4. Code Clean-up**
+
+Code clean up required a moderate amount of effort thanks to our decision to enforce clean coding practices from the get-go: each PR had to reach a minimum of 80% diff line coverage in terms of testing, had to adhere to the module's code quality guidelines in terms of variable naming and documentation, and had to go through extensive PR reviews. This spread the code clean-up task over the entire project instead of being an issue in its own regard. We also did an in-depth examination of the whole codebase at the end of v1.4 to standardize all JavaDocs and improve code quality.
