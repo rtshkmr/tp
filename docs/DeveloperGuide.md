@@ -136,7 +136,7 @@ The `Model`,
 * does not depend on any of the other three components.
 * contains a `UniqueTagSet` to prevent duplication of `Tag` objects.
 
-#### Inner Workings of TBM
+#### Inner workings of TBM
 
 <!--- TODO: Add a full explanation of the interaction between Note, Tag and Country, with class and sequence diagrams? -->
 
@@ -262,7 +262,7 @@ The following sequence diagram shows how the suggest operation works:
 A command history greatly optimises the user's productivity by removing the need to repetitively type out similar commands.
 Furthermore, it allows backwards viewing of previous commands given, which is similar to the CLI experience. 
 
-However, the difference between the traditional CLI history and TBM CLI history is that TBM's history only accepts valid commands. Invalid commands entered will not be included will not appear in the command history.
+However, the difference between the traditional CLI history and TBM's CLI history is that TBM's history only accepts valid commands. Invalid commands entered will not be included will not appear in the command history.
 Furthermore, the modification of previous commands in the history do not override the current command as well. The current input being edited is stored in a separate variable as the user scrolls through the command history. This is proposed upgrade for the CLI history feature.
 
 The implementation of command history is backed by a list of strings `history`. Upon the entering of a valid command, the command history, `CommandHistory`.

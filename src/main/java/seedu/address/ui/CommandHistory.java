@@ -137,7 +137,7 @@ public class CommandHistory {
     }
 
     /**
-     * Clears the temp history.
+     * Clears the temporary history.
      */
     private void clearTemp() {
         temp = null;

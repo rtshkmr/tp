@@ -38,19 +38,31 @@ public class UserPrefs implements ReadOnlyUserPrefs {
         setTbmManagerFilePath(newUserPrefs.getTbmManagerFilePath());
     }
 
+    /**
+     * Returns the {@code guiSettings}.
+     */
     public GuiSettings getGuiSettings() {
         return guiSettings;
     }
 
+    /**
+     * Sets the {@code guiSettings}.
+     */
     public void setGuiSettings(GuiSettings guiSettings) {
         requireNonNull(guiSettings);
         this.guiSettings = guiSettings;
     }
 
+    /**
+     * Returns the {@code tbmManagerFilePath}.
+     */
     public Path getTbmManagerFilePath() {
         return tbmManagerFilePath;
     }
 
+    /**
+     * Sets the {@code tbmManagerFilePath}.
+     */
     public void setTbmManagerFilePath(Path tbmManagerFilePath) {
         requireNonNull(tbmManagerFilePath);
         this.tbmManagerFilePath = tbmManagerFilePath;

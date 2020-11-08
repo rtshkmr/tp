@@ -287,6 +287,8 @@ Examples:
 
     Filters by clients in Russia.
 
+[Link](#filtering-by-country) to Appendix C for screenshot of how command works.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ### **2. Keeping Track of Important Information via Notes and Tags**
@@ -406,6 +408,8 @@ Examples:
 
     Only country notes for **Singapore** will be displayed.
 
+[Link](#viewing-country-note) to Appendix C for screenshot of how command works. 
+
 ##### 2.2.2: Adding notes for a country: `country note add`
 
 Adds a note that will be associated with the country corresponding to the country code supplied.
@@ -431,7 +435,9 @@ Examples:
     Adds a **note** for the country of **India** with the following specifications:
     - Content: **_is world's fastest growing economy_** 
     - Tag: **_untagged_**
-    
+
+[Link](#adding-country-note) to Appendix C for screenshot of how command works.
+  
 ##### 2.2.3: Editing notes for a country: `country note edit`
 
 Edits a note that is associated with a specific country at the given index based on the **current view** of the [list panel displaying country notes](#ui-when-viewing-country). Supplying tags to the command will add the tags onto the current existing tags for that note.
@@ -475,6 +481,8 @@ Thailand
 --------
 3. Political unrest in the capital [tag: politics]
 ```
+
+[Link](#editing-country-note) to Appendix C for screenshot of how command works.
 
 ##### 2.2.4: Deleting notes for a country: `country note delete`
 
@@ -712,6 +720,50 @@ Here are the alternative stylistic choices that you might make when writing out 
 ## **Appendix C: Expected Command Behaviour Screenshots**
 
 We've added screenshots for you to refer to, to determine easily what the output should be upon issuing a particular command.  
+
+### **Filtering by country**
+
+Before filtering, here is what it looks like,
+
+<img src="images/country_filter_before_ss.png" alt="Before filter" width="800" height="600">
+
+After filtering for clients from Spain,
+
+<img src="images/country_filter_after_ss.png" alt="Before filter" width="800" height="600">
+
+Back to [command](#17-filtering-clients-by-country-country-filter).
+
+### **Viewing country note**
+
+Below is a screenshot of what happenss when you enter the command: `country note view c/SG` to view Singapore notes,
+
+<img src="images/country_note_view_ss.png" alt="Viewing country note" width="800" height="600">
+
+Back to [command](#221-viewing-notes-for-a-country-country-note-view).
+
+### **Adding country note**
+
+Before adding a note to Singapore, there is only one note for Singapore,
+
+<img src="images/country_note_view_ss.png" alt="Before adding a country note to Singapore" width="800" height="600">
+
+After adding the note, the display automatically updates,
+
+<img src="images/country_note_add_ss.png" alt="After adding a country ntoe to Singapore" width="800" height="600">
+
+Back to [command](#222-adding-notes-for-a-country-country-note-add).
+
+### **Editing country note**
+
+Before editing note 1 of Singapore, ensure that you first view the country notes of Singapore with `country note view c/SG`,
+
+<img src="images/country_note_add_ss.png" alt="Before editing the first note of Singapore" width="800" height="600">
+
+After editing, you will see the display update to show the new note,
+
+<img src="images/country_note_edit_ss.png" alt="After editing the first note of Singapore" width="800" height="600">
+
+Back to [command](#223-editing-notes-for-a-country-country-note-edit).
 
 ### **Dummy Command Template **
 

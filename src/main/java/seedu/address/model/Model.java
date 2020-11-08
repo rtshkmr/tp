@@ -19,7 +19,7 @@ import seedu.address.model.tag.Tag;
 public interface Model {
 
     /**
-     * {@code Predicate} that always evaluate to true
+     * {@code Predicate} that always evaluates to true.
      */
     Predicate<Client> PREDICATE_SHOW_ALL_CLIENTS = unused -> true;
 
@@ -79,7 +79,7 @@ public interface Model {
     void setWidgetClient(Client client);
 
     /**
-     * Retrives the client to be displayed in the widget.
+     * Retrieves the client to be displayed in the widget.
      *
      * @return Client.
      */
@@ -129,19 +129,19 @@ public interface Model {
     void addClientNote(Client client, Note clientNote);
 
     /**
-     * Deletes a Client Note associated to a particular Client.
+     * Deletes a note associated to a particular client.
      *
-     * @param associatedClient Client associated to the note to be deleted.
+     * @param associatedClient Client that the note belongs to.
      * @param noteToDelete     Note to be deleted.
      */
     void deleteClientNote(Client associatedClient, Note noteToDelete);
 
     /**
-     * Edits a Client Note associated to a particular Client.
+     * Edits a note associated to a particular client.
      *
-     * @param associatedClient Client associated to the note to be edited.
-     * @param noteToEdit     Note to be edited.
-     * @param  newNote     newNote to be used.
+     * @param associatedClient Client that the note belongs to.
+     * @param noteToEdit       Note to be edited.
+     * @param  newNote         New note to be used.
      */
     void editClientNote(Client associatedClient, Note noteToEdit, Note newNote);
 
@@ -194,7 +194,7 @@ public interface Model {
     void updateFilteredCountryNoteList(Predicate<CountryNote> predicate);
 
     /**
-     * Initialises TagNoteMap from Clients notes and Country notes.
+     * Initialises {@code TagNoteMap} from client notes and country notes.
      */
     void initialiseTagNoteMap();
 

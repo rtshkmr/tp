@@ -16,6 +16,9 @@ public class WidgetModelManager implements WidgetModel {
 
     private WidgetModelManager() {}
 
+    /**
+     * Initializes a standard {@code WidgetModelManager}.
+     */
     static WidgetModelManager initWidget() {
         logger.info("----------------[ Creating WidgetModelManager ]");
         return new WidgetModelManager();
