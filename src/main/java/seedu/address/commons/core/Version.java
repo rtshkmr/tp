@@ -32,18 +32,38 @@ public class Version implements Comparable<Version> {
         this.isEarlyAccess = isEarlyAccess;
     }
 
+    /**
+     * Returns the major version number.
+     *
+     * @return major number.
+     */
     public int getMajor() {
         return major;
     }
 
+    /**
+     * Returns the minor version number.
+     *
+     * @return minor number.
+     */
     public int getMinor() {
         return minor;
     }
 
+    /**
+     * Returns the patch version number.
+     *
+     * @return patch number.
+     */
     public int getPatch() {
         return patch;
     }
 
+    /**
+     * Checks if the current version is an early access version.
+     *
+     * @return True if the current versioning of the application is an early access rollout.
+     */
     public boolean isEarlyAccess() {
         return isEarlyAccess;
     }

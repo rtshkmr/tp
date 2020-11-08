@@ -35,14 +35,29 @@ public class GuiSettings implements Serializable {
         windowCoordinates = new Point(xPosition, yPosition);
     }
 
+    /**
+     * Returns the width of the window.
+     *
+     * @return Window width.
+     */
     public double getWindowWidth() {
         return windowWidth;
     }
 
+    /**
+     * Returns the window height.
+     *
+     * @return Window height.
+     */
     public double getWindowHeight() {
         return windowHeight;
     }
 
+    /**
+     * Returns the window {@code coordinates}.
+     *
+     * @return Window coordinates {@code Point}.
+     */
     public Point getWindowCoordinates() {
         return windowCoordinates != null ? new Point(windowCoordinates) : null;
     }

@@ -61,7 +61,7 @@ public class WidgetViewBox extends UiPart<Region> {
     private VBox clientNoteListView;
 
     /**
-     * Creates a {@code WidgetViewBox} with the given {@code WidgetObject}.
+     * Creates a {@code WidgetViewBox}.
      */
     public WidgetViewBox(ObservableList<Client> clientObservableList) {
         super(FXML);
