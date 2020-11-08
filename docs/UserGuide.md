@@ -51,6 +51,7 @@ This User Guide has been structured such that users can easily find and understa
 ### Tips
 
 <div markdown="block" class="alert alert-info">
+
 **:information_source:** This is a tip for users.
 </div> 
 
