@@ -12,7 +12,7 @@ title: Testing guide
 
 There are three ways to run tests.
 
-:bulb: Running test using method 3 is more reliable, and it does not choke up your computer graphical interface.
+:bulb: Running test using method 3 is more reliable, and it does not choke up your computer's graphical interface.
 
 * **Method 1: Using IntelliJ JUnit test runner** (Not recommended)
   * To run all tests, right-click on the `src/test/java` folder and choose `Run 'All Tests'`
