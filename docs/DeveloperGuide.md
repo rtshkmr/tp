@@ -207,15 +207,16 @@ Hence, `CountryNoteAddCommand` stores a `CountryNote` object. For brevity, the a
 
 ![Country Note Add Sequence Diagram](images/CountryNoteAddSeqDiag.png)
 
-### Switching between displaying the Country Note Panel and displaying the Client View
+### Switching between displaying Country Note List Panel, the Client View, and the default view.
 
 #### Implementation
 
-The mechanism to switch between displaying the Country Note Panel and displaying the Client View is facilitated by the state of the `CommandResult` after executing the user command.
+The mechanism to switch between displaying the Country Note List Panel, the Client View, and the default view is facilitated by the state of the `CommandResult` after executing the user command.
 
 `CommandResult` implements the following operations that are relevant to the Display Panel: 
 * `CommandResult#shouldDisplayClient()` — Returns true if the UI should display the client view, otherwise returns false.
 * `CommandResult#shouldDisplayCountryNote()` — Returns true if the UI should display the country notes view, otherwise returns false.
+* `CommandResult#shouldResetWidget()` — Returns true if the UI should reset the display panel to its default view, otherwise returns false.
 
 The following activity diagram illustrates what happens to the Display Panel when the user inputs a command.  
 
