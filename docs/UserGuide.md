@@ -36,9 +36,9 @@ title: User Guide
 ## **About**
 ### Using this User Guide
 This User Guide has been structured such that users can easily find and understand what they need.
-[About](#2-about) contains useful tips and information on reading this document.
-[Quickstart](#3-getting-started) consists of instructions to set up this application
-[TBM Features](#4-features) includes the details of the 4 main features of **_TBM_** which are
+[About](#about) contains useful tips and information on reading this document.
+[Quickstart](#3quickstart) consists of instructions to set up this application
+[TBM Features](#features) includes the details of the 4 main features of **_TBM_**, which are
 
 * Country
 
