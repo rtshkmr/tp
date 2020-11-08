@@ -468,6 +468,8 @@ Example:
 * Command: `country note delete 1`
 
     Deletes the country note at index 1 of the country notes list panel.
+    
+[Link](#deleting-country-note) to Appendix C for screenshot of how command works.
 
 ### **3. Getting Suggested Clients**
 
@@ -494,11 +496,15 @@ Examples:
 
     Obtains a list of clients based on their current contract details but only clients who are available will be shown. Clients whose contracts are expiring will be shown first.
 
+[Link](#getting-client-suggestions) to Appendix C for screenshot of how command works.
+
 ### **4. Clearing All your Entries**
 
 Deletes all existing information from the application. The end result will be an application with no client/note/country data. The left display panel will be reset to its default view.
 
 Format: `clear`
+
+[Link](#clearing-all-data) to Appendix C for screenshot of how command works.
 
 ### **5. Exiting the Program**
 
@@ -801,6 +807,42 @@ After editing, you will see the display update to show the new note,
 <img src="images/country_note_edit_ss.png" alt="After editing the first note of Singapore" width="800" height="600">
 
 [Back to command](#223-editing-notes-for-a-country-country-note-edit).
+
+### **Deleting country note**
+
+Initially, this is how the country notes panel will look like after issuing the command `country note view`.
+
+<<BEFORE PIC...>>
+
+After issuing the command `country note delete 1`, notice that the country note belonging to **Japan** with the content, **"A high-context country, hence building relationships is important for doing business"**, was deleted.
+
+<<AFTER PIC...>>
+
+Back to [command](#224-deleting-notes-for-a-country-country-note-delete).
+
+### **Getting client suggestions**
+
+Initially this is how the client list panel will look like after issuing the command `client list`.
+
+<<BEFORE PIC...>>
+
+After issuing the command `client suggest by/contract`, notice that clients whose contract expiry date ends earlier would be displayed higher in the client list panel. 
+
+<<AFTER PIC...>>
+
+Back to [command](#3-getting-suggested-clients).
+
+### **Clearing all data**
+
+This is how **_TBM_** looks like with existing data. 
+
+<<BEFORE PIC...>>
+
+After issuing the command `clear`, notice that all existing data will be cleared from **_TBM_**.
+
+<<AFTER PIC...>>
+
+Back to [command](#4-clearing-all-your-entries).
 
 ### **Dummy Command Template **
 
