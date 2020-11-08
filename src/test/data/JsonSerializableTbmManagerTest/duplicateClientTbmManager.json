@@ -5,14 +5,14 @@
     "email": "alice@example.com",
     "address": "123, Jurong West Ave 6, #08-111",
     "country": "SG",
-    "timezone": "GMT+8",
+    "timezone": "UTC+08:00",
     "contractExpiryDate": "10-9-2020"
   }, {
     "name": "Alice Pauline",
     "phone": "94351253",
     "email": "pauline@example.com",
     "country": "SG",
-    "timezone": "GMT+8",
+    "timezone": "UTC+08:00",
     "contractExpiryDate": "10-9-2020",
     "address": "4th street"
   } ],

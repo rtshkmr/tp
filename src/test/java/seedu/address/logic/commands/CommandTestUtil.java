@@ -38,8 +38,8 @@ public class CommandTestUtil {
     public static final String VALID_ADDRESS_BOB = "Block 123, Bobby Street 3";
     public static final String VALID_COUNTRY_AMY = "SG";
     public static final String VALID_COUNTRY_BOB = "MY";
-    public static final String VALID_TIMEZONE_AMY = "GMT+8";
-    public static final String VALID_TIMEZONE_BOB = "GMT+7";
+    public static final String VALID_TIMEZONE_AMY = "UTC+08:00";
+    public static final String VALID_TIMEZONE_BOB = "UTC+07:00";
     public static final String VALID_CONTRACT_EXPIRY_DATE_AMY = "1-1-2022";
     public static final String VALID_CONTRACT_EXPIRY_DATE_BOB = "13-12-2021";
     public static final String VALID_LAST_MODIFIED_INSTANT_AMY = "2020-10-10T00:00:00.000000Z";

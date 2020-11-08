@@ -5,14 +5,14 @@
     "email": "hans@example.com",
     "address": "4th street",
     "country": "SG",
-    "timezone": "GMT+8"
+    "timezone": "UTC+08:00"
   }, {
     "name": "Client With Invalid Phone Field",
     "phone": "948asdf2424",
     "email": "hans@example.com",
     "address": "4th street",
     "country": "SG",
-    "timezone": "GMT+8"
+    "timezone": "UTC+08:00"
   } ],
   "notes": []
 }

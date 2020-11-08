@@ -193,7 +193,7 @@ public class ClientTest {
         Note clientNote = new Note("hell yes");
         client.addClientNote(clientNote);
         String expected = "Alice Pauline Phone: 94351253 Email: alice@example.com Address: 123, Jurong West Ave 6,"
-                + " #08-111 Country: Singapore (SG) Timezone: GMT+8 Contract Expiry Date: 1-4-2021";
+                + " #08-111 Country: Singapore (SG) Timezone: UTC+08:00 Contract Expiry Date: 1-4-2021";
         assertEquals(expected, client.toString());
     }
 

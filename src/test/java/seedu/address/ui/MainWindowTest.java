@@ -123,9 +123,9 @@ public class MainWindowTest extends GuiUnitTest {
         assertFalse(guiRobot.isWindowShown(HelpWindowHandle.HELP_WINDOW_TITLE));
 
         // command execution by robot
-        terminal.inputCommand("client add n/Lim p/18002345 e/lim@gmail.com a/Yishun c/SG tz/GMT+8");
-        terminal.inputCommand("client add n/Kim p/18002346 e/kim@gmail.com a/Kishun c/SG tz/GMT+8");
-        terminal.inputCommand("client add n/Sim p/18002347 e/sim@gmail.com a/Sishun c/SG tz/GMT+8");
+        terminal.inputCommand("client add n/Lim p/18002345 e/lim@gmail.com a/Yishun c/SG tz/UTC+08:00");
+        terminal.inputCommand("client add n/Kim p/18002346 e/kim@gmail.com a/Kishun c/SG tz/UTC+08:00");
+        terminal.inputCommand("client add n/Sim p/18002347 e/sim@gmail.com a/Sishun c/SG tz/UTC+08:00");
         terminal.inputCommand("client edit 1 n/Jim");
         terminal.inputCommand("client note add 1 t/reminder nt/birthday tmr");
         terminal.inputCommand("client note add 1 t/reminder nt/party tmr");

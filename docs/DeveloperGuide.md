@@ -517,7 +517,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 6.  **_TBM_** should be able to hold up to 5000 total client notes without a noticeable sluggishness in performance for typical usage.
 7.  **_TBM_** can handle at most 10000 business contacts and at most 50000 total client notes.
 8.  **_TBM_** will only accept countries that are specified by the [ISO3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) specification.
-9.  **_TBM_** will only accept [GMT](https://en.wikipedia.org/wiki/Greenwich_Mean_Time) timezones.
+9.  **_TBM_** will only accept the UTC offsets defined in this [list](https://www.timeanddate.com/time/current-number-time-zones.html).
 10. **_TBM_** is not required to validate that the timezone of a business contact correctly matches his/her country.
 11. **_TBM_** should retain all functionalities even when it is not connected to the internet.
 12. The size of the **_TBM_** _JAR_ file should not exceed 100Mb.
@@ -526,7 +526,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * **Business Contact**: Synonymous with **Client**
 * **Client**: Refers to a person whom the user is conducting his/her business with
-* **GMT**: [Greenwich Mean Time](https://en.wikipedia.org/wiki/Greenwich_Mean_Time)
+* **UTC**: [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)
 * **Mainstream OS**: Windows, Linux, Unix, macOS
 * **_TBM_**: Initialism for Travelling BusinessMan
 

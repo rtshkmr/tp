@@ -20,7 +20,7 @@ public class ClientBuilder {
     public static final String DEFAULT_EMAIL = "alice@gmail.com";
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
     public static final String DEFAULT_COUNTRY = "SG";
-    public static final String DEFAULT_TIMEZONE = "GMT+8";
+    public static final String DEFAULT_TIMEZONE = "UTC+08:00";
     public static final String DEFAULT_CONTRACT_EXPIRY_DATE = "4-1-2021";
 
     private Name name;

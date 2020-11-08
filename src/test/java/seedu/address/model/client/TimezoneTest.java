@@ -32,65 +32,113 @@ public class TimezoneTest {
         // invalid timezone
         assertFalse(Timezone.isValidTimezone("")); // empty string
         assertFalse(Timezone.isValidTimezone(" ")); // spaces only
-        assertFalse(Timezone.isValidTimezone("UTC+8")); // does not start with GMT
-        assertFalse(Timezone.isValidTimezone("GM+8")); // misspelled GMT
-        assertFalse(Timezone.isValidTimezone("GMT+15")); // out of range (positive)
-        assertFalse(Timezone.isValidTimezone("GMT-13")); // out of range (negative)
-        assertFalse(Timezone.isValidTimezone("GMT+654657987654456")); // large number
+        assertFalse(Timezone.isValidTimezone("GMT+00:00")); // does not start with UTC
+        assertFalse(Timezone.isValidTimezone("UT+00:00")); // misspelled UTC
+        assertFalse(Timezone.isValidTimezone("UTC+15:00")); // out of range (positive)
+        assertFalse(Timezone.isValidTimezone("UTC-13:00")); // out of range (negative)
+        assertFalse(Timezone.isValidTimezone("UTC+13:30")); // unrecognised timezone
+        assertFalse(Timezone.isValidTimezone("UTC")); // no offset provided
+        assertFalse(Timezone.isValidTimezone("UTC+")); // incomplete offset
+        assertFalse(Timezone.isValidTimezone("UTC-")); // incomplete offset
+        assertFalse(Timezone.isValidTimezone("utc+00:00")); // lowercase UTC
+        assertFalse(Timezone.isValidTimezone("UTC+654657987654456")); // large number
+        assertFalse(Timezone.isValidTimezone("UTC+0:00")); // wrong format
+        assertFalse(Timezone.isValidTimezone("UTC+00:0")); // wrong format
+        assertFalse(Timezone.isValidTimezone("UTC+0")); // wrong format
 
-        // valid timezone
-        assertTrue(Timezone.isValidTimezone("GMT+8")); // valid timezone
-        assertTrue(Timezone.isValidTimezone("GMT-12")); // smallest negative offset
-        assertTrue(Timezone.isValidTimezone("GMT+14")); // largest positive offset
-
+        // all valid timezones
+        assertTrue(Timezone.isValidTimezone("UTC+14:00"));
+        assertTrue(Timezone.isValidTimezone("UTC+13:45"));
+        assertTrue(Timezone.isValidTimezone("UTC+13:00"));
+        assertTrue(Timezone.isValidTimezone("UTC+12:00"));
+        assertTrue(Timezone.isValidTimezone("UTC+11:00"));
+        assertTrue(Timezone.isValidTimezone("UTC+10:30"));
+        assertTrue(Timezone.isValidTimezone("UTC+10:00"));
+        assertTrue(Timezone.isValidTimezone("UTC+09:30"));
+        assertTrue(Timezone.isValidTimezone("UTC+09:00"));
+        assertTrue(Timezone.isValidTimezone("UTC+08:45"));
+        assertTrue(Timezone.isValidTimezone("UTC+08:00"));
+        assertTrue(Timezone.isValidTimezone("UTC+07:00"));
+        assertTrue(Timezone.isValidTimezone("UTC+06:30"));
+        assertTrue(Timezone.isValidTimezone("UTC+06:00"));
+        assertTrue(Timezone.isValidTimezone("UTC+05:45"));
+        assertTrue(Timezone.isValidTimezone("UTC+05:30"));
+        assertTrue(Timezone.isValidTimezone("UTC+05:00"));
+        assertTrue(Timezone.isValidTimezone("UTC+04:30"));
+        assertTrue(Timezone.isValidTimezone("UTC+04:00"));
+        assertTrue(Timezone.isValidTimezone("UTC+03:30"));
+        assertTrue(Timezone.isValidTimezone("UTC+03:00"));
+        assertTrue(Timezone.isValidTimezone("UTC+02:00"));
+        assertTrue(Timezone.isValidTimezone("UTC+01:00"));
+        assertTrue(Timezone.isValidTimezone("UTC+00:00"));
+        assertTrue(Timezone.isValidTimezone("UTC-01:00"));
+        assertTrue(Timezone.isValidTimezone("UTC-02:00"));
+        assertTrue(Timezone.isValidTimezone("UTC-03:00"));
+        assertTrue(Timezone.isValidTimezone("UTC-03:30"));
+        assertTrue(Timezone.isValidTimezone("UTC-04:00"));
+        assertTrue(Timezone.isValidTimezone("UTC-05:00"));
+        assertTrue(Timezone.isValidTimezone("UTC-06:00"));
+        assertTrue(Timezone.isValidTimezone("UTC-07:00"));
+        assertTrue(Timezone.isValidTimezone("UTC-08:00"));
+        assertTrue(Timezone.isValidTimezone("UTC-09:00"));
+        assertTrue(Timezone.isValidTimezone("UTC-09:30"));
+        assertTrue(Timezone.isValidTimezone("UTC-10:00"));
+        assertTrue(Timezone.isValidTimezone("UTC-11:00"));
+        assertTrue(Timezone.isValidTimezone("UTC-12:00"));
     }
 
     @Test
     public void validTimezones_displayedCorrectly() {
-        assertEquals("GMT+14", new Timezone("GMT+14").toString());
-        assertEquals("GMT-12", new Timezone("GMT-12").toString());
-        assertEquals("GMT+0", new Timezone("GMT-0").toString());
-        assertEquals("GMT+0", new Timezone("GMT+0").toString());
-        assertEquals("GMT+0", new Timezone("GMT-00").toString());
-        assertEquals("GMT+0", new Timezone("GMT+00").toString());
+        assertEquals("UTC+14:00", new Timezone("UTC+14:00").toString());
+        assertEquals("UTC-12:00", new Timezone("UTC-12:00").toString());
+        assertEquals("UTC+13:45", new Timezone("UTC+13:45").toString());
+        assertEquals("UTC-09:30", new Timezone("UTC-09:30").toString());
+        assertEquals("UTC+00:00", new Timezone("UTC+00:00").toString());
     }
 
     @Test
     public void getCurrHourInTimezone() {
         // use System clock to test
         // adapted from https://www.w3resource.com/java-exercises/datatypes/java-datatype-exercise-5.php
-        for (int timezoneOffset = -1 * Timezone.SMALLEST_NEGATIVE_OFFSET;
-                timezoneOffset <= Timezone.LARGEST_POSITIVE_OFFSET; timezoneOffset++) {
+        Timezone.VALID_TIMEZONES.forEach(timezoneOffsetString -> {
+            // String is in format "+HH:MM"
+            String sign = timezoneOffsetString.substring(0, 1);
+            String hoursOffsetString = timezoneOffsetString.substring(1, 3);
+            String minutesOffsetString = timezoneOffsetString.substring(4);
+
+            int hoursOffset = Integer.parseInt(sign + hoursOffsetString);
+            int minutesOffset = Integer.parseInt(sign + minutesOffsetString);
+
             long totalMilliseconds = System.currentTimeMillis();
             long totalSeconds = totalMilliseconds / 1000;
             long totalMinutes = totalSeconds / 60;
-            long totalHours = totalMinutes / 60;
-            long currentHour = ((totalHours + timezoneOffset) % 24);
+            long totalHours = (totalMinutes + minutesOffset) / 60;
+            long currentHour = (totalHours + hoursOffset) % 24;
 
-            String value = "GMT" + (timezoneOffset >= 0 ? "+" : "") + timezoneOffset;
+            String value = Timezone.UTC_STRING + timezoneOffsetString;
             assertEquals(currentHour, new Timezone(value).getCurrHourInTimezone());
-        }
+        });
     }
 
     @Test
     public void getTimeZone() {
-        assertEquals(TimeZone.getTimeZone(ZoneId.of("GMT+14")), new Timezone("GMT+14").getJavaTimeZone());
-        assertEquals(TimeZone.getTimeZone(ZoneId.of("GMT-12")), new Timezone("GMT-12").getJavaTimeZone());
-        assertEquals(TimeZone.getTimeZone(ZoneId.of("GMT+0")), new Timezone("GMT-0").getJavaTimeZone());
-        assertEquals(TimeZone.getTimeZone(ZoneId.of("GMT+0")), new Timezone("GMT+0").getJavaTimeZone());
-        assertEquals(TimeZone.getTimeZone(ZoneId.of("GMT+0")), new Timezone("GMT-00").getJavaTimeZone());
-        assertEquals(TimeZone.getTimeZone(ZoneId.of("GMT+0")), new Timezone("GMT+00").getJavaTimeZone());
+        assertEquals(TimeZone.getTimeZone(ZoneId.of("+14:00")), new Timezone("UTC+14:00").getJavaTimeZone());
+        assertEquals(TimeZone.getTimeZone(ZoneId.of("-12:00")), new Timezone("UTC-12:00").getJavaTimeZone());
+        assertEquals(TimeZone.getTimeZone(ZoneId.of("+13:45")), new Timezone("UTC+13:45").getJavaTimeZone());
+        assertEquals(TimeZone.getTimeZone(ZoneId.of("-09:30")), new Timezone("UTC-09:30").getJavaTimeZone());
+        assertEquals(TimeZone.getTimeZone(ZoneId.of("+00:00")), new Timezone("UTC+00:00").getJavaTimeZone());
     }
 
     @Test
     public void hashCode_test() {
-        assertEquals(new Timezone("GMT+8").hashCode(), new Timezone("GMT+8").hashCode());
-        assertEquals(new Timezone("GMT-8").hashCode(), new Timezone("GMT-8").hashCode());
-        assertEquals(new Timezone("GMT-0").hashCode(), new Timezone("GMT-0").hashCode());
-        assertEquals(new Timezone("GMT+0").hashCode(), new Timezone("GMT+0").hashCode());
+        assertEquals(new Timezone("UTC+14:00").hashCode(), new Timezone("UTC+14:00").hashCode());
+        assertEquals(new Timezone("UTC-12:00").hashCode(), new Timezone("UTC-12:00").hashCode());
+        assertEquals(new Timezone("UTC+13:45").hashCode(), new Timezone("UTC+13:45").hashCode());
+        assertEquals(new Timezone("UTC-09:30").hashCode(), new Timezone("UTC-09:30").hashCode());
+        assertEquals(new Timezone("UTC+00:00").hashCode(), new Timezone("UTC+00:00").hashCode());
 
-        assertNotEquals(new Timezone("GMT+12").hashCode(), new Timezone("GMT-12").hashCode());
-        assertNotEquals(new Timezone("GMT+5").hashCode(), new Timezone("GMT+10").hashCode());
-        assertNotEquals(new Timezone("GMT-5").hashCode(), new Timezone("GMT-10").hashCode());
+        assertNotEquals(new Timezone("UTC+14:00").hashCode(), new Timezone("UTC-12:00").hashCode());
+        assertNotEquals(new Timezone("UTC+13:45").hashCode(), new Timezone("UTC-09:30").hashCode());
+        assertNotEquals(new Timezone("UTC+00:00").hashCode(), new Timezone("UTC+14:00").hashCode());
     }
 }

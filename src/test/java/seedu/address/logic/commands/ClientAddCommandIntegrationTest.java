@@ -28,7 +28,6 @@ public class ClientAddCommandIntegrationTest {
     @Test
     public void execute_newClient_success() {
         Client validClient = new ClientBuilder().build();
-
         Model expectedModel = new ModelManager(model.getTbmManager(), new UserPrefs());
         expectedModel.addClient(validClient);
         assertCommandSuccess(new ClientAddCommand(validClient), model,

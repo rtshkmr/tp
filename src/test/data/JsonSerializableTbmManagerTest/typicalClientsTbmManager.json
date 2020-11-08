@@ -6,7 +6,7 @@
       "email": "alice@example.com",
       "address": "123, Jurong West Ave 6, #08-111",
       "country": "SG",
-      "timezone": "GMT+8",
+      "timezone": "UTC+08:00",
       "contractExpiryDate": "1-4-2021",
       "clientNotes": [ {
           "contents": "lives in a pineapple",
@@ -23,7 +23,7 @@
       "email": "johnd@example.com",
       "address": "311, Clementi Ave 2, #02-25",
       "country": "SG",
-      "timezone": "GMT+8",
+      "timezone": "UTC+08:00",
       "contractExpiryDate": "3-12-2022",
       "clientNotes": [ {
           "contents": "his son is the devil's incarnate",
@@ -40,7 +40,7 @@
       "email": "heinz@example.com",
       "address": "wall street",
       "country": "US",
-      "timezone": "GMT-4",
+      "timezone": "UTC-04:00",
       "contractExpiryDate": "30-1-2022"
     }, {
       "name": "Daniel Meier",
@@ -48,7 +48,7 @@
       "email": "cornelia@example.com",
       "address": "10th street",
       "country": "SG",
-      "timezone": "GMT+8",
+      "timezone": "UTC+08:00",
       "contractExpiryDate": "28-2-2021"
     }, {
       "name": "Elle Meyer",
@@ -56,7 +56,7 @@
       "email": "werner@example.com",
       "address": "michegan ave",
       "country": "GB",
-      "timezone": "GMT+1",
+      "timezone": "UTC+01:00",
       "contractExpiryDate": "10-10-2024"
     }, {
       "name": "Fiona Kunz",
@@ -64,7 +64,7 @@
       "email": "lydia@example.com",
       "address": "little tokyo",
       "country": "JP",
-      "timezone": "GMT+9",
+      "timezone": "UTC+09:00",
       "contractExpiryDate": "9-11-2022"
     }, {
       "name": "George Best",
@@ -72,7 +72,7 @@
       "email": "anna@example.com",
       "address": "4th street",
       "country": "US",
-      "timezone": "GMT-4",
+      "timezone": "UTC-04:00",
       "contractExpiryDate": "2-8-2021"
     } ],
   "countryNotes": [ {
