@@ -8,7 +8,7 @@ import javafx.scene.layout.Region;
 import seedu.address.model.client.Client;
 
 /**
- * Panel containing the list of clients.
+ * The UI component that displays a panel containing the list of clients.
  */
 public class ClientListPanel extends UiPart<Region> {
 
@@ -29,8 +29,6 @@ public class ClientListPanel extends UiPart<Region> {
             return clientListViewCell;
         });
     }
-
-    // Selection test was removed due to lack of selection feature in AB3.
 
     /**
      * Custom {@code ListCell} that displays the graphics of a {@code Client} using a {@code ClientListCard}.

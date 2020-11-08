@@ -37,7 +37,6 @@ public class ClientListPanelTest extends GuiUnitTest {
     }
 
     /*
-     * TODO: Update accordingly when the GUI changes to accommodate Notes
      * This is probably useless as TBM has almost no significant interaction with the ListView.
      * However the this test is a good benchmark should we refactor the ListView. According to
      * changes suggested in displaying notes, more performance test may be needed for this specific ListView.

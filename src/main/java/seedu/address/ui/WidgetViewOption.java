@@ -12,22 +12,22 @@ public class WidgetViewOption {
     private static final String COUNTRY_NOTE = "COUNTRY_NOTE";
     private static final String NONE = "NONE";
 
-    private final boolean isClient;
-    private final boolean isCountryNote;
+    private final boolean isClientView;
+    private final boolean isCountryNoteView;
     private final Country country;
 
     /**
      * Initializes a WidgetViewOption.
      *
-     * @param isClient True if displaying client view.
-     * @param isCountryNote True if displaying country notes view.
+     * @param isClientView True if displaying client view.
+     * @param isCountryNoteView True if displaying country notes view.
      * @param country The country of the country notes to view.
      */
-    private WidgetViewOption(boolean isClient, boolean isCountryNote, Country country) {
-        assert !(isClient && isCountryNote) : "isClient and isCountryNote cannot be both true";
+    private WidgetViewOption(boolean isClientView, boolean isCountryNoteView, Country country) {
+        assert !(isClientView && isCountryNoteView) : "isClientView and isCountryNoteView cannot be both true";
         requireNonNull(country);
-        this.isClient = isClient;
-        this.isCountryNote = isCountryNote;
+        this.isClientView = isClientView;
+        this.isCountryNoteView = isCountryNoteView;
         this.country = country;
     }
 
@@ -63,8 +63,8 @@ public class WidgetViewOption {
      *
      * @return True if UI should display client view.
      */
-    public boolean isClient() {
-        return isClient;
+    public boolean isClientView() {
+        return isClientView;
     }
 
     /**
@@ -72,8 +72,8 @@ public class WidgetViewOption {
      *
      * @return True if UI should display country notes view.
      */
-    public boolean isCountryNote() {
-        return isCountryNote;
+    public boolean isCountryNoteView() {
+        return isCountryNoteView;
     }
 
     /**
@@ -87,9 +87,9 @@ public class WidgetViewOption {
 
     @Override
     public String toString() {
-        if (isClient) {
+        if (isClientView) {
             return CLIENT;
-        } else if (isCountryNote) {
+        } else if (isCountryNoteView) {
             return COUNTRY_NOTE;
         } else {
             return NONE;

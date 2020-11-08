@@ -33,6 +33,9 @@ public class CommandBox extends UiPart<Region> {
         commandTextField.textProperty().addListener((unused1, unused2, unused3) -> setStyleToDefault());
     }
 
+    /**
+     * Handles the UP and DOWN key code pressed event for navigating through the {@code CommandHistory}.
+     */
     @FXML
     private void handleKeyPressed(KeyEvent keyEvent) {
         if (keyEvent.getCode() == KeyCode.UP) {
@@ -43,7 +46,8 @@ public class CommandBox extends UiPart<Region> {
     }
 
     /**
-     * UP key event.
+     * Retrieves the previous command relative to the current point in the {@code CommandHistory}
+     * and replaces the text in {@code commandTextField} with the command.
      */
     private void getPreviousCommand() {
         if (history.hasPrevious()) {
@@ -55,7 +59,8 @@ public class CommandBox extends UiPart<Region> {
     }
 
     /**
-     * DOWN key event.
+     * Retrieves the next command relative to the current point in the {@code CommandHistory}
+     * and replaces the text in {@code commandTextField} with the command.
      */
     private void getNextCommand() {
         if (history.hasNext() || history.hasIncompletelyTypedCommand()) {
@@ -66,7 +71,7 @@ public class CommandBox extends UiPart<Region> {
     }
 
     /**
-     * Handles the Enter button pressed event.
+     * Handles the Enter button pressed event and begins the execution of the command based on user input.
      */
     @FXML
     private void handleCommandEntered() {

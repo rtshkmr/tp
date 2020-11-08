@@ -20,8 +20,8 @@ public class CommandResultTest {
         assertFalse(defaultCommandResult.isShowHelp());
         assertFalse(defaultCommandResult.isExit());
         assertEquals("NONE", defaultCommandResult.getWidgetViewOptionAsString());
-        assertFalse(defaultCommandResult.shouldDisplayClient());
-        assertFalse(defaultCommandResult.shouldDisplayCountryNote());
+        assertFalse(defaultCommandResult.shouldDisplayClientView());
+        assertFalse(defaultCommandResult.shouldDisplayCountryNoteView());
 
         CommandResult customCommandResult = new CommandResult("test", false, true, false,
                 WidgetViewOption.generateClientWidgetOption());
@@ -30,8 +30,8 @@ public class CommandResultTest {
         assertFalse(customCommandResult.isExit());
         assertEquals("CLIENT", customCommandResult.getWidgetViewOptionAsString());
         assertEquals(customCommandResult.getFeedbackToUser(), "test");
-        assertTrue(customCommandResult.shouldDisplayClient());
-        assertFalse(customCommandResult.shouldDisplayCountryNote());
+        assertTrue(customCommandResult.shouldDisplayClientView());
+        assertFalse(customCommandResult.shouldDisplayCountryNoteView());
 
         customCommandResult = new CommandResult("test", false, false, true,
                 WidgetViewOption.generateCountryNoteWidgetOption(Country.NULL_COUNTRY));
@@ -39,8 +39,8 @@ public class CommandResultTest {
         assertFalse(customCommandResult.isShowHelp());
         assertTrue(customCommandResult.isExit());
         assertEquals("COUNTRY_NOTE", customCommandResult.getWidgetViewOptionAsString());
-        assertFalse(customCommandResult.shouldDisplayClient());
-        assertTrue(customCommandResult.shouldDisplayCountryNote());
+        assertFalse(customCommandResult.shouldDisplayClientView());
+        assertTrue(customCommandResult.shouldDisplayCountryNoteView());
 
         customCommandResult = new CommandResult("test", true, false, false);
         assertTrue(customCommandResult.shouldResetWidget());
