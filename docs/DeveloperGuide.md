@@ -220,7 +220,7 @@ The mechanism to switch between displaying the Country Note List Panel, the Clie
 
 The following activity diagram illustrates what happens to the Display Panel when the user inputs a command.  
 
-![Switching Country Note Panel and Client View](images/CountryNotePanelClientViewActDiag.png)
+![Switching Country Note Panel, Client View, and default view](images/CountryNotePanelClientViewActDiag.png)
 
 ### Suggesting contacts
 
