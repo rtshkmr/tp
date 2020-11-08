@@ -48,7 +48,7 @@ You can reach us at the email `team4@emerald.pink`.
   - Add tests for View command
   - Maintain a showcase of MVP funcationalities
 
-### raysonkoh
+### Rayson Koh
 
 <img src="images/raysonkoh.png" width="200px">
 
