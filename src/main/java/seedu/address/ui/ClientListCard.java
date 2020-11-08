@@ -10,7 +10,7 @@ import javafx.scene.layout.VBox;
 import seedu.address.model.client.Client;
 
 /**
- * An UI component that displays information of a {@code Client}.
+ * The UI component that displays information of a {@code Client}.
  */
 public class ClientListCard extends UiPart<Region> {
 
@@ -21,7 +21,7 @@ public class ClientListCard extends UiPart<Region> {
      * As a consequence, UI elements' variable names cannot be set to such keywords
      * or an exception will be thrown by JavaFX during runtime.
      *
-     * @see <a href="https://github.com/se-edu/addressbook-level4/issues/336">The issue on TbmManager level 4</a>
+     * @see <a href="https://github.com/se-edu/addressbook-level4/issues/336">The issue on Address Book level 4</a>
      */
 
     public final Client client;

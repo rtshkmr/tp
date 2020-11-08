@@ -11,7 +11,6 @@ import seedu.address.model.country.Country;
 import seedu.address.model.note.CountryNote;
 
 public class CountryNoteListPanelTest extends GuiUnitTest {
-    //TODO: Add more tests
     private static final ObservableList<CountryNote> COUNTRY_NOTE_OBSERVABLE_LIST = FXCollections.observableArrayList();
     private static final long CARD_CREATION_TIMEOUT = 2500;
 

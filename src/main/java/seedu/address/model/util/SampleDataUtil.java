@@ -25,6 +25,9 @@ import seedu.address.model.tag.Tag;
  */
 public class SampleDataUtil {
 
+    /**
+     * Returns a standard list of sample client data.
+     */
     public static Client[] getSampleClients() {
         Client alex = new Client(new Name("Alex Yeoh"), new Phone("87438807"), new Email("alexyeoh@example.com"),
                 new Address("Blk 30 Geylang Street 29, #06-40"), new Country("SG"), new Timezone("UTC+08:00"),
@@ -65,25 +68,30 @@ public class SampleDataUtil {
         alexNote1Tags.add(new Tag("romantic"));
         Note alexNote1 = new Note("Wants to take his wife to Norway for New Years' Day");
         alexNote1.setTags(alexNote1Tags);
+
         Set<Tag> alexNote2Tags = new HashSet<>();
         alexNote2Tags.add(new Tag("altruist"));
         alexNote2Tags.add(new Tag("socialEnterprise"));
         Note alexNote2 = new Note("Likes doing volunteer work");
         alexNote2.setTags(alexNote2Tags);
+
         Set<Tag> alexNote3Tags = new HashSet<>();
         alexNote3Tags.add(new Tag("meetings"));
         alexNote3Tags.add(new Tag("workPreferences"));
         Note alexNote3 = new Note("Prefers to meet up at his office, not that much of a public spaces guy");
         alexNote3.setTags(alexNote3Tags);
+
         Set<Tag> alexNote4Tags = new HashSet<>();
         alexNote4Tags.add(new Tag("hobbies"));
         Note alexNote4 = new Note("Need to meet him to see his vintage Honda with a side-car."
                 + "He really loves old cars");
         alexNote4.setTags(alexNote4Tags);
+
         Set<Tag> alexNote5Tags = new HashSet<>();
         alexNote5Tags.add(new Tag("reminder"));
         Note alexNote5 = new Note("Birthday tomorrow");
         alexNote5.setTags(alexNote5Tags);
+
         alex.addClientNote(alexNote1);
         alex.addClientNote(alexNote2);
         alex.addClientNote(alexNote3);
@@ -92,28 +100,34 @@ public class SampleDataUtil {
         return new Client[] { alex, bernice, charlotte, david, irfan, roy };
     }
 
+    /**
+     * Returns a standard list of sample country note data.
+     */
     public static List<CountryNote> getSampleCountryNotes() {
-        CountryNote first = new CountryNote("Small domestic market as compared "
+        CountryNote firstCountryNote = new CountryNote("Small domestic market as compared "
                 + "to rest of SEA countries", new Country("SG"));
-        Set<Tag> firstTags = new HashSet<>();
-        firstTags.add(new Tag("marketsize"));
-        first.setTags(firstTags);
+        Set<Tag> firstCountryNoteTags = new HashSet<>();
+        firstCountryNoteTags.add(new Tag("marketsize"));
+        firstCountryNote.setTags(firstCountryNoteTags);
 
-        CountryNote second = new CountryNote("Political unrest in the capital",
+        CountryNote secondCountryNote = new CountryNote("Political unrest in the capital",
                 new Country("TH"));
-        Set<Tag> secondTags = new HashSet<>();
-        secondTags.add(new Tag("politics"));
-        second.setTags(secondTags);
+        Set<Tag> secondCountryNoteTags = new HashSet<>();
+        secondCountryNoteTags.add(new Tag("politics"));
+        secondCountryNote.setTags(secondCountryNoteTags);
 
-        CountryNote third = new CountryNote("A high-context country, hence building "
+        CountryNote thirdCountryNote = new CountryNote("A high-context country, hence building "
                 + "relationships is important for doing business", new Country("JP"));
-        Set<Tag> thirdTags = new HashSet<>();
-        thirdTags.add(new Tag("intercultural"));
-        third.setTags(thirdTags);
+        Set<Tag> thirdCountryNoteTags = new HashSet<>();
+        thirdCountryNoteTags.add(new Tag("intercultural"));
+        thirdCountryNote.setTags(thirdCountryNoteTags);
 
-        return Arrays.asList(first, second, third);
+        return Arrays.asList(firstCountryNote, secondCountryNote, thirdCountryNote);
     }
 
+    /**
+     * Returns TBM Manager with sample data.
+     */
     public static ReadOnlyTbmManager getSampleTbmManager() {
         TbmManager sampleTm = new TbmManager();
         for (Client sampleClient : getSampleClients()) {

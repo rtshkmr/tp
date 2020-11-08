@@ -21,17 +21,19 @@ import seedu.address.model.client.Timezone;
 import seedu.address.model.note.Note;
 
 /**
- * An Ui component that displays the information of {@code Client}.
+ * The UI component that displays the information of {@code Client}.
  */
 public class WidgetViewBox extends UiPart<Region> {
 
     private static final String FXML = "WidgetViewBox.fxml";
 
     private final ObservableList<Client> clientObservableList;
+
+    private TextClock textClock;
+    // Default values indicate that there is no client currently being viewed.
     private int displayedClientIndex = -1;
     private int clientListSize = -1;
     private Client displayedClient = null;
-    private TextClock textClock;
 
     @FXML
     private ScrollPane widgetScrollPane;
@@ -70,6 +72,7 @@ public class WidgetViewBox extends UiPart<Region> {
         clientObservableList.addListener((ListChangeListener<Client>) c -> {
             if (c.next()) {
                 if (clientObservableList.size() == clientListSize && !c.wasPermutated()) {
+                    // List size remains the same and ordering did not change
                     if (displayedClientIndex != -1) {
                         updateClientDisplay(clientObservableList.get(displayedClientIndex));
                     }

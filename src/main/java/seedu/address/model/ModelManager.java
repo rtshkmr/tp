@@ -60,12 +60,14 @@ public class ModelManager implements Model {
         defaultClientListOrder = Comparator.comparing(filteredClients::indexOf);
         filteredCountryNotes = new FilteredList<>(this.tbmManager.getCountryNoteList());
         sortedFilteredCountryNotes = new SortedList<>(filteredCountryNotes,
-                Comparator.comparing(CountryNote::getCountry)
-                        .thenComparingInt(filteredCountryNotes::indexOf));
+                Comparator.comparing(CountryNote::getCountry).thenComparingInt(filteredCountryNotes::indexOf));
         this.tagNoteMap = new TagNoteMap();
-        this.initialiseTagNoteMap(); // init TagNoteMap upon construction of modelManager
+        this.initialiseTagNoteMap(); // init TagNoteMap upon construction of ModelManager
     }
 
+    /**
+     * Initializes a ModelManager with a new {@code TbmManager} and {@code UserPrefs}.
+     */
     public ModelManager() {
         this(new TbmManager(), new UserPrefs());
     }
@@ -204,9 +206,6 @@ public class ModelManager implements Model {
         this.tagNoteMap.addTagsForNote(newTags, note);
     }
 
-    /**
-     * Initialises TagNoteMap from Clients notes and Country notes.
-     */
     @Override
     public void initialiseTagNoteMap() {
         this.tagNoteMap.initTagNoteMapFromClients(this.tbmManager.getClientList());

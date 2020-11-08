@@ -49,7 +49,7 @@ public class MainWindow extends UiPart<Stage> {
     @FXML
     private StackPane resultDisplayPlaceholder;
     @FXML
-    private StackPane statusbarPlaceholder;
+    private StackPane statusBarPlaceholder;
 
     /**
      * Creates a {@code MainWindow} with the given {@code Stage} and {@code Logic}.
@@ -69,6 +69,9 @@ public class MainWindow extends UiPart<Stage> {
         helpWindow = new HelpWindow(mainApp);
     }
 
+    /**
+     * Obtains the stage.
+     */
     public Stage getPrimaryStage() {
         return primaryStage;
     }
@@ -79,7 +82,8 @@ public class MainWindow extends UiPart<Stage> {
 
     /**
      * Sets the accelerator of a MenuItem.
-     * @param keyCombination the KeyCombination value of the accelerator
+     *
+     * @param keyCombination the KeyCombination value of the accelerator.
      */
     private void setAccelerator(MenuItem menuItem, KeyCombination keyCombination) {
         menuItem.setAccelerator(keyCombination);
@@ -122,7 +126,7 @@ public class MainWindow extends UiPart<Stage> {
         resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());
 
         StatusBarFooter statusBarFooter = new StatusBarFooter(logic.getTbmManagerFilePath());
-        statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());
+        statusBarPlaceholder.getChildren().add(statusBarFooter.getRoot());
 
         CommandBox commandBox = new CommandBox(this::executeCommand);
         commandBoxPlaceholder.getChildren().add(commandBox.getRoot());
@@ -213,13 +217,13 @@ public class MainWindow extends UiPart<Stage> {
 
             logger.info("Widget View Option: " + commandResult.getWidgetViewOptionAsString());
 
-            if (commandResult.shouldDisplayClient()) {
+            if (commandResult.shouldDisplayClientView()) {
                 logger.info("Toggling client view");
                 widgetPlaceholder.getChildren().clear();
                 widgetPlaceholder.getChildren().add(widgetViewBox.getRoot());
                 logger.info(logic.getWidgetClient().getName().fullName);
                 widgetViewBox.updateClientDisplay(logic.getWidgetClient());
-            } else if (commandResult.shouldDisplayCountryNote()) {
+            } else if (commandResult.shouldDisplayCountryNoteView()) {
                 logger.info("Toggling country notes view");
                 widgetPlaceholder.getChildren().clear();
                 countryNoteListPanel.setHeader(commandResult.getCountry());

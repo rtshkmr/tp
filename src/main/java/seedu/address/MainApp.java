@@ -72,8 +72,8 @@ public class MainApp extends Application {
 
     /**
      * Returns a {@code ModelManager} with the data from {@code storage}'s address book and {@code userPrefs}. <br>
-     * The data from the sample address book will be used instead if {@code storage}'s address book is not found,
-     * or an empty address book will be used instead if errors occur when reading {@code storage}'s address book.
+     * The data from the sample TBM Manager will be used instead if {@code storage}'s TBM Manager is not found,
+     * or an empty TBM Manager will be used instead if errors occur when reading {@code storage}'s TBM Manager.
      */
     private Model initModelManager(Storage storage, ReadOnlyUserPrefs userPrefs) {
         Optional<ReadOnlyTbmManager> tbmManagerOptional;

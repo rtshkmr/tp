@@ -32,17 +32,18 @@ public class TbmManager implements ReadOnlyTbmManager {
         countryNotesManager = new CountryNotesManager();
     }
 
+    /**
+     * Creates an empty TbmManager without any existing data.
+     */
     public TbmManager() {}
 
     /**
-     * Creates an TbmManager using the Clients in the {@code toBeCopied}
+     * Creates an TbmManager using the data in the {@code toBeCopied}
      */
     public TbmManager(ReadOnlyTbmManager toBeCopied) {
         this();
         resetData(toBeCopied);
     }
-
-    //// list overwrite operations
 
     /**
      * Replaces the contents of the client list with {@code clients} and the contents of the tag set with
@@ -110,10 +111,10 @@ public class TbmManager implements ReadOnlyTbmManager {
     }
 
     /**
-     * Checks whether the given country has the given countryNote.
+     * Checks whether the given country has the given {@code countryNote}.
      *
-     * @param countryNote The given countryNote
-     * @return True if the given country has the given countryNote.
+     * @param countryNote The given country note.
+     * @return True if the given country has the given {@code countryNote}.
      */
     public boolean hasCountryNote(CountryNote countryNote) {
         requireNonNull(countryNote);
@@ -121,9 +122,9 @@ public class TbmManager implements ReadOnlyTbmManager {
     }
 
     /**
-     * Adds the given countryNote to the given country.
+     * Adds the given {@code countryNote} into the notes manager for country.
      *
-     * @param countryNote The given countryNote
+     * @param countryNote The given country note
      */
     public void addCountryNote(CountryNote countryNote) {
         requireNonNull(countryNote);
@@ -150,8 +151,6 @@ public class TbmManager implements ReadOnlyTbmManager {
         requireNonNull(countryNoteToDelete);
         countryNotesManager.deleteCountryNote(countryNoteToDelete);
     }
-
-    //// util methods
 
     @Override
     public String toString() {
