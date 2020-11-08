@@ -151,6 +151,8 @@ Example:
 
   Adds a new client with name **Katya**, phone number **98123456**, email **katya@yahoo.com**, address **Vladivostok, Nevelskogo, bld. 15, appt. 256**, country **Russia**, timezone **UTC+03:00**, contract expiry date **2 Mar 2020**.
 
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#adding-a-client)
+
 #### 1.2: Deleting a client: `client delete`
 
 Deletes an existing client from **_TBM_**, you have to make reference to the Client's index. This can be easily read off from the client card as shown [here](#ui-when-viewing-clients).
@@ -162,6 +164,8 @@ Example:
 * Command: `client delete 5`
 
     Deletes the client at index 5 of the list panel.
+
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#deleting-a-client)
 
 #### 1.3: Editing a client: `client edit`
 
@@ -183,34 +187,7 @@ Examples:
 
     Edits **country** to `Japan` and **timezone** to `UTC+07:00`, other fields remain the same.
 
-
---- shift this part below to appendix C ---
-Given the client below:
-
-```
-Client 1
---------
-Name: Alex
-Phone: 911
-Country: Singapore
-Timezone: UTC+08:00
-...(other fields omitted)
-```
-Command: `client edit 1 c/JP tz/UTC+07:00`
-
-Alex's **country** and **timezone** will be edited, and the following will be the result.
-
-```
-Client 1
---------
-Name: Alex
-Phone: 911
-Country: Japan
-Timezone: UTC+07:00
-...(other fields omitted)
-```
-
---- the part above to be shifted to appendix C, with SS ----
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#editing-a-client)
 
 #### 1.4: Viewing _All_ your Clients: `client list`
 
@@ -239,6 +216,8 @@ Given the current list of clients:
 Command: `client view 2`
 
 The information for the client at index 2 of the list will be shown. In the example above, Alex's information will be displayed.
+
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#viewing-a-client)
 
 #### 1.6: Finding clients: `client find`
 
@@ -715,6 +694,70 @@ Here are the alternative stylistic choices that you might make when writing out 
 
 We've added screenshots for you to refer to, to determine easily what the output should be upon issuing a particular command.  
 
+### Adding a client
+
+In the initial state of TBM below, we can see that there are currently no clients in our application.
+
+![Client Add Before](images/client_add_before_ss.png)
+
+To add a client, we execute the following command:
+
+Command: `client add n/Katya p/98123456 e/katya@yahoo.com a/Vladivostok, Nevelskogo, bld. 15, appt. 256 c/RU tz/UTC+03:00 ce/2-3-2020`
+
+![Client Add After](images/client_add_after_ss.png)
+
+The client should appear with **name** Katya, **phone number** 98123456, **email address** katya@yahoo.com, **address** Vladivostok, Nevelskogo, bld. 15, appt. 256, **country** Russia, **timezone offset** of UTC+03:00 and a **contract expiry date** of 2 March 2020.
+
+[Back to command](#11-adding-a-client-client-add)
+
+### Deleting a client
+
+In the initial state of TBM below, we have one client **Katya** in our application.
+
+![Client Delete Before](images/client_delete_before_ss.png)
+
+We see that the number beside **Katya** indicates that she has a `CLIENT_INDEX` of `1`. If we wish to delete the client **Katya**, we execute the following command: 
+
+Command: `client delete 1`
+
+![Client Delete After](images/client_delete_after_ss.png)
+
+The client should now be removed from our application, and we now have an empty client list panel.
+
+[Back to command](#12-deleting-a-client-client-delete)
+
+### Editing a client
+
+In the initial state of TBM below, we have multiple clients in our client list panel. 
+
+![Client Edit Before](images/client_view_before_ss.png)
+
+Suppose the client named **Alex Yeoh** has changed his number to `12345678`, we obtain his `CLIENT_INDEX` from the number beside his name (1) in the list panel and we execute the following command: 
+
+Command: `client edit 1 p/12345678`
+
+![Client Edit After](images/client_edit_after_ss.png)
+
+As we can see, the client's number has changed from `87438807` to `12345678`.
+
+[Back to command](#13-editing-a-client-client-edit)
+
+### Viewing a client
+
+In the initial state of TBM below, we have multiple clients in our client list panel. Currently, the display panel on the left is showing the default home screen.
+
+![Client View Before](images/client_view_before_ss.png)
+
+If we want to know more information about the client named **Bernice Yu**, we obtain his `CLIENT_INDEX` from the number beside his name (2) in the list panel and we execute the following command: 
+
+Command: `client view 2`  
+
+![Client View After](images/client_view_after_ss.png)
+
+The client's information will appear in the display panel on the left where we can view more information regarding the client such as the time in his timezone as well as our notes for that client.
+
+[Back to command](#15-viewing-_a-particular_-client-client-view)
+
 ### **Filtering by country**
 
 Before filtering, here is what it looks like,
@@ -725,7 +768,7 @@ After filtering for clients from Spain,
 
 <img src="images/country_filter_after_ss.png" alt="Before filter" width="800" height="600">
 
-Back to [command](#17-filtering-clients-by-country-country-filter).
+[Back to command](#17-filtering-clients-by-country-country-filter).
 
 ### **Viewing country note**
 
@@ -733,7 +776,7 @@ Below is a screenshot of what happenss when you enter the command: `country note
 
 <img src="images/country_note_view_ss.png" alt="Viewing country note" width="800" height="600">
 
-Back to [command](#221-viewing-notes-for-a-country-country-note-view).
+[Back to command](#221-viewing-notes-for-a-country-country-note-view).
 
 ### **Adding country note**
 
@@ -745,7 +788,7 @@ After adding the note, the display automatically updates,
 
 <img src="images/country_note_add_ss.png" alt="After adding a country ntoe to Singapore" width="800" height="600">
 
-Back to [command](#222-adding-notes-for-a-country-country-note-add).
+[Back to command](#222-adding-notes-for-a-country-country-note-add).
 
 ### **Editing country note**
 
@@ -757,7 +800,7 @@ After editing, you will see the display update to show the new note,
 
 <img src="images/country_note_edit_ss.png" alt="After editing the first note of Singapore" width="800" height="600">
 
-Back to [command](#223-editing-notes-for-a-country-country-note-edit).
+[Back to command](#223-editing-notes-for-a-country-country-note-edit).
 
 ### **Dummy Command Template **
 
