@@ -2,7 +2,7 @@
 start
 :User inputs a command;
 
-'Since the beta syntax does not support placing the condition outside the
+'Since the syntax does not support placing the condition outside the
 'diamond we place it as the true branch instead.
 
 :LogicManager executes the user command
