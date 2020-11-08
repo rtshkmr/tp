@@ -20,7 +20,7 @@ Given below are how to use Gradle for some important project tasks.
   e.g. `./gradlew clean`
 
 * **`shadowJar`**: Uses the ShadowJar plugin to creat a fat JAR file in the `build/lib` folder, *if the current file is outdated*.<br>
-  e.g. `./gradlew shadowJar`.
+  e.g. `./gradlew shadowJar`
 
 * **`run`**: Builds and runs the application.<br>
   **`runShadow`**: Builds the application as a fat JAR, and then runs it.
@@ -29,8 +29,9 @@ Given below are how to use Gradle for some important project tasks.
   **`checkstyleTest`**: Runs the code style check for the test code base.
 
 * **`test`**: Runs all tests.<
-  * `./gradlew test` — Runs all tests
-  * `./gradlew clean test` — Cleans the project and runs tests
+  * `./gradlew test` — Runs all tests.
+  * `./gradlew clean test` — Cleans the project and runs tests.
+  * `./gradlew clean headless test` — Cleans the project and runs tests in headless mode.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -58,7 +59,7 @@ Any warnings or errors will be printed out to the console.
 
 **If adding new checks:**
 
-* Checks are implemented as executable `check-*` scripts within the `.github` directory. The `run-checks.sh` script will automatically pick up and run files named as such. That is, you can add more such files if you need and the CI will do the rest.
+* Checks are implemented as executable `check-*` scripts within the `.github` directory. The `run-checks.sh` script will automatically pick up and run files named as such. That is, you can add more such files if you need, and the CI will do the rest.
 
 * Check scripts should print out errors in the format `SEVERITY:FILENAME:LINE: MESSAGE`
   * SEVERITY is either ERROR or WARN.
@@ -74,6 +75,6 @@ Any warnings or errors will be printed out to the console.
 Here are the steps to create a new release.
 
 1. Update the version number in [`MainApp.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java).
-1. Generate a fat JAR file using Gradle (i.e., `gradlew shadow`).
+1. Generate a fat JAR file using Gradle (i.e., `gradlew shadowJar`).
 1. Tag the repo with the version number. e.g. `v0.1`
 1. [Create a new release using GitHub](https://help.github.com/articles/creating-releases/). Upload the JAR file you created.

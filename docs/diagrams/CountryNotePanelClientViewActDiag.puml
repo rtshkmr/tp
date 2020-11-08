@@ -18,11 +18,11 @@ else ([else])
   if () then ([commandResult.shouldDisplayCountryNote()])
       :Remove all child components in
       the Display Panel Container;
-      :Add the Container of the
-      Country Note Panel UI as a child component
+      :Add the Container of the Country Note
+      List Panel UI as a child component
       of the Display Panel Container;
   else ([else])
-    if () then ([commandResult.isResetWidget()])
+    if () then ([commandResult.shouldResetWidget()])
       :Remove all child components in
       the Display Panel Container;
       :Add the Container of the Client
