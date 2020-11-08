@@ -5,7 +5,8 @@ title: Developer Guide
 
 ## **Introduction**
 
-Welcome! We are excited that you want to learn about **_TBM_**.<br>
+Welcome! We are excited that you want to learn about **_TBM_**. **_TBM_** is a specialised contact management system targeted at business people with many international clients.
+<br><br> 
 This page contains step-by-step instructions on how to get started in contributing or getting yourself involved in this awesome project! However, before you get too excited, allow us to introduce you to the core concepts that underpins the heart of **_TBM_**.
 
 ### Travelling BusinessMan Design Concepts
@@ -14,14 +15,14 @@ This page contains step-by-step instructions on how to get started in contributi
 
 1. Scalable: Software which does not deteriorate in performance with increasing data sizes.
 
-1. Extensible: A community driven software development process, which encourages innovative inputs and contributions from our users. Features are easily integrated into the application when needed.
+1. Extensible: A community driven software development process, which encourages innovative inputs and contributions from our users. Features can be easily integrated into the application when needed.
 
 1. Privacy: We do not collect, store or misappropriate our client's data.
 
 1. CLI Optimised: Built by users for users. Our features in the application cater to users highly accustomed to the CLI.
 
-These concepts are the foundations of **_TBM_**, furthermore we believe in the value of having users being an active contributor to our project.
-With that being said, this guide will help orient you eager developers quickly, to things like,
+These concepts are the foundations of **_TBM_**, furthermore we believe in the value of having users be active contributors to our project.
+With that being said, this guide will help orient you eager developers quickly, to things like:
 
 1. Software design choices of **_TBM_**.
 
@@ -38,7 +39,7 @@ With that being said, this guide will help orient you eager developers quickly, 
 
 ## **Setting up, getting started**
 
-Refer to the guide [_Setting up and getting started_](SettingUp.md).
+Refer to the guide: [_Setting up and getting started_](SettingUp.md).
 
 --------------------------------------------------------------------------------------------------------------------
 
