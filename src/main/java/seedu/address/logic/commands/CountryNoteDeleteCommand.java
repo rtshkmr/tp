@@ -18,7 +18,7 @@ public class CountryNoteDeleteCommand extends Command {
     public static final String COMMAND_WORD = "country note delete";
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Deletes the country note at the given index in the currently viewed country note list panel.\n"
-            + "Parameters: INDEX\n"
+            + "Parameters: COUNTRY_NOTE_INDEX\n"
             + "Example: " + COMMAND_WORD + " 1";
     public static final String MESSAGE_SUCCESS = "Deleted country note at index %1$s: %2$s";
     public static final String MESSAGE_COUNTRY_NOTES_NOT_VISIBLE = "Country notes are not currently being displayed,"

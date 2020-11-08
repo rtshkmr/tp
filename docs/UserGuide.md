@@ -37,16 +37,8 @@ title: User Guide
 ### Using this User Guide
 This User Guide has been structured such that users can easily find and understand what they need.
 [About](#about) contains useful tips and information on reading this document.
-[Quickstart](#3quickstart) consists of instructions to set up this application
-[TBM Features](#features) includes the details of the 4 main features of **_TBM_**, which are
-
-* Country
-
-* Client
-
-* Note
-
-* Timezone
+[Quickstart](#quickstart) consists of instructions to set up this application
+[TBM Features](#tbms-features) includes the details of the main features of **_TBM_**, such as managing your clients and keeping track of important information.
 
 ### Tips
 
@@ -61,7 +53,7 @@ All commands follow the same format. The following explains notations used in in
 
 * Words in `UPPER_CASE` are the command parameters.
 
-	- Example: in `client view INDEX`, `INDEX` is the parameter supplied to the command `client view`. 
+	- Example: in `client view CLIENT_INDEX`, `CLIENT_INDEX` is the parameter supplied to the command `client view`. 
 	 e.g. `client view 1`
 
 * `[]` square brackets represent an optional parameter for the command.
@@ -121,7 +113,7 @@ Certain commands require parameters. A quick summary of these parameters as well
   e.g `n/NAME [ce/CONTRACT_EXPIRY_DATE]` can be used as `n/John Doe ce/2-3-2020` (both supplied) or as `n/John Doe` (optional parameter missing).
 
 * Items in round brackets mean that you have to supply at least one of them.<br>
-  e.g. `INDEX (n/NAME) (n/PHONE_NUMBER)` can be used as `1 n/John Doe` or `1 p/98899889` or `1 n/John Doe p/98899889`, but not as `1` (i.e. both items are not supplied).
+  e.g. `CLIENT_INDEX (n/NAME) (n/PHONE_NUMBER)` can be used as `1 n/John Doe` or `1 p/98899889` or `1 n/John Doe p/98899889`, but not as `1` (i.e. both items are not supplied).
 
 * Items with `…`​ after them can be used multiple times including zero times.<br>
   e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
@@ -163,7 +155,7 @@ Example:
 
 Deletes an existing client from **_TBM_**, you have to make reference to the Client's index. This can be easily read off from the client card as shown [here](#ui-when-viewing-clients).
 
-Format: `client delete INDEX`
+Format: `client delete CLIENT_INDEX`
 
 Example:
 
@@ -175,7 +167,7 @@ Example:
 
 Edits a client's information by their index in the list view. Only edits the fields that have been passed in as parameters.
 
-Format: `client edit INDEX (n/NAME) (p/PHONE) (e/EMAIL) (a/ADDRESS) (c/COUNTRY_CODE) (tz/TIMEZONE) (ce/CONTRACT_EXPIRY)`
+Format: `client edit CLIENT_INDEX (n/NAME) (p/PHONE) (e/EMAIL) (a/ADDRESS) (c/COUNTRY_CODE) (tz/TIMEZONE) (ce/CONTRACT_EXPIRY)`
 
 Examples:
 
@@ -229,13 +221,13 @@ Format: `client list`
 
 #### 1.5: Viewing _a Particular_ Client: `client view`
 
-Views the client specified by the `INDEX` parameter. All the details for this client as well as notes related to this client will be shown in the Display Panel.
+Views the client specified by the `CLIENT_INDEX` parameter. All the details for this client as well as notes related to this client will be shown in the Display Panel.
 <div markdown="block" class="alert alert-info">
 
 **:information_source:** Please refer to [this](#ui-when-viewing-clients) if you need to be re-acquainted with the UI for client related commands
 </div>
 
-Format: `client view INDEX`
+Format: `client view CLIENT_INDEX`
 
 Example:
 
@@ -330,7 +322,7 @@ Examples:
 
 Deletes a note of a client (denoted by a client's index) by the note's index.
 
-Format: `client note delete CLIENT_INDEX NOTE_INDEX`
+Format: `client note delete CLIENT_INDEX CLIENT_NOTE_INDEX`
 
 Examples:
 
@@ -357,7 +349,7 @@ Notes:
 
 Edits a note of a client (denoted by that client's index) by the note's index. Supplying tags to the command will add the tags onto the current existing tags for that note.
 
-Format: `client note edit CLIENT_INDEX NOTE_INDEX (nt/NOTE_STRING) (t/TAG)...`
+Format: `client note edit CLIENT_INDEX CLIENT_NOTE_INDEX (nt/NOTE_STRING) (t/TAG)...`
 
 Examples:
 
@@ -444,7 +436,7 @@ Edits a note that is associated with a specific country at the given index based
 
 Due to ambiguity, editing of a country note when the country notes panel is not being displayed is not allowed, and an error message will be shown if this is attempted.
 
-Format: `country note edit INDEX (nt/NOTE_STRING) (t/TAG)...`
+Format: `country note edit COUNTRY_NOTE_INDEX (nt/NOTE_STRING) (t/TAG)...`
 
 Example:
 
@@ -490,7 +482,7 @@ Deletes a note that is associated with a specific country at the given index bas
 
 Due to ambiguity, deleting of a country note when the country notes panel is not being displayed is not allowed, and an error message will be shown if this is attempted.
 
-Format: `country note delete INDEX`
+Format: `country note delete COUNTRY_NOTE_INDEX`
 
 Example:
 
@@ -592,22 +584,24 @@ Action | Format, Examples
 --------|------------------
 **List all clients** | `list`
 **Add client** | `client add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS c/COUNTRY_CODE tz/TIMEZONE [ce/CONTRACT_EXPIRY_DATE]` <br> e.g., `client add n/Katya p/98123456 e/katya@yahoo.com a/Vladivostok, Nevelskogo, bld. 15, appt. 256 c/RU tz/UTC+03:00 ce/22-12-2020`
-**Edit client** | `client edit INDEX (n/NAME) (p/PHONE) (e/EMAIL) (a/ADDRESS) (c/COUNTRY_CODE) (tz/TIMEZONE) (ce/CONTRACT_EXPIRY_DATE)`<br> e.g.,`client edit 3 c/JP tz/UTC+07:00`
-**View client** | `client view INDEX` <br> e.g., `client view 2`
+**Edit client** | `client edit CLIENT_INDEX (n/NAME) (p/PHONE) (e/EMAIL) (a/ADDRESS) (c/COUNTRY_CODE) (tz/TIMEZONE) (ce/CONTRACT_EXPIRY_DATE)`<br> e.g.,`client edit 3 c/JP tz/UTC+07:00`
+**View client** | `client view CLIENT_INDEX` <br> e.g., `client view 2`
 **Find client** | `client find KEYWORD [MORE_KEYWORDS]`<br> e.g., `client find Hans`
-**Delete client** | `client delete INDEX`<br> e.g., `client delete 3`
+**Delete client** | `client delete CLIENT_INDEX`<br> e.g., `client delete 3`
 **Add client note** | `client note add CLIENT_INDEX nt/NOTE_STRING [t/TAG]...` <br> e.g., `client note add 4 t/meeting nt/need to slowly convince him to sign the contract`
-**Delete client note** | `client note delete CLIENT_INDEX NOTE_INDEX` <br> e.g., `client note delete 3 2`
-**Edit client note** | `client note edit CLIENT_INDEX NOTE_INDEX (nt/NOTE_STRING) (t/TAG)...` <br> e.g., `client note edit 3 2 nt/Loves cats t/pets`
+**Delete client note** | `client note delete CLIENT_INDEX CLIENT_NOTE_INDEX` <br> e.g., `client note delete 3 2`
+**Edit client note** | `client note edit CLIENT_INDEX CLIENT_NOTE_INDEX (nt/NOTE_STRING) (t/TAG)...` <br> e.g., `client note edit 3 2 nt/Loves cats t/pets`
 **Filter by country** | `country filter c/COUNTRY_CODE` <br> e.g., `country filter c/SG`
 **View country note** | `country note view [c/COUNTRY_CODE]` <br> e.g., `country note view c/SG`
 **Add country note** | `country note add c/COUNTRY_CODE nt/NOTE_STRING [t/TAG]...` <br> e.g., `country note add c/SG nt/has one of the lowest coporate taxes in the world t/tax`
-**Edit country note** | `country note edit INDEX (nt/NOTE_STRING) (t/TAG)...` <br> e.g., `country note edit 1 nt/has one of the lowest coporate taxes in the world t/tax`
-**Delete country note** | `country note delete INDEX` <br> e.g., `country note delete 1`
+**Edit country note** | `country note edit COUNTRY_NOTE_INDEX (nt/NOTE_STRING) (t/TAG)...` <br> e.g., `country note edit 1 nt/has one of the lowest coporate taxes in the world t/tax`
+**Delete country note** | `country note delete COUNTRY_NOTE_INDEX` <br> e.g., `country note delete 1`
 **Get suggestions** | `client suggest by/SUGGESTION_TYPE [by/SUGGESTION_TYPE]...` <br> e.g., `client suggest by/available by/frequency`
 **Clear** | `clear`
 **Exit** | `exit`
 **Help** | `help`
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## **Parameter Constraints Summary**
 
@@ -623,7 +617,7 @@ Parameter | Prefix | Constraints, Examples
 **NOTE_STRING** | `nt/` | Notes can take any values, and it should not be blank. <br> e.g. `nt/Likes cats`
 **TAG** | `t/` | Tags names should be alphanumeric and have a maximum of 45 characters. <br> e.g. `t/important`
 **SUGGESTION_TYPE** | `by/` | Suggestion types can only be either `available`, `contract` or `frequency`. <br> e.g. `by/available`
-**INDEX** | - | Index is a number greater than 0 that is based on the numberings beside each client or note. <br> e.g. `1` would refer to the first client or note.
+**CLIENT_INDEX / CLIENT_NOTE_INDEX / COUNTRY_NOTE_INDEX** | - | Index is a number greater than 0 that is based on the numberings beside each client or note. <br> e.g. `1` would refer to the first client or note.
 
 --------------------------------------------------------------------------------------------------------------------
 
