@@ -51,7 +51,8 @@ This User Guide has been structured such that users can easily find and understa
 ### Tips
 
 <div markdown="block" class="alert alert-info">
-</div>  This flags a tip for the user.
+**:information_source:** This is a tip for users.
+</div> 
 
 ### 2.3 Command Syntax
  
