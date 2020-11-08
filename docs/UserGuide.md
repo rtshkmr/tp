@@ -33,6 +33,41 @@ title: User Guide
 
 --------------------------------------------------------------------------------------------------------------------
 
+## **About**
+### Using this User Guide
+This User Guide has been structured such that users can easily find and understand what they need.
+[About](#2-about) contains useful tips and information on reading this document.
+[Quickstart](#3-getting-started) consists of instructions to set up this application
+[TBM Features](#4-features) includes the details of the 4 main features of **_TBM_** which are
+
+* Country
+
+* Client
+
+* Note
+
+* Timezone
+
+### Tips
+
+<div markdown="block" class="alert alert-info">
+</div>  This flags a tip for the user.
+
+### 2.3 Command Syntax
+ 
+All commands follow the same format. The following explains notations used in indicating commaand formats.
+
+* Words in `UPPER_CASE` are the command parameters.
+
+	- Example: in `client view INDEX`, `INDEX` is the parameter supplied to the command `client view`. 
+	 e.g. `client view 1`
+
+* `[]` square brackets represent an optional parameter for the command.
+
+    - Example: `client note add CLIENT_INDEX nt/NOTE_STRING [t/TAG]...`, `t/TAG` is an optional parameter.
+    e.g. `client note add 1 nt/Birthday tmr` / `client note add nt/Birthday tmr t/reminder`
+    
+--------------------------------------------------------------------------------------------------------------------
 ## **Quickstart**
 
 <div markdown="block" class="alert alert-info">
@@ -684,6 +719,3 @@ each ss window  size to be 800x600px
 
 link the command description above to this section so users can navigate to here easily 
 link a return link back to the description as well
-
-
-
