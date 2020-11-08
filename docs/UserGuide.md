@@ -107,11 +107,11 @@ Format: `help`
 
 ### **1. Managing your Clients** 
 
-To do your ** _business in bliss_** , you need to keep track of a multitude of clients and, you need to do it quickly. **Adding**, **Deleting**, **Editing**, **Viewing** and **Finding** your clients can be done in a mere _handful of keystrokes_ that make the most out of your fast typing speeds.
+To do your **_business in bliss_** , you need to keep track of a multitude of clients and, you need to do it quickly. **Adding**, **Deleting**, **Editing**, **Viewing** and **Finding** your clients can be done in a mere _handful of keystrokes_ that make the most out of your fast typing speeds.
 
 #### 1.1: Adding a client: `client add`
 
-Adds a new client to **_TBM_**.
+Adds a new client into **_TBM_**, you simply have to provide the mandatory parameters as described by the format below. Adding the other optional parameters can be done by subsequently issuing an `edit` command for that client. 
 
 Format: `client add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS c/COUNTRY_CODE tz/TIMEZONE [ce/CONTRACT_EXPIRY_DATE]`
 
@@ -124,7 +124,7 @@ Example:
 
 #### 1.2: Deleting a client: `client delete`
 
-Deletes a client by their index in the list view.
+Deletes an existing client from **_TBM_**, you have to make reference to the Client's index. This can be easily read off from the client card as shown [here](#ui-when-viewing-clients).
 
 Format: `client delete INDEX`
 
@@ -154,6 +154,8 @@ Examples:
 
     Edits **country** to `Japan` and **timezone** to `UTC+07:00`, other fields remain the same.
 
+
+--- shift this part below to appendix C ---
 Given the client below:
 
 ```
@@ -178,16 +180,19 @@ Country: Japan
 Timezone: UTC+07:00
 ...(other fields omitted)
 ```
-#### 1.4: Viewing All your Clients: `client list`
 
-Shows a list of all clients in **_TBM_**. If a client's data fields are too long, they may be cut off in the client card, but you can view them in full using the [`client view`](#viewing-a-client--client-view) command.
+--- the part above to be shifted to appendix C, with SS ----
+
+#### 1.4: Viewing _All_ your Clients: `client list`
+
+Shows a list of all clients in **_TBM_**. Client Cards are intended to display the most important details succinctly. Therefore, if a particular data field is too long, you should view them view them in full using the [`client view`](#viewing-a-client--client-view) command.
 This command will also reset the left display panel to its default view. 
 
 Format: `client list`
 
-#### 1.5: Viewing a Client: `client view`
+#### 1.5: Viewing _a Particular_ Client: `client view`
 
-Views the client specified by the `INDEX` parameter.
+Views the client specified by the `INDEX` parameter. All the details for this client as well as notes related to this client will be shown in the Display Panel.
 <div markdown="block" class="alert alert-info">
 
 **:information_source:** Please refer to [this](#ui-when-viewing-clients) if you need to be re-acquainted with the UI for client related commands
@@ -231,7 +236,7 @@ Examples:
 
 #### 1.7: Filtering clients by country: `country filter`
 
-Filters the list of clients by the specified country.
+FIlters and gives you a list of clients that are associated to the specificed country.
 
 Format: `country filter c/COUNTRY_CODE`
 
@@ -260,7 +265,7 @@ Managing your relationships with your Clients is quick and easy thanks to **_TBM
 
 ##### 2.1.1: Adding client notes: `client note add`
 
-Adds a note to the client at the specified index in the list view. If a note with the exact same content and tags already exists, a "duplicate note" error will be displayed.
+Adds a note to a particular client at the specified index in the list view. **_TBM_** will notify you with a **"duplicate note"** message if you happen to add a note which already exists (i.e. has the same content and set of tags). We do this to avoid unnecessary clutter for you.
 
 <div markdown="block" class="alert alert-info">
 **:information_source:** Even if the client is not currently being displayed in the left display panel, client notes for that client can still be added, as long as that client is present in the client list view.
