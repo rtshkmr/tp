@@ -5,8 +5,7 @@ title: Ritesh Kumar's Project Portfolio Page
 
 ## Project: Travelling BusinessMan
 
-Travelling BusinessMan is a desktop application that manages notes and contacts across multiple
-countries and timezones for businessmen who travels a lot.
+Travelling BusinessMan is a desktop application that manages notes and clients across multiple countries and timezones for businessmen who travel a lot and have many international clients. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 24 kLoC.
 
 Given below are my contributions to the project.
 

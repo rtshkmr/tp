@@ -21,7 +21,7 @@ import seedu.address.commons.core.LogsCenter;
 public class HelpWindow extends UiPart<Stage> {
 
     public static final String USERGUIDE_URL = "https://ay2021s1-cs2103t-f11-4.github.io/tp/UserGuide.html";
-    public static final String USERGUIDE_MESSAGE = "For more information, refer to the user guide: ";
+    public static final String USERGUIDE_MESSAGE = "For more information, refer to our user guide: ";
     public static final String HELP_TITLE = "Commonly used commands";
     public static final String COMMON_COMMANDS =
             "* client list\n"
@@ -31,6 +31,7 @@ public class HelpWindow extends UiPart<Stage> {
             + "(ce/CONTRACT_EXPIRY_DATE)\n"
             + "* client view INDEX\n"
             + "* client find KEYWORD [MORE_KEYWORDS]\n"
+            + "* client suggest by/SUGGESTION_TYPE [by/SUGGESTION_TYPE]...\n"
             + "* client delete INDEX\n"
             + "* client note add CLIENT_INDEX nt/NOTE_STRING [t/TAG]...\n"
             + "* client note delete CLIENT_INDEX NOTE_INDEX\n"
@@ -40,7 +41,6 @@ public class HelpWindow extends UiPart<Stage> {
             + "* country note add c/COUNTRY_CODE nt/NOTE_STRING [t/TAG]...\n"
             + "* country note edit INDEX (nt/NOTE_STRING) (t/TAG)...\n"
             + "* country note delete INDEX\n"
-            + "* suggest by/SUGGESTION_TYPE [by/SUGGESTION_TYPE]...\n"
             + "* clear\n"
             + "* exit\n"
             + "* help";

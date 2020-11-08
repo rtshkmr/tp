@@ -5,7 +5,7 @@ title: Lim Ming Chong's Project Portfolio Page
 
 ## Project: Travelling BusinessMan
 
-Travelling BusinessMan is a desktop application that manages notes and contacts across multiple countries and timezones for businessmen who travels a lot. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 24 kLoC.
+Travelling BusinessMan is a desktop application that manages notes and clients across multiple countries and timezones for businessmen who travel a lot and have many international clients. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 24 kLoC.
 
 Given below are my contributions to the project.
 
@@ -13,6 +13,7 @@ Given below are my contributions to the project.
   * Added option to close help window using the Esc key (Pull request [\#133](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/133))
   * Created the `NoteCard` UI component to view client and country notes in a user-friendly way and implemented a better GUI display for `country note view` and `country note view c/COUNTRY` (Pull request [\#247](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/247))
   * Co-authored pull request [\#197](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/197) to implement GUI testing and integrate into GitHub Continuous Integration workflow
+    * Credits: Address Book 4's [codebase](https://github.com/se-edu/addressbook-level4) was referenced  
   * Added `ContractExpiryDate` field to `Client` (Pull request [\#191](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/191))
   * `client suggest by/contract` command
   * Implemented sorting for client list for `SuggestCommand` purposes (Pull request [\#221](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/221))
@@ -24,9 +25,9 @@ Given below are my contributions to the project.
   * Created walking skeleton for `v1.2` (Pull request [\#115](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/115))
 
 * **Enhancements to existing features**:
-  * Refactored all instances of `person` to `client` (Pull request [\#116](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/116)) 
+  * Refactored all instances of `person` to `client` (Pull request [\#116](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/116))
   * Updated checkstyle to better enforce code quality (Pull requests [\#128](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/128), [\#216](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/216) (Co-authored))
-  * Implemented defensive truncation of the window size and position read from user preferences to ensure the application renders on screen properly even if `preferences.json` is edited (Pull request [\#352](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/352)) 
+  * Implemented defensive truncation of the window size and position read from user preferences to ensure the application renders on screen properly even if `preferences.json` is edited (Pull request [\#352](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/352))
   * Consistently increased test coverage in pull requests (Pull requests [\#191](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/191), [\#197](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/197) (Co-authored), [#\203](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/203) (Co-authored), [\#206](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/206), [\#258](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/258), [\#271](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/271), [\#274](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/274), [\#355](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/355))
   * Checked and polished code quality for the `logic` package (Pull request [\#362](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/362))
   * Cleaned up and standardized test code (Pull request [\#271](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/271))
@@ -43,7 +44,7 @@ Given below are my contributions to the project.
   * Contributed to forum discussions (examples: [\#36](https://github.com/nus-cs2103-AY2021S1/forum/issues/36), [\#62](https://github.com/nus-cs2103-AY2021S1/forum/issues/62), [\#71](https://github.com/nus-cs2103-AY2021S1/forum/issues/71), [\#110](https://github.com/nus-cs2103-AY2021S1/forum/issues/110), [\#126](https://github.com/nus-cs2103-AY2021S1/forum/issues/126), [\#132](https://github.com/nus-cs2103-AY2021S1/forum/issues/132), [\#145](https://github.com/nus-cs2103-AY2021S1/forum/issues/145), [\#146](https://github.com/nus-cs2103-AY2021S1/forum/issues/146), [\#169](https://github.com/nus-cs2103-AY2021S1/forum/issues/169), [\#239](https://github.com/nus-cs2103-AY2021S1/forum/issues/239), [\#295](https://github.com/nus-cs2103-AY2021S1/forum/issues/295), [\#296](https://github.com/nus-cs2103-AY2021S1/forum/issues/296), [\#316](https://github.com/nus-cs2103-AY2021S1/forum/issues/316), [\#336](https://github.com/nus-cs2103-AY2021S1/forum/issues/336))
   * Gave suggestions for other teams in the class (examples: [\#309](https://github.com/nus-cs2103-AY2021S1/forum/issues/309))
   * Reported bugs in other teams' products:
-    * [25 issues created during the Practical Exam Dry-Run](https://github.com/qwoprocks/ped/issues)
+    * [25 issues reported during the Practical Exam Dry-Run](https://github.com/qwoprocks/ped/issues)
 
 * **Tools**:
   * Added a [GitHub action](https://github.com/cloudbees/plantuml-github-action) to automatically generates and commits images of UML diagrams when .puml files are changed (Pull requests [\#135](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/135), [\#141](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/141))
