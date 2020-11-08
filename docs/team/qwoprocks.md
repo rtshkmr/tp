@@ -43,7 +43,7 @@ Given below are my contributions to the project.
   * Contributed to forum discussions (examples: [\#36](https://github.com/nus-cs2103-AY2021S1/forum/issues/36), [\#62](https://github.com/nus-cs2103-AY2021S1/forum/issues/62), [\#71](https://github.com/nus-cs2103-AY2021S1/forum/issues/71), [\#110](https://github.com/nus-cs2103-AY2021S1/forum/issues/110), [\#126](https://github.com/nus-cs2103-AY2021S1/forum/issues/126), [\#132](https://github.com/nus-cs2103-AY2021S1/forum/issues/132), [\#145](https://github.com/nus-cs2103-AY2021S1/forum/issues/145), [\#146](https://github.com/nus-cs2103-AY2021S1/forum/issues/146), [\#169](https://github.com/nus-cs2103-AY2021S1/forum/issues/169), [\#239](https://github.com/nus-cs2103-AY2021S1/forum/issues/239), [\#295](https://github.com/nus-cs2103-AY2021S1/forum/issues/295), [\#296](https://github.com/nus-cs2103-AY2021S1/forum/issues/296), [\#316](https://github.com/nus-cs2103-AY2021S1/forum/issues/316), [\#336](https://github.com/nus-cs2103-AY2021S1/forum/issues/336))
   * Gave suggestions for other teams in the class (examples: [\#309](https://github.com/nus-cs2103-AY2021S1/forum/issues/309))
   * Reported bugs in other teams' products:
-    * [25 issues created during the Practical Exam Dry-Run](https://github.com/qwoprocks/ped/issues)
+    * [25 issues reported during the Practical Exam Dry-Run](https://github.com/qwoprocks/ped/issues)
 
 * **Tools**:
   * Added a [GitHub action](https://github.com/cloudbees/plantuml-github-action) to automatically generates and commits images of UML diagrams when .puml files are changed (Pull requests [\#135](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/135), [\#141](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/141))
