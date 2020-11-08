@@ -379,7 +379,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 * **Alternative 2:** Individual command knows how to undo/redo by
   itself.
-  * Pros: Will use less memory (e.g. for `delete`, just save the client being deleted).
+  * Pros: Will use less memory (e.g. for `client delete`, just save the client being deleted).
   * Cons: We must ensure that the implementation of each individual command are correct.
 
 _{more aspects and alternatives to be added}_
@@ -582,7 +582,6 @@ Given below are instructions to test the app manually. Additionally, testers can
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** These instructions only provide a starting point for testers to work on;
 testers are expected to do more *exploratory* testing.
-
 </div>
 
 ### Launch and shutdown
@@ -633,7 +632,7 @@ testers are expected to do more *exploratory* testing.
 
 With an estimate value of **100** to be the level of effort required to develop **AB3**, we would place the effort required to deliver the current version of **TBM** at **205**.
 
-Major changes are changes that required a significant amount of effort (an estimate minimum of 68 man hours per change) from the team to coordinate, plan, implement, review, and optimize, while minor changes are changes that required a moderate amount of effort (an estimated minimum of 20 man hours per change).
+Major changes are changes that required a significant amount of effort (an estimate minimum of 68 man-hours per change) from the team to coordinate, plan, implement, review, and optimize, while minor changes are changes that required a moderate amount of effort (an estimated minimum of 20 man-hours per change).
 
 ### Major Changes
 
@@ -641,11 +640,11 @@ Major changes are changes that required a significant amount of effort (an estim
 
 To give users the ability to write notes capable of being handled in a generic manner for the entities of `Client` and `Country`, a `Note` class was created and a `CountryNote` class extended from it. Client notes could be stored easily by allowing clients to contain client-specific notes and country notes had to be managed by the `CountryNotesManager` controller class to handle the mapping between unique `Country` objects and their associated Notes. 
 
-Unique`Tag` objects were implemented by having a `TagNoteMap` class that keeps track of the association between unique `Note` and `Tag` objects. Storage of this many-to-many relationship required effort in circumventing the no-DBMS constraint imposed by the module. We chose to programatically generate the `TagNoteMap` object upon TBM's start-up with the aim of reducing file-size of the JSON data files on the user's hard-drive.
+Unique`Tag` objects were implemented by having a `TagNoteMap` class that keeps track of the association between unique `Note` and `Tag` objects. Storage of this many-to-many relationship required effort in circumventing the no-DBMS constraint imposed by the module. We chose to programmatically generate the `TagNoteMap` object upon TBM's start-up with the aim of reducing file-size of the JSON data files on the user's hard-drive.
 
 **2. Additional Client Fields**
 
-We refactored the codebase as well as the documentation from `Person` in AB3 to `Client` in TBM with additional fields to fit our target audience. Adding of simple tags were moved to a new note package that allowed more freedom and flexibility in adding data to clients. We added new fields in `Country`, `Timezone`, `ContractExpiryDate`, `LastModifiedInstant`. `Country` and `Timezone` required non-trivial validation and testing to verify their correctness. `Timezone`, `ContractExpiryDate` and `LastModifiedInstant` are necessary for suggestions. The `LastModifiedInstant` class serves as metadata that is not directly exposed to the user but is only updated upon any logical modifications to a client object.
+We refactored the codebase as well as the documentation from `Person` in AB3 to `Client` in TBM with additional fields to fit our target audience. Adding of simple tags was moved to a new note package that allowed more freedom and flexibility in adding data to clients. We added new fields in `Country`, `Timezone`, `ContractExpiryDate`, `LastModifiedInstant`. `Country` and `Timezone` required non-trivial validation and testing to verify their correctness. `Timezone`, `ContractExpiryDate` and `LastModifiedInstant` are necessary for suggestions. The `LastModifiedInstant` class serves as metadata that is not directly exposed to the user but is only updated upon any logical modifications to a client object.
 
 **3. Client Suggestion**
 
@@ -653,7 +652,7 @@ A `ClientSuggestionType` class was created which acts as a controller class that
 
 **4. GUI**
 
-In line with human-centric UX design, TBM's GUI was changed to be visually appealing, intuitive, informative, smooth, and have a flexible layout. We made effort to ensure that the layout was consistent and eliminated weird behaviours resulting from limitations of JavaFX. One challenge was that the client cards in **AB3** had an undefined behaviour where they changed sizes when being clicked on, even though there is no expected response upon clicking. We fixed this by setting `ListViewCell` to disabled.
+In line with human-centric UX design, TBM's GUI was changed to be visually appealing, intuitive, informative, smooth, and have a flexible layout. We made effort to ensure that the layout was consistent and eliminated weird behaviours resulting from limitations of JavaFX. One challenge was that the client cards in **AB3** had an undefined behaviour where they changed sizes when being clicked on, even though there is no expected response upon clicking. We fixed this by setting `ListViewCell` to `disabled`.
 
 **5. Automated GUI Testing**
 
@@ -673,7 +672,7 @@ The command format of TBM had to be modified from AB3 to account for client-rela
 
 **2. Command Parsing**
 
-Extending on the original parsing of AB3, we modified the command parsing to accomodate our command format, and further modularized code in `MainParser` to make the codebase easier to read and test.
+Extending on the original parsing of AB3, we modified the command parsing to accommodate our command format, and further modularized code in `MainParser` to make the codebase easier to read and test.
 
 **3. Command History**
 
