@@ -21,7 +21,8 @@ public class ClientSuggestCommand extends Command {
     public static final String COMMAND_WORD = "client suggest";
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Suggests a list of all clients based on the "
             + "suggestion types specified in the arguments.\n"
-            + "Parameters: " + PREFIX_SUGGEST + "SUGGESTION_TYPE\n"
+            + "Parameters: " + PREFIX_SUGGEST + "SUGGESTION_TYPE "
+            + "[" + PREFIX_SUGGEST + "SUGGESTION_TYPE]...\n"
             + "Example: " + COMMAND_WORD + " " + PREFIX_SUGGEST + ClientSuggestionType.BY_FREQUENCY + "\n"
             + "Example: " + COMMAND_WORD + " " + PREFIX_SUGGEST + ClientSuggestionType.BY_AVAILABLE + "\n"
             + "Example: " + COMMAND_WORD + " " + PREFIX_SUGGEST + ClientSuggestionType.BY_CONTRACT;

@@ -22,7 +22,7 @@ public class ClientNoteAddCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a note associated to a client "
             + "by the index number used in the displayed client list. "
             + "Existing values will be overwritten by the input values.\n"
-            + "Parameters: INDEX " + PREFIX_NOTE + "NOTE_STRING [" + PREFIX_TAG + "TAG]...\n"
+            + "Parameters: CLIENT_INDEX " + PREFIX_NOTE + "NOTE_STRING [" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 " + PREFIX_NOTE + "client note content";
     private static final String MESSAGE_DUPLICATE_CLIENT_NOTE = "The client note already exists";
     private static final String MESSAGE_SUCCESS = "Successfully added client note";

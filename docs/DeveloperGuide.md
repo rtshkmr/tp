@@ -180,6 +180,22 @@ The `TagNoteMap#initTagNoteMapFromNotes()` is exposed in the `Model` interface a
 
 Given below is an example usage scenario and how mapping mechanism behaves at each step.
 
+
+`TagNoteMap`'s storage had two alternative implementations of our choosing: 
+
+1. Create JSON adaptations of the association class which holds the relevant many-to-many relationship so that it could simply be loaded upon application start-up.
+
+2. Programatically initialise a single `TagNoteMap` object at application start-up. 
+
+
+Choosing between 1 and 2 has a trade-off between storage-file-size and some overhead operation for initialising at startup. We realised that the file size issue would be a bigger issue and our tests showed that initialising has no visiable impact on the User Experience hence we chose option 2.
+
+Here is how `TagNoteMap` is initialised at TBM's startup: 
+
+
+-- insert sequence diagram to describe how tagnotemap is initialised upon tbm startup ---
+
+
 ### Associating Notes and Countries
 
 #### Implementation
@@ -383,6 +399,19 @@ The following activity diagram summarizes what happens when a user executes a ne
   * Cons: We must ensure that the implementation of each individual command are correct.
 
 _{more aspects and alternatives to be added}_
+
+
+### \[Proposed\] Find by Tags
+
+The use of `TagNoteMap` as an association class to keep track of the many-to-many relationship between `Tag` and `Note` allows for easy addition of a "Find by Tags" feature. `TagNoteMap` has `tagToNotesMap` and `noteToTagsMap` which map a single entity to a collection of all the other associated objects of the other entity. 
+
+Hence a valid command syntax of `find byTag/TAG_NAME` would be a minimal change to the 
+
+-- insert common tagnote map implementation uml class diagram -- 
+
+
+The complication lies in the GUI implementation to display the output of the find by tag. This is because the return values will be both country and client notes (which themselves are associated to countries and clients) so while we might reuse the Display Panel area, we would still a modification of cards to indicate the entity type (`Client` or `Country`). 
+
 
 ### \[Proposed\] Data archiving
 
