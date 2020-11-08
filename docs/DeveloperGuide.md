@@ -274,11 +274,11 @@ Step 1. The user launches the application for the first time. The `VersionedTbmM
 
 ![UndoRedoState0](images/UndoRedoState0.png)
 
-Step 2. The user executes `delete 5` command to delete the 5th client in the address book. The `delete` command calls `Model#commitTbmManager()`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `tbmManagerStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state.
+Step 2. The user executes `client delete 5` command to delete the 5th client in `TbmManager`. The `client delete` command calls `Model#commitTbmManager()`, causing the modified state of the address book after the `client delete 5` command executes to be saved in the `tbmManagerStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state.
 
 ![UndoRedoState1](images/UndoRedoState1.png)
 
-Step 3. The user executes `add n/David …​` to add a new client. The `add` command also calls `Model#commitTbmManager()`, causing another modified address book state to be saved into the `tbmManagerStateList`.
+Step 3. The user executes `client add n/David …​` to add a new client. The `client add` command also calls `Model#commitTbmManager()`, causing another modified address book state to be saved into the `tbmManagerStateList`.
 
 ![UndoRedoState2](images/UndoRedoState2.png)
 
@@ -309,11 +309,11 @@ The `redo` command does the opposite — it calls `Model#redoTbmManager()`, 
 
 </div>
 
-Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitTbmManager()`, `Model#undoTbmManager()` or `Model#redoTbmManager()`. Thus, the `tbmManagerStateList` remains unchanged.
+Step 5. The user then decides to execute the command `client list`. Commands that do not modify `TbmManager`, such as `client list`, will usually not call `Model#commitTbmManager()`, `Model#undoTbmManager()` or `Model#redoTbmManager()`. Thus, the `tbmManagerStateList` remains unchanged.
 
 ![UndoRedoState4](images/UndoRedoState4.png)
 
-Step 6. The user executes `clear`, which calls `Model#commitTbmManager()`. Since the `currentStatePointer` is not pointing at the end of the `tbmManagerStateList`, all address book states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `add n/David …​` command. This is the behavior that most modern desktop applications follow.
+Step 6. The user executes `clear`, which calls `Model#commitTbmManager()`. Since the `currentStatePointer` is not pointing at the end of the `tbmManagerStateList`, all address book states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `client add n/David …​` command. This is the behavior that most modern desktop applications follow.
 
 ![UndoRedoState5](images/UndoRedoState5.png)
 
