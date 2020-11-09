@@ -21,5 +21,7 @@ JsonUserPrefsStorage .left.|> UserPrefsStorage
 JsonTbmManagerStorage .left.|> TbmManagerStorage
 JsonTbmManagerStorage .down.> JsonSerializableTbmManagerStorage
 JsonSerializableTbmManagerStorage .right.> JsonSerializableClient
-JsonSerializableClient .right.> JsonAdaptedTag
+JsonSerializableClient .right.> JsonAdaptedNote
+JsonAdaptedNote .up.> JsonAdaptedTag
+JsonSerializableTbmManagerStorage .down.> JsonAdaptedNote
 @enduml
