@@ -844,7 +844,7 @@ Below is a screenshot of what happens when you enter the command: `country note 
 
 ### **Adding country note**
 
-Before adding a note to Singapore, there are only two notes for Singapore,
+Before adding a note to Singapore, there is only one note for Singapore,
 
 <img src="images/country_note_view_ss.jpg" alt="Before adding a country note to Singapore" width="800" height="600">
 
