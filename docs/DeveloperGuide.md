@@ -488,7 +488,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 (For all use cases below, the **System** is the `TBM` and the **Actor** is the `user`, unless specified otherwise)
 
-#### **UC1 - Adding a Client**
+#### UC1 - Adding a Client
 
 **MSS**
 
@@ -507,7 +507,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
-#### **UC2 - Finding Clients**
+#### UC2 - Finding Clients
 
 **MSS**
 
@@ -522,7 +522,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
-#### **UC3 - Saving data**
+#### UC3 - Saving data
 
 **MSS**
 
@@ -541,7 +541,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
-#### **UC4 - Filtering by country**
+#### UC4 - Filtering by country
 
 **MSS**
 
@@ -558,7 +558,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case ends.
 
-#### **UC5 - Clearing all entries from **_TBM_****
+#### UC5 - Clearing all entries from **_TBM_**
 
 **MSS**
 
@@ -578,6 +578,31 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 3a. User decides not to clear all entries.
 
   Use case ends.
+  
+#### UC6 - Obtaining client suggestions
+
+**MSS**
+
+1. User wants to view clients who are available for a quick call.
+2. User passes this criteria via a command.
+3. **_TBM_** filters the clients, only showing clients who are available.
+
+    Use case ends.
+
+**Extensions**
+
+* 1a. User wishes to obtain suggestions based on a different criteria (E.g. clients whose contracts are expiring).
+    
+    * 1a1. User passes in a different criteria via the command.
+    * 1a2. **_TBM_** filters and sorts the clients, showing those whose contracts are expiring first.
+    
+    Use case ends.
+
+* 2a. User passes in an invalid criteria.
+
+    * 2a1. **_TBM_** shows an error message.
+
+    Use case ends.
 
 ### Non-Functional Requirements
 
