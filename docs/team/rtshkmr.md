@@ -12,7 +12,8 @@ Given below are my contributions to the project.
 <br/><br/>
 * **New Features Implemented**:
   * `Client Notes`: Added [Create](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/134), Read, [Update](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/259), [Destroy](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/203) functionality for `Note` objects associated to clients along with required documentation and tests.  
-  * `TagNoteMap`: Created unique `Tag` Objects and established the many-to-many relationship between `Tag` and `Note` objects to circumvent "no-DBMS constraint" imposed by the mod (Initial implementation in PR [#150](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/150)). Also added storage for `Note` [#235](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/235), [#164](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/164), 
+  * `TagNoteMap`: Created unique `Tag` Objects and established the many-to-many relationship between `Tag` and `Note` objects to circumvent "no-DBMS constraint" imposed by the mod (Initial implementation in PR [#150](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/150)). 
+  * Added storage for `Note` [#235](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/235), [#164](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/164).
 <br/><br/>
 * **Code contributed:** [RepoSense link](https://nus-cs2103-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=rtshkmr&sort=groupTitle&sortWithin=title&since=2020-08-14&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other)
 
