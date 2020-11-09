@@ -54,7 +54,7 @@ Country ..> CountryCodeVerifier
 
 CountryNotesManager *-left->"*" CountryNote : contains >
 CountryNote -->"1" Country
-CountryNote ..|> Note
+CountryNote --|> Note
 UniqueTagSet *->"*" Tag
 TagNoteMap ->"*" Note
 TagNoteMap *-->"1" UniqueTagSet
