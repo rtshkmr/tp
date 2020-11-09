@@ -36,9 +36,9 @@ title: User Guide
 ## **About**
 ### Using this User Guide
 This User Guide has been structured such that users can easily find and understand what they need.
-[About](#about) contains useful tips and information on reading this document.
-[Quickstart](#quickstart) consists of instructions to set up this application
-[TBM Features](#tbms-features) includes the details of the main features of **_TBM_**, such as managing your clients and keeping track of important information.
+  - [About](#about) contains useful tips and information on reading this document.
+  - [Quickstart](#quickstart) consists of instructions to set up this application
+  - [TBM Features](#tbms-features) includes the details of the main features of **_TBM_**, such as managing your clients and keeping track of important information.
 
 ### Tips
 
@@ -47,20 +47,6 @@ This User Guide has been structured such that users can easily find and understa
 **:information_source:** This is a tip for users.
 </div> 
 
-### 2.3 Command Syntax
- 
-All commands follow the same format. The following explains notations used in indicating commaand formats.
-
-* Words in `UPPER_CASE` are the command parameters.
-
-	- Example: in `client view CLIENT_INDEX`, `CLIENT_INDEX` is the parameter supplied to the command `client view`. 
-	 e.g. `client view 1`
-
-* `[]` square brackets represent an optional parameter for the command.
-
-    - Example: `client note add CLIENT_INDEX nt/NOTE_STRING [t/TAG]...`, `t/TAG` is an optional parameter.
-    e.g. `client note add 1 nt/Birthday tmr` / `client note add nt/Birthday tmr t/reminder`
-    
 --------------------------------------------------------------------------------------------------------------------
 ## **Quickstart**
 
