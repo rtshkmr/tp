@@ -678,10 +678,10 @@ testers are expected to do more *exploratory* testing.
    1. Prerequisites: List all clients using the `client list` command. Multiple clients in the list.
 
    1. Test case: `client delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the results display is updated.
+      Expected: First contact is deleted from the list. Details of the deleted contact shown in the results display.
 
    1. Test case: `client delete 0`<br>
-      Expected: No client is deleted. Error details shown in the status message. Results display remains the same.
+      Expected: No client is deleted. Error details shown in the display.
 
    1. Other incorrect delete commands to try: `client delete`, `client delete x`, `...` (where x is larger than the list size)<br>
       Expected: Similar to previous.
