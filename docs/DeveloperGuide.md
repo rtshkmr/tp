@@ -190,10 +190,11 @@ Given below is an example usage scenario and how mapping mechanism behaves at ea
 
 Choosing between 1 and 2 has a trade-off between storage-file-size and some overhead operation for initialising at startup. We realised that the file size issue would be a bigger issue and our tests showed that initialising has no visiable impact on the User Experience hence we chose option 2.
 
-Here is how `TagNoteMap` is initialised at TBM's startup: 
+The sequence diagram below highlights the key aspects of initialising `TagNoteMap` at Application Start-Up:
+
+![Init TagNoteMap](images/TagNoteMapInitialization.png) 
 
 
--- insert sequence diagram to describe how tagnotemap is initialised upon tbm startup ---
 
 
 ### Associating Notes and Countries

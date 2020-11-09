@@ -535,8 +535,11 @@ If the `tbmManager.json` file gets corrupted, for example, if some fields were c
 
 ## **Frequently Asked Questions (FAQ)**
 
-**Q**: How do I transfer my data to another Computer?<br>
+**Q1**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous **_TBM_** home folder.<br>
+
+**Q2**: How do I install Java11?
+**A**: 
 
 --------------------------------------------------------------------------------------------------------------------
 
