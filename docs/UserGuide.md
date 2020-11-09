@@ -786,13 +786,13 @@ Below is a screenshot of what happenss when you enter the command: `country note
 
 ### **Adding country note**
 
-Before adding a note to Singapore, there is only one note for Singapore,
+Before adding a note to Singapore, there are only two notes for Singapore,
 
 <img src="images/country_note_view_ss.png" alt="Before adding a country note to Singapore" width="800" height="600">
 
 After adding the note, the display automatically updates,
 
-<img src="images/country_note_add_ss.png" alt="After adding a country ntoe to Singapore" width="800" height="600">
+<img src="images/country_note_add_ss.png" alt="After adding a country note to Singapore" width="800" height="600">
 
 [Back to command](#222-adding-notes-for-a-country-country-note-add).
 
