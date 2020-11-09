@@ -2,6 +2,9 @@
 layout: page
 title: Developer Guide
 ---
+<div>
+    <img src="images/TBM_BRAND.png" width="500px" height="500px">
+</div>
 
 ## **Introduction**
 
@@ -29,6 +32,8 @@ With that being said, this guide will help orient you eager developers quickly, 
 1. Architecture of **_TBM_**.
 
 1. Implementations for the array of features **_TBM_** offers.
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## Table of Contents
 
