@@ -9,7 +9,6 @@ Travelling BusinessMan is a desktop application that manages notes and clients a
 
 Given below are my contributions to the project.
 
-<br/><br/>
 * **New Features Implemented**:
   * `Client Notes`: Added [Create](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/134), Read, [Update](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/259), [Destroy](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/203) functionality for `Note` objects associated to clients along with required documentation and tests.  
   * `TagNoteMap`: Created unique `Tag` Objects and established the many-to-many relationship between `Tag` and `Note` objects to circumvent "no-DBMS constraint" imposed by the mod (Initial implementation in PR [#150](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/150)). 
