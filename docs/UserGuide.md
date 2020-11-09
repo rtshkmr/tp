@@ -643,7 +643,10 @@ Action | Format, Examples
 
 [Back to Table of Contents](#table-of-contents)
 
---------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------
+
 
 ## **Glossary**
 
@@ -653,7 +656,12 @@ Action | Format, Examples
 * **Mainstream OS**: Windows, Linux, Unix, macOS
 * **_TBM_**: Initialism for Travelling BusinessMan
 
---------------------------------------------------------------------------------------------------------------------
+[Back to Table of Contents](#table-of-contents)
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
 
 ## **Frequently Asked Questions (FAQ)**
 
@@ -665,6 +673,8 @@ Action | Format, Examples
 
 **Q3**: How do I install Java 11 on my computer?<br>
 **A**: Head to the official download page [here](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html), then download and run the installer for your operating system.<br>
+
+[Back to Table of Contents](#table-of-contents)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -724,7 +734,11 @@ This is what to expect when you type in the `help` command or press `F1`:
    <strong><i>{End of Appendix A, please return to the <a href="#table-of-contents">Table of Contents</a>}</i></strong> 
 </p>
 
+
+
 --------------------------------------------------------------------------------------------------------------------
+
+
 
 ## **Appendix B: International Standards Followed** 
 
@@ -754,7 +768,11 @@ Here are the alternative stylistic choices that you might make when writing out 
 <p align="center">
    <strong><i>{End of Appendix B, please return to the <a href="#table-of-contents">Table of Contents</a>}</i></strong> 
 </p>
+
+
 --------------------------------------------------------------------------------------------------------------------
+
+
 
 ## **Appendix C: Expected Command Behaviour Screenshots**
 
@@ -985,3 +1003,6 @@ After issuing the command `clear`, notice that all existing data will be cleared
 <p align="center">
    <strong><i>{End of Appendix C, please return to the <a href="#table-of-contents">Table of Contents</a>}</i></strong> 
 </p>
+
+
+--------------------------------------------------------------------------------------------------------------------
