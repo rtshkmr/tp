@@ -484,7 +484,7 @@ Examples:
 
 * Command: `client suggest by/frequency`
 
-    Obtains a list of clients based on the last time their details were edited in **_TBM_**. Clients who have not been contacted for a longer period will be the first in the list.
+    Obtains a list of clients based on the last time their details were modified in **_TBM_**. Clients will be considered modified on adding a client, editing a client, adding a client note, deleting a client note or editing a client note. Clients who have not been modified for a longer period will be the first in the list.
 
 * `client suggest by/contract`
 
