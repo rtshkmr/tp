@@ -261,7 +261,7 @@ Examples:
 
     Filters by clients in Russia.
 
-[Link](#filtering-by-country) to Appendix C for screenshot of how command works.
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#filtering-by-country).
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -359,7 +359,7 @@ Examples:
 
     Only country notes for **Singapore** will be displayed.
 
-[Link](#viewing-country-note) to Appendix C for screenshot of how command works. 
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#viewing-country-note).
 
 ##### 2.2.2: Adding notes for a country: `country note add`
 
@@ -387,7 +387,7 @@ Examples:
     - Content: **_is world's fastest growing economy_** 
     - Tag: **_untagged_**
 
-[Link](#adding-country-note) to Appendix C for screenshot of how command works.
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#adding-country-note).
   
 ##### 2.2.3: Editing notes for a country: `country note edit`
 
@@ -433,7 +433,7 @@ Thailand
 3. Political unrest in the capital [tag: politics]
 ```
 
-[Link](#editing-country-note) to Appendix C for screenshot of how command works.
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#editing-country-note).
 
 ##### 2.2.4: Deleting notes for a country: `country note delete`
 
@@ -449,7 +449,7 @@ Example:
 
     Deletes the country note at index 1 of the country notes list panel.
     
-[Link](#deleting-country-note) to Appendix C for screenshot of how command works.
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#deleting-country-note).
 
 ### **3. Getting Suggested Clients**
 
@@ -476,7 +476,7 @@ Examples:
 
     Obtains a list of clients based on their current contract details but only clients who are available will be shown. Clients whose contracts are expiring will be shown first.
 
-[Link](#getting-client-suggestions) to Appendix C for screenshot of how command works.
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#getting-client-suggestions).
 
 ### **4. Clearing All your Entries**
 
@@ -484,7 +484,7 @@ Deletes all existing information from the application. The end result will be an
 
 Format: `clear`
 
-[Link](#clearing-all-data) to Appendix C for screenshot of how command works.
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#clearing-all-data).
 
 ### **5. Exiting the Program**
 
