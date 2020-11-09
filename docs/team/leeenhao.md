@@ -42,7 +42,9 @@ Given below are my contributions to the project.
 
   * Improve GUI
   
-  * GUI theme and styling overhaul
+  * GUI theme and styling change
+  
+    - First MVP: Change to fit the aspirational design model proposed in the main website.
   
   * Capability to view each client information in detail
 
@@ -50,13 +52,13 @@ Given below are my contributions to the project.
 
   * User Guide:
   
-    * Added `client view` command section to user guide to document the changes.
+    - Added `client view` command section to user guide to document the changes.
     
   * Developer Guide:
   
-    * Add “Adding a client” and "Viewing help" to use cases
+    - Add “Adding a client” and "Viewing help" to use cases
     
-    * Updating class diagrams
+    - Updating class diagrams
 
 * **Community**:
 
@@ -66,4 +68,8 @@ Given below are my contributions to the project.
 
   * TestFX [Link](https://github.com/nus-cs2103-AY2021S1/forum/issues/340)
   
+    - For automated GUI testing, and system testing.
+  
   * AB4 testing utilities
+  
+    - Adapted, with permission from Professor Damith C. Rajapakse, AB4 testing utilities as it presented a more extensible usage of TestFX.
