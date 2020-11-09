@@ -21,9 +21,6 @@ title: User Guide
     </p>
 </div>
 
-   ![Client Notes](images/command-screenshots/client_view.png) 
-   <p align="center"><i>Figure 1. TBM Application</i></p>
-
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Table of Contents**
@@ -80,6 +77,11 @@ Before you start using **_TBM_**,
     1. Double click on the `TBM.jar` file and the application will start shortly.
 
     1. Alternatively, open any shell terminal in the current directory and run the command `java -jar TBM.jar`.
+  
+You should see the following display:
+
+![Default view](images/default_view.png) 
+<p align="center"><i>Figure 1. TBM Application</i></p>
 
 Now that you have started **_TBM_**,
 
