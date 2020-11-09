@@ -131,7 +131,7 @@ Adds a new client into **_TBM_**, you simply have to provide the mandatory param
 
 Format: `client add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS c/COUNTRY_CODE tz/TIMEZONE [ce/CONTRACT_EXPIRY_DATE]`
 
-Please refer to [Appendix B](#appendix-b-international-standards-followed) to understand the International Standards that **_TBM_** follows for phone numbers and country codes.
+Please refer to [Appendix B](#appendix-b-international-standards-followed) to understand the International Standards that **_TBM_** follows for phone numbers and country codes.<br><br>
 Example:
 
 * Command: `client add n/Katya p/98123456 e/katya@yahoo.com a/Vladivostok, Nevelskogo, bld. 15, appt. 256 c/RU tz/UTC+03:00 ce/2-3-2020`<br>
@@ -361,13 +361,15 @@ Examples:
 
     Adds a **note** for the country of **Singapore** with the following specifications: 
     - Content: **_has one of the lowest corporate taxes in the world_** 
-    - Tag: **_tax_** 
+    - Tag: **_tax_**
+    <br><br>
     
 * Command: `country note add c/CN nt/building good relations (guanxi) is important when conducting business here t/intercultural`
 
     Adds a **note** for the country of **China** with the following specifications: 
     - Content: **_building good relations (guanxi) is important when conducting business here_** 
     - Tag: **_intercultural_** 
+    <br><br>
     
 * Command: `country note add c/IN nt/is world's fastest growing economy`
 
