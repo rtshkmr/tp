@@ -838,7 +838,7 @@ Please note that you could have edited only the tags or only the note contents i
 
 Below is a screenshot of what happens when you enter the command: `country note view c/SG` to view Singapore notes,
 
-<img src="images/country_note_view_ss.jpg" alt="Viewing country note" width="800" height="600">
+<img src="images/country_note_view_ss.png" alt="Viewing country note" width="800" height="600">
 
 [Back to command](#221-viewing-notes-for-a-country-country-note-view).
 
@@ -858,7 +858,7 @@ After adding the note, the display automatically updates,
 
 Before editing note 1 of Singapore, ensure that you first view the country notes of Singapore with `country note view c/SG`,
 
-<img src="images/country_note_add_ss.png" alt="Before editing the first note of Singapore" width="800" height="600">
+<img src="images/country_note_view_ss.png" alt="Before editing the first note of Singapore" width="800" height="600">
 
 After editing, you will see the display update to show the new note,
 
