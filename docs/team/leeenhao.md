@@ -22,6 +22,8 @@ Given below are my contributions to the project.
   
   * Some optimisation to GUI.
   
+  * Added viewing box to the application.
+  
 * **New Feature**: Commandline history
 
   * Feature for CLI users who wants more of the traditional experience.
