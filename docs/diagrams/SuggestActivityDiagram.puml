@@ -13,7 +13,7 @@ while () is ([arguments present])
 endwhile ([else])
 
 :Apply predicates to Model#updateClientFilteredList;
-:Apply comparators to Model#sortClientFilteredList;
-:Changes to FilteredList are propagated to user via UI;
+:Apply comparators to Model#updateSortedFilteredClientList;
+:Changes to SortedList are propagated to user via UI;
 stop
 @enduml

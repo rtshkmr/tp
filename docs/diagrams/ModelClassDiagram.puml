@@ -21,7 +21,7 @@ Class WidgetModelManager
 Class WidgetObject
 }
 
-note "The design of Country, Note and Tag is omitted\nfrom this diagram to keep it simple. Refer to\nthe bottom section." as N1
+note "The design of Country, Note and Tag is omitted\nfrom this diagram to keep it simple. Refer to\nthe 'Inner workings' section below for\nmore details" as N1
 
 Package Client {
 Class Client
@@ -33,31 +33,16 @@ Class Timezone
 Class UniqueClientList
 Class ContractExpiryDate
 Class Timezone
+Class LastModifiedInstant
 }
 
 Package Note {
-Class Note
-Class TagNoteMap
-}
-
-Package Country {
-Class Country
 }
 
 Package Tag {
-Class Tag
-Class UniqueTagSet
-}
-
-Package Note {
-Class Note
-Class TagNoteMap
 }
 
 Package Country {
-Class Country
-Class CountryNotesManager
-Class CountryCodeVerifier
 }
 }
 
@@ -69,39 +54,35 @@ TbmManager .up.|> ReadOnlyTbmManager
 
 ModelManager .up.|> Model
 Model .right.> ObservableList
-ModelManager o--> "1" TbmManager
-ModelManager o-left-> "1" UserPrefs
+ModelManager *--> "1" TbmManager
+ModelManager *-left-> "1" UserPrefs
 ModelManager *-right->"1" WidgetModel
-TbmManager *-right->"1" UniqueTagSet
-TbmManager *-right-> "1" CountryNotesManager
-
+TbmManager -right-> Country
+TbmManager -right-> Tag
 
 UserPrefs .up.|> ReadOnlyUserPrefs
 
 TbmManager *--> "1" UniqueClientList
-UniqueClientList o--> "*" Client
+UniqueClientList *--> "*" Client
 Client *--> Name
 Client *--> Phone
 Client *--> Email
 Client *--> Address
 Client *--> ContractExpiryDate
-Client *-up-> "*" Tag
+Client *--> Timezone
+Client *--> LastModifiedInstant
+Client --> Note
 Client -right-> Country
-Client --> Timezone
-Client -->"*" Note
 
+Tag -- Note
 
 WidgetModelManager ..|> WidgetModel
 WidgetModelManager *-right->"1" WidgetObject
 
-CountryNotesManager o-right-> "*" Country
-UniqueTagSet o-right-> "*" Tag
-TagNoteMap o-right-> "*" Note
-
 Name -[hidden]right-> Phone
 Phone -[hidden]right-> Address
 Address -[hidden]right-> Email
-UniqueTagSet -[hidden]right-> Tag
 
-ModelManager -->"1" Client : filtered list
+ModelManager -->"*" Client : filtered list
+
 @enduml

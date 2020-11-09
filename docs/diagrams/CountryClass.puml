@@ -15,10 +15,11 @@ Interface Model <<Interface>>
 Class ModelManager
 }
 
+
 ModelManager .up.|> Model
 ModelManager -down-> "1" TbmManager
 TbmManager --> "1" CountryNotesManager
-CountryNotesManager "1" -r-> "*" CountryNote
+CountryNotesManager "1" -right-> "*" CountryNote
 CountryNote -up-|> Note
 CountryNote --> "1" Country
 Country ..> CountryCodeVerifier

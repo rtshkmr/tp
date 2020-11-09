@@ -1,10 +1,10 @@
 @startuml
 !include style.puml
 
-title After command "suggest by/contract"
+title After command "client suggest by/contract"
 
 box Logic LOGIC_COLOR_T1
-participant ":SuggestCommand" as SuggestCommand LOGIC_COLOR
+participant ":ClientSuggestCommand" as ClientSuggestCommand LOGIC_COLOR
 participant "c:CommandResult" as CommandResult LOGIC_COLOR
 end box
 
@@ -12,28 +12,28 @@ box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
 
-[-> SuggestCommand : execute("suggest by/contract")
-activate SuggestCommand
+[-> ClientSuggestCommand : execute("client suggest by/contract")
+activate ClientSuggestCommand
 
-SuggestCommand -> Model : updateClientFilteredList(Predicate)
+ClientSuggestCommand -> Model : updateClientFilteredList(Predicate)
 activate Model
 
-Model --> SuggestCommand
+Model --> ClientSuggestCommand
 deactivate Model
 
-SuggestCommand -> Model : sortClientFilteredList(Comparator)
+ClientSuggestCommand -> Model : updateSortedFilteredClientList(Comparator)
 activate Model
 
-Model --> SuggestCommand
+Model --> ClientSuggestCommand
 deactivate Model
 
 create CommandResult
-SuggestCommand -> CommandResult
+ClientSuggestCommand -> CommandResult
 activate CommandResult
 
-CommandResult --> SuggestCommand : c
+CommandResult --> ClientSuggestCommand : c
 deactivate CommandResult
 
-[<-- SuggestCommand : c
-deactivate SuggestCommand
+[<-- ClientSuggestCommand : c
+deactivate ClientSuggestCommand
 @enduml

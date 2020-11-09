@@ -20,7 +20,7 @@ public class CountryNoteEditCommandParserTest {
     private static final String INVALID_COMMAND_ERROR = "Invalid command format! \n"
             + "country note edit: "
             + "Edits the country note at the given index in the last viewed country note list panel.\n"
-            + "Parameters: INDEX (nt/NOTE_STRING ) (t/TAG)...\n"
+            + "Parameters: COUNTRY_NOTE_INDEX (nt/NOTE_STRING ) (t/TAG)...\n"
             + "Example: country note edit 1 nt/better government stability in recent months";
     private static final String INVALID_INDEX_ERROR = "Index is not a non-zero unsigned integer.";
     private static final String INVALID_TAG_ERROR = Tag.MESSAGE_CONSTRAINTS;

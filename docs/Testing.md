@@ -12,7 +12,7 @@ title: Testing guide
 
 There are three ways to run tests.
 
-:bulb: Running test using method 3 is more reliable, and it does not choke up your computer graphical interface.
+:bulb: Running test using method 3 is more reliable, and it does not choke up your computer's graphical interface.
 
 * **Method 1: Using IntelliJ JUnit test runner** (Not recommended)
   * To run all tests, right-click on the `src/test/java` folder and choose `Run 'All Tests'`
@@ -37,10 +37,10 @@ This project has three types of tests:
 
     a. *Unit tests* that test the individual GUI components. These are in the `seedu.address.ui` package.
     
-    b. *System test* within `seedu.address.ui` package, the `MainWindowTest.java` simulates a full user interaction with the GUI of TBM.
+    b. *System test* within `seedu.address.ui` package, the `MainWindowTest.java` simulates user interaction with the full **_TBM_** GUI.
 
 1. ##### Non-GUI Tests
-    These are tests not involving the GUI of TBM. They include,<br>
+    These are tests not involving the GUI of **_TBM_**. They include,<br>
     a. *Unit tests* targeting the lowest level methods/classes.<br>
 
       e.g  `seedu.address.commons.StringUtilTest`
@@ -49,6 +49,6 @@ This project has three types of tests:
 
       e.g. `seedu.address.storage.StorageManagerTest`
 
-    c. Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together.<br>
+    c. Hybrids of unit and integration tests. These test are checking multiple code units as well as how they are connected together.<br>
 
       e.g. `seedu.address.logic.LogicManagerTest`

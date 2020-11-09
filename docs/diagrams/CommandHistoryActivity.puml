@@ -10,11 +10,14 @@ endif;
 if () then ([UP button is pressed])
   :CommandHistory tries to retrieve the valid command entered previously;
   :Display will show the retrieved command;
-else if () then ([DOWN button is pressed])
-  :CommandHistory tries to retrieve the next valid command entered;
-  :Display will show the retrieved command;
 else ([else])
-  :nothing happens;
+  if () then ([DOWN button is pressed])
+    :CommandHistory tries to retrieve the next valid command entered;
+    :Display will show the retrieved command;
+  else ([else])
+    :nothing happens;
+  endif;
 endif;
+
 stop
 @enduml

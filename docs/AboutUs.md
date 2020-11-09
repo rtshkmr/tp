@@ -5,7 +5,7 @@ title: About Us
 
 We are a team based in the [School of Computing, National University of Singapore](http://www.comp.nus.edu.sg).
 
-You can reach us at the email `university@rocketmail.com`
+You can reach us at the email `team4@emerald.pink`.
 
 ## Project team
 
@@ -45,10 +45,10 @@ You can reach us at the email `university@rocketmail.com`
 * Responsibilities:
   - Implementing the View command and relevant functionalities associated
   - Modification of GUI to fit the theme of TBM
-  - Add tests for View command
-  - Maintain a showcase of MVP funcationalities
+  - Add GUI tests
+  - CLI optimisation
 
-### raysonkoh
+### Rayson Koh
 
 <img src="images/raysonkoh.png" width="200px">
 
@@ -57,10 +57,10 @@ You can reach us at the email `university@rocketmail.com`
 
 * Role: In charge of testing
 * Responsibilities:
-  - Implementing the Country class and all associated functionality
-  - Add command for adding country notes
-  - Add command for filtering by country
-  - Add tests for filtering and adding country notes
+  - Fill in implementation for Country and CountryNotesManager class
+  - Implement country-note-related commands
+  - Implement filtering clients by country command
+  - Enhance save functionality to include saving country notes
 
 ### Ritesh Kumar
 

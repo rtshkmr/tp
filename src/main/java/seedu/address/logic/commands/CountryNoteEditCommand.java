@@ -24,7 +24,7 @@ public class CountryNoteEditCommand extends Command {
     public static final String COMMAND_WORD = "country note edit";
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Edits the country note at the given index in the last viewed country note list panel.\n"
-            + "Parameters: INDEX "
+            + "Parameters: COUNTRY_NOTE_INDEX "
             + "(" + PREFIX_NOTE + "NOTE_STRING )"
             + " (" + PREFIX_TAG + "TAG)...\n"
             + "Example: " + COMMAND_WORD + " 1 " + PREFIX_NOTE

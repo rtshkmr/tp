@@ -21,8 +21,8 @@ public class ClientNoteDeleteCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Deletes a note associated to a client "
             + "by the index number used in the displayed client list "
             + "and the index number for client note in the displayed client notes list. "
-            + "Parameters: CLIENT INDEX, CLIENT NOTES INDEX"
-            + "Example: " + COMMAND_WORD + " 1 " + "client note content";
+            + "Parameters: CLIENT_INDEX CLIENT_NOTE_INDEX\n"
+            + "Example: " + COMMAND_WORD + " 1 2";
     public static final String MESSAGE_DELETED_CLIENT_NOTE_SUCCESS = "Successfully deleted client note";
     private static final String MESSAGE_INVALID_CLIENT_NOTE_DISPLAYED_INDEX = "The client note index provided is "
             + "invalid";

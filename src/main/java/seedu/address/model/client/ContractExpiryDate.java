@@ -14,8 +14,8 @@ import java.util.Objects;
  */
 public class ContractExpiryDate implements Comparable<ContractExpiryDate> {
 
-    public static final String MESSAGE_CONSTRAINTS = "ContractExpiryDate should be in the format day-month-year,"
-            + " where day is between 1 and 31 and month is between 1-12.";
+    public static final String MESSAGE_CONSTRAINTS = "ContractExpiryDate should be in the format day-month-year."
+            + " Please input a valid date. Invalid dates like 29/02/2019 will not work.";
     /*
      * ContractExpiryDate should be in the format day-month-year separating the digits.
      * Day should be in the range 1-31, month should be in the range 1-12, and year can be from 0000-9999.

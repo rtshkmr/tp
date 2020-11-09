@@ -5,16 +5,24 @@ body {
 }
 
 h2, h3, h4, h5, h6 {
+  font-weight: bold;
   color: #3a506b;
 }
 
 div > img, p > img {
   display: block;
   margin: auto;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 7px 7px 15px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 7px 7px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: 7px 7px 15px 0px rgba(0,0,0,0.75);
 }
 
 img.emoji {
   display: inline !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 table {
@@ -29,11 +37,11 @@ table {
 }
 
 a {
-  color: #be0000;
+  color: #d40000;
 }
 
 a:visited {
-  color: #800000;
+  color: #d40000;
 }
 
 // Bootstrap style alerts

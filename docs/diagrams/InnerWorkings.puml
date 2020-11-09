@@ -7,52 +7,57 @@ skinparam classBackgroundColor MODEL_COLOR
 
 Package Client {
 Class Client
+Class Name
 Class Address
 Class Email
-Class Name
 Class Phone
 Class UniqueClientList
 Class ContractExpiryDate
 Class Timezone
+Class LastModifiedInstant
 }
 
 Package Country {
 Class Country
-Class CountryManager
+Class CountryCodeVerifier
 }
 
-Package Note {
+Package Note as NotePackage {
 Class Note
+Class CountryNotesManager
+Class CountryNote
 Class TagNoteMap
 }
 
-Package Tag {
+Package Tag as TagPackage {
 Class Tag
 Class UniqueTagSet
 }
 
-TbmManager *-right-> "1" UniqueClientList
-TbmManager *-right-> "1" UniqueTagSet
-TbmManager *-right-> "1" CountryManager
+TbmManager *-->"1" UniqueClientList
+TbmManager *-->"1" TagNoteMap
+TbmManager *-->"1" CountryNotesManager
 
-UniqueClientList o--> "*" Client
+UniqueClientList *--> "*" Client
 
-Client *--> Name
-Client *--> Phone
-Client *--> Email
-Client *--> Address
-Client *--> ContractExpiryDate
-Client *-up-> "*" Tag
-Client -up-> Country
-Client --> Timezone
-Client -->"*" Note
+Client *-->"1" Name
+Client *-->"1" Phone
+Client *-->"1" Email
+Client *-->"1" Address
+Client *-->"0..1" ContractExpiryDate
+Client *-->"1" Timezone
+Client *-->"*" Note
+Client *-->"1" LastModifiedInstant
+Client -->"1" Country
 
-CountryManager o-left->"*" Country : has >
-UniqueTagSet o-right->"*" Tag
-TagNoteMap o-right->"*" Note
+Country ..> CountryCodeVerifier
 
-TagNoteMap o-up-> Tag
-CountryManager --> "*" Note : creates mapping >
+CountryNotesManager *-left->"*" CountryNote : contains >
+CountryNote -->"1" Country
+CountryNote --|> Note
+UniqueTagSet *->"*" Tag
+TagNoteMap ->"*" Note
+TagNoteMap *-->"1" UniqueTagSet
 
-Client -[hidden]right- TbmManager
+UniqueClientList -[hidden]up- TbmManager
 @enduml
