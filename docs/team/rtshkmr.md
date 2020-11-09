@@ -20,15 +20,19 @@ Given below are my contributions to the project.
   * PR reviews: #153 #149 #148 #131 #121
   * PR approvals:
   * Managed project v1.1 to v1.4 on GitHub
-  * Created Last-Sprint documentation PR with Templates and Descriptions to facilitate collaborative work between all members of the group (Pull Request[#351](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/351)) 
+  * Created Last-Sprint documentation PR with Templates and Descriptions to facilitate collaborative work between all members of the group (Pull Request[#351](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/351))
+   
 <br/><br/>
+
 * **Enhancements to existing features**:
   * Improved Phone Number parsing using Custom Regex and adhering to international standards PR [#337](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/337)
   * Bug Fixes: 
     * Serialization/Deserialization inconsistencies for Client Notes storage [#320](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/320)
     * Inconsistent order when refreshing Notes after editing [#312](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/312)
     * Minor UI Interactions [#336](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/336)
+    
 <br/><br/>
+
 * **Documentation**:
   * User Guide:
       * Updated Client Note features
@@ -40,7 +44,9 @@ Given below are my contributions to the project.
       * Added Proposed Implementation for Finding by Tags to utilise the many-to-many relationship tracked by `TagNoteMap`
       * Added Description for Implementation of Associating Notes and Tags 
       * Added PUML Sequence diagram to explain how `TagNoteMap` is initialised
-<br/><br/>   
+      
+<br/><br/>
+   
 * **Community** 
   * PRs reviewed, some with changes requested (noteworthy ones): [#118](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/118), [#149](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/149), [#161](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/161), [#185](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/185), [#352](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/352)
   * Added a tip on **JVM shutdown hook** on the module page [#85](https://github.com/nus-cs2103-AY2021S1/forum/issues/85)
