@@ -847,37 +847,37 @@ After editing, you will see the display update to show the new note,
 
 Initially, this is how the country notes panel will look like after issuing the command `country note view`.
 
-<<BEFORE PIC...>>
+<img src="images/country_note_delete_before.png" alt="Before issuing the country note delete command" width="800" height="600">
 
 After issuing the command `country note delete 1`, notice that the country note belonging to **Japan** with the content, **"A high-context country, hence building relationships is important for doing business"**, was deleted.
 
-<<AFTER PIC...>>
+<img src="images/country_note_delete_after.png" alt="After issuing the country note delete command" width="800" height="600">
 
-Back to [command](#224-deleting-notes-for-a-country-country-note-delete).
+[Back to command](#224-deleting-notes-for-a-country-country-note-delete).
 
 ### **Getting client suggestions**
 
 Initially this is how the client list panel will look like after issuing the command `client list`.
 
-<<BEFORE PIC...>>
+<img src="images/client_suggest_before.png" alt="Before issuing the suggest command" width="800" height="600">
 
 After issuing the command `client suggest by/contract`, notice that clients whose contract expiry date ends earlier would be displayed higher in the client list panel. 
 
-<<AFTER PIC...>>
+<img src="images/client_suggest_after.png" alt="After issuing the suggest command" width="800" height="600">
 
-Back to [command](#3-getting-suggested-clients).
+[Back to command](#3-getting-suggested-clients).
 
 ### **Clearing all data**
 
 This is how **_TBM_** looks like with existing data. 
 
-<<BEFORE PIC...>>
+<img src="images/clear_before.png" alt="Before issuing the clear command" width="800" height="600">
 
 After issuing the command `clear`, notice that all existing data will be cleared from **_TBM_**.
 
-<<AFTER PIC...>>
+<img src="images/clear_after.png" alt="After issuing the clear command" width="800" height="600">
 
-Back to [command](#4-clearing-all-your-entries).
+[Back to command](#4-clearing-all-your-entries).
 
 ### **Dummy Command Template **
 
