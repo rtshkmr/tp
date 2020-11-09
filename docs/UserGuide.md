@@ -574,29 +574,6 @@ Format: `help`
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Glossary**
-
-* **Business Contact**: Synonymous with **Client**
-* **Client**: Refers to a person whom the user is conducting his/her business with
-* **UTC**: [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)
-* **Mainstream OS**: Windows, Linux, Unix, macOS
-* **_TBM_**: Initialism for Travelling BusinessMan
-
-## **Frequently Asked Questions (FAQ)**
-
-**Q1**: How do I transfer my data to another computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous **_TBM_** home folder.<br>
-
-**Q2**: How do I know if Java 11 is already installed on my computer?<br>
-**A**: Open up your favourite command line application and run the command `java --version`. The output should contain `java 11` if Java 11 is installed.<br>
-
-**Q3**: How do I install Java 11 on my computer?<br>
-**A**: Head to the official download page [here](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html), then download and run the installer for your operating system.<br>
-
-[Back to Table of Contents](#table-of-contents)
-
---------------------------------------------------------------------------------------------------------------------
-
 ## **Command Summary**
 
 Action | Format, Examples
