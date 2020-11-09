@@ -140,6 +140,8 @@ Example:
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#adding-a-client)
 
+[Back to Table of Contents](#table-of-contents)
+
 #### 1.2: Deleting a client: `client delete`
 
 Deletes an existing client from **_TBM_**, you have to make reference to the Client's index. This can be easily read off from the client card as shown [here](#ui-when-viewing-clients).
@@ -153,6 +155,8 @@ Example:
     Deletes the client at index 5 of the list panel.
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#deleting-a-client)
+
+[Back to Table of Contents](#table-of-contents)
 
 #### 1.3: Editing a client: `client edit`
 
@@ -176,6 +180,8 @@ Examples:
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#editing-a-client)
 
+[Back to Table of Contents](#table-of-contents)
+
 #### 1.4: Viewing _all_ your Clients: `client list`
 
 Shows a list of all clients in **_TBM_**. Client Cards are intended to display the most important details succinctly. Therefore, if a particular data field is too long, you should view them in full using the [`client view`](#15-viewing-a-particular-client-client-view) command.
@@ -185,6 +191,8 @@ This command will also reset the left display panel to its default view.
 Format: `client list`
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#viewing-all-clients)
+
+[Back to Table of Contents](#table-of-contents)
 
 #### 1.5: Viewing _a Particular_ Client: `client view`
 
@@ -208,6 +216,8 @@ Command: `client view 2`
 The information for the client at index 2 of the list will be shown. In the example above, Alex's information will be displayed.
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#viewing-a-client)
+
+[Back to Table of Contents](#table-of-contents)
 
 #### 1.6: Finding clients: `client find`
 
@@ -233,9 +243,11 @@ Examples:
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#finding-clients)
 
+[Back to Table of Contents](#table-of-contents)
+
 #### 1.7: Filtering clients by country: `country filter`
 
-FIlters and gives you a list of clients that are associated to the specificed country.
+Filters and gives you a list of clients that are associated to the specificed country.
 
 Format: `country filter c/COUNTRY_CODE`
 
@@ -250,6 +262,8 @@ Examples:
     Filters by clients in Russia.
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#filtering-by-country).
+
+[Back to Table of Contents](#table-of-contents)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -290,6 +304,8 @@ Examples:
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#adding-client-notes)
 
+[Back to Table of Contents](#table-of-contents)
+
 ##### 2.1.2: Deleting client notes: `client note delete`
 
 Deletes a note of a client (denoted by a client's index) by the note's index.
@@ -301,6 +317,8 @@ Examples:
 * `client note delete 1 12` i.e. 12th note of client 1
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#deleting-client-notes)
+
+[Back to Table of Contents](#table-of-contents)
 
 ##### 2.1.3: Editing client notes: `client note edit`
 
@@ -321,6 +339,8 @@ Examples:
   Edits the note contents as well as adds a new tag `t/ItalianRestaurants`
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#editing-client-notes)
+
+[Back to Table of Contents](#table-of-contents)
 
 #### 2.2: Country Notes
 
@@ -348,6 +368,8 @@ Examples:
     Only country notes for **Singapore** will be displayed.
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#viewing-country-note).
+
+[Back to Table of Contents](#table-of-contents)
 
 ##### 2.2.2: Adding notes for a country: `country note add`
 
@@ -378,6 +400,8 @@ Examples:
     - Tag: **_untagged_**
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#adding-country-note).
+  
+[Back to Table of Contents](#table-of-contents)
   
 ##### 2.2.3: Editing notes for a country: `country note edit`
 
@@ -425,6 +449,8 @@ Thailand
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#editing-country-note).
 
+[Back to Table of Contents](#table-of-contents)
+
 ##### 2.2.4: Deleting notes for a country: `country note delete`
 
 Deletes a note that is associated with a specific country at the given index based on the **current view** of the [list panel displaying country notes](#ui-when-viewing-country).
@@ -440,6 +466,8 @@ Example:
     Deletes the country note at index 1 of the country notes list panel.
     
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#deleting-country-note).
+
+[Back to Table of Contents](#table-of-contents)
 
 ### **3. Getting Suggested Clients**
 
@@ -468,6 +496,8 @@ Examples:
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#getting-client-suggestions).
 
+[Back to Table of Contents](#table-of-contents)
+
 ### **4. Clearing All your Entries**
 
 Deletes all existing information from the application. The end result will be an application with no client/note/country data. The left display panel will be reset to its default view.
@@ -476,11 +506,15 @@ Format: `clear`
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#clearing-all-data).
 
+[Back to Table of Contents](#table-of-contents)
+
 ### **5. Exiting the Program**
 
 Exits the program.
 
 Format: `exit`
+
+[Back to Table of Contents](#table-of-contents)
 
 ### **6. Saving your Data**
 
@@ -527,11 +561,39 @@ The location for this file is `./data/tbmManager.json` (indicated at the bottom 
 If the `tbmManager.json` file gets corrupted, for example, if some fields were changed to contain invalid values, **_TBM_** will be unable to load your data. The only exception is the `lastModifiedInstant` field, which will be regenerated by **_TBM_**.
 </div>
 
+[Back to Table of Contents](#table-of-contents)
+
+
 ### **7. Viewing Help**
 
 **_TBM_**'s commands are easy to use and remember, but in the case you need to see a list of commonly used commands, simply type `help` or press the `F1` key to access this list in the [new help window](#help-window). Pressing the `Esc` key will close this window.
 
 Format: `help`
+
+[Back to Table of Contents](#table-of-contents)
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Glossary**
+
+* **Business Contact**: Synonymous with **Client**
+* **Client**: Refers to a person whom the user is conducting his/her business with
+* **UTC**: [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)
+* **Mainstream OS**: Windows, Linux, Unix, macOS
+* **_TBM_**: Initialism for Travelling BusinessMan
+
+## **Frequently Asked Questions (FAQ)**
+
+**Q1**: How do I transfer my data to another computer?<br>
+**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous **_TBM_** home folder.<br>
+
+**Q2**: How do I know if Java 11 is already installed on my computer?<br>
+**A**: Open up your favourite command line application and run the command `java --version`. The output should contain `java 11` if Java 11 is installed.<br>
+
+**Q3**: How do I install Java 11 on my computer?<br>
+**A**: Head to the official download page [here](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html), then download and run the installer for your operating system.<br>
+
+[Back to Table of Contents](#table-of-contents)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -558,6 +620,8 @@ Action | Format, Examples
 **Exit** | `exit`
 **Help** | `help`
 
+[Back to Table of Contents](#table-of-contents)
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Parameter Constraints Summary**
@@ -576,6 +640,8 @@ Action | Format, Examples
 |**TAG** | `t/` | Tags names should be alphanumeric and have a maximum of 45 characters. <br> e.g. `t/important` |
 |**SUGGESTION_TYPE** | `by/` | Suggestion types can only be either `available`, `contract` or `frequency`. <br> e.g. `by/available` |
 |**CLIENT_INDEX / CLIENT_NOTE_INDEX / COUNTRY_NOTE_INDEX** | - | Index is a number greater than 0 that is based on the numberings beside each client or note. <br> e.g. `1` would refer to the first client or note. |
+
+[Back to Table of Contents](#table-of-contents)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -915,3 +981,7 @@ After issuing the command `clear`, notice that all existing data will be cleared
 <img src="images/clear_after.png" alt="After issuing the clear command" width="800" height="600">
 
 [Back to command](#4-clearing-all-your-entries).
+
+<p align="center">
+   <strong><i>{End of Appendix C, please return to the <a href="#table-of-contents">Table of Contents</a>}</i></strong> 
+</p>
