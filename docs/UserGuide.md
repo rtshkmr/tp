@@ -657,10 +657,10 @@ Action | Format, Examples
 **A**: This application can be run on Linux, Windows, and macOS, as long as you have Java 11 installed.
 
 **Q5**: Can I run this application on my phone?<br> 
-**A**: Currently, we do not have a mobile version of our application. This is a planned feature in our upcoming releases. Please stay tuned to our [GitHub repository](https://github.com/AY2021S1-CS2103T-F11-4) for more updates.<br>
+**A**: Currently, we do not have a mobile version of our application. This is a planned feature in our upcoming releases. Please stay tuned to our [GitHub repository](https://github.com/AY2021S1-CS2103T-F11-4/tp) for more updates.<br>
 
 **Q6**: How do I contact the development team?<br> 
-**A**: For business proposals, please head to our [About Us](AboutUs.md) page for our contact details. For bug reports or feature requests, please head to our [GitHub repository](https://github.com/AY2021S1-CS2103T-F11-4) to file an issue.<br>
+**A**: For business proposals, please head to our [About Us](AboutUs.md) page for our contact details. For bug reports or feature requests, please head to our [GitHub repository](https://github.com/AY2021S1-CS2103T-F11-4/tp) to file an issue.<br>
 
 **Q7**: Do I need an internet connection to run this application?<br> 
 **A**: No, an internet connection is not required to use any of our application's features.<br>
