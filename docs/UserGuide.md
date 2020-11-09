@@ -187,7 +187,7 @@ For a visual example on how the command works, refer to [Appendix C: Expected Co
 
 [Back to Table of Contents](#table-of-contents)
 
-#### 1.4: Viewing _all_ your Clients: `client list`
+#### 1.4: Viewing _all_ your clients: `client list`
 
 Shows a list of all clients in **_TBM_**. Client Cards are intended to display the most important details succinctly. Therefore, if a particular data field is too long, you should view them in full using the [`client view`](#15-viewing-a-particular-client-client-view) command.
 
@@ -199,7 +199,7 @@ For a visual example on how the command works, refer to [Appendix C: Expected Co
 
 [Back to Table of Contents](#table-of-contents)
 
-#### 1.5: Viewing _a Particular_ Client: `client view`
+#### 1.5: Viewing _a particular_ client: `client view`
 
 Views the client specified by the `CLIENT_INDEX` parameter. All the details for this client as well as notes related to this client will be shown in the Display Panel.
 <div markdown="block" class="alert alert-info">
@@ -625,9 +625,7 @@ Action | Format, Examples
 
 [Back to Table of Contents](#table-of-contents)
 
-
 ---------------------------------------------------------------------------------------------------------------------
-
 
 ## **Glossary**
 
@@ -638,7 +636,6 @@ Action | Format, Examples
 * **_TBM_**: Initialism for Travelling BusinessMan
 
 [Back to Table of Contents](#table-of-contents)
-
 
 ---------------------------------------------------------------------------------------------------------------------
 
