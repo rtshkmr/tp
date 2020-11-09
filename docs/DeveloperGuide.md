@@ -432,7 +432,7 @@ _{Explain here how the data archiving feature will be implemented}_
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Requirements**
+## **Appendix A: Requirements**
 
 ### Product scope
 
@@ -606,7 +606,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Instructions for manual testing**
+## **Appendix B: Instructions for manual testing**
 
 Given below are instructions to test the app manually. Additionally, testers can look through our [Testing Guide](Testing.md) to get started on automated testing.
 
@@ -658,7 +658,7 @@ testers are expected to do more *exploratory* testing.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Effort**
+## **Appendix C: Effort**
 
 With an estimate value of **100** to be the level of effort required to develop **AB3**, we would place the effort required to deliver the current version of **TBM** at **205**.
 
