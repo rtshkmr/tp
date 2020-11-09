@@ -21,7 +21,7 @@ Class WidgetModelManager
 Class WidgetObject
 }
 
-note "The design of Country, Note and Tag is omitted\nfrom this diagram to keep it simple. Refer to\nthe bottom section for mor" as N1
+note "The design of Country, Note and Tag is omitted\nfrom this diagram to keep it simple. Refer to\nthe 'Inner workings' section below for\nmore details" as N1
 
 Package Client {
 Class Client

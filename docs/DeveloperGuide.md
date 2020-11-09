@@ -135,11 +135,11 @@ The `Model`,
 * exposes an unmodifiable `ObservableList<Client>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
 * does not depend on any of the other three components.
 
-#### Inner workings of TBM
+#### Inner workings
 
-![Design of the Client, Note, Tag and Country Components](images/InnerWorkings.png)
+![Design of the Client, Note, Tag, and Country Components](images/InnerWorkings.png)
 
-The above Model diagram provides a high level view of how **_TBM_** functions. However, is does not fully represent the class design between Note, Country and Tag.
+The above class diagram shows the inner workings of the Note, Tag, and Country components, as well as their associations with the Client component.
 
 ### Storage component
 
