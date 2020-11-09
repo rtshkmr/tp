@@ -192,7 +192,7 @@ Choosing between 1 and 2 has a trade-off between storage-file-size and some over
 
 The sequence diagram below highlights the key aspects of initialising `TagNoteMap` at Application Start-Up:
 
-![Init TagNoteMap](images/TagNoteMapInitialization.png) 
+![Init TagNoteMap](images/TagNoteMapInitializationSequence.png) 
 
 
 
