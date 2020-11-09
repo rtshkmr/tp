@@ -129,7 +129,6 @@ Certain commands require parameters. A quick summary of these parameters as well
 
 **_TBM_**'s commands are easy to use and remember, but in the case you need to see a list of commonly used commands, simply type `help` or press the `F1` key to access this list in the [new help window](#help-window). Pressing the `Esc` key will close this window.
 
-
 Format: `help`
 
 --------------------------------------------------------------------------------------------------------------------
@@ -189,12 +188,15 @@ Examples:
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#editing-a-client)
 
-#### 1.4: Viewing _All_ your Clients: `client list`
+#### 1.4: Viewing _all_ your Clients: `client list`
 
-Shows a list of all clients in **_TBM_**. Client Cards are intended to display the most important details succinctly. Therefore, if a particular data field is too long, you should view them view them in full using the [`client view`](#viewing-a-client--client-view) command.
+Shows a list of all clients in **_TBM_**. Client Cards are intended to display the most important details succinctly. Therefore, if a particular data field is too long, you should view them in full using the [`client view`](#viewing-a-client--client-view) command.
+
 This command will also reset the left display panel to its default view. 
 
 Format: `client list`
+
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#viewing-all-clients)
 
 #### 1.5: Viewing _a Particular_ Client: `client view`
 
@@ -241,6 +243,7 @@ Examples:
 
    Finds all clients whose names contain either **Katya** or **Hans**.
 
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#finding-clients)
 
 #### 1.7: Filtering clients by country: `country filter`
 
@@ -297,32 +300,19 @@ Examples:
 
     Adds a **note** with a **tag** to the **fourth** client in the list.
 
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#adding-client-notes)
+
 ##### 2.1.2: Deleting client notes: `client note delete`
 
 Deletes a note of a client (denoted by a client's index) by the note's index.
 
 Format: `client note delete CLIENT_INDEX CLIENT_NOTE_INDEX`
 
-Examples:
+Examples: 
+* `client note delete 2 1`
+* `client note delete 1 12` i.e. 12th note of client 1
 
-Given a list of notes:
-
-```
-Client: 3
-Notes:
-1. Loves dogs [tag: pref]
-2. Hates cats [tag: pref]
-```
-
-Command: `client note delete 3 2`
-
-The above command deletes the note regarding "Hates cats". The resulting information will look like:
-
-```
-Client: 3
-Notes:
-1. Loves dogs [tag: pref]
-```
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#deleting-client-notes)
 
 ##### 2.1.3: Editing client notes: `client note edit`
 
@@ -332,27 +322,17 @@ Format: `client note edit CLIENT_INDEX CLIENT_NOTE_INDEX (nt/NOTE_STRING) (t/TAG
 
 Examples:
 
-Given a list of notes:
+* `client note edit 2 1 nt/prefers face-to-face meetings to calls`
+  Just edits the note contents. The existing tags will be preserved.
 
-```
-Client: 3
-Notes:
-1. Loves dogs [tag: pref]
-2. Hates cats [tag: pref]
-3. Apprehensive of resigning contract [tag: meeting]
-```
+* `client note edit 2 1 t/ItalianRestaurants`
+  Just adds a new tag `t/ItalianRestaurants`. Existing tags and the note contents will be unchanged.
 
-Command: `client note edit 3 2 nt/Loves cats t/important`
 
-The original note containing "Hates cats" will be changed to "Loves cats" with an additional tag (on top of the existing one). The resulting list will look like:
+* `client note edit 2 1 nt/prefers face-to-face meetings to calls t/ItalianRestaurants`
+  Edits the note contents as well as adds a new tag `t/ItalianRestaurants`
 
-```
-Client: 3
-Notes:
-1. Loves dogs [tag: pref]
-2. Loves cats [tag: pref, important]
-3. Apprehensive of resigning contract [tag: meeting]
-```
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#editing-client-notes)
 
 #### 2.2: Country Notes
 
@@ -558,8 +538,11 @@ If the `tbmManager.json` file gets corrupted, for example, if some fields were c
 
 ## **Frequently Asked Questions (FAQ)**
 
-**Q**: How do I transfer my data to another Computer?<br>
+**Q1**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous **_TBM_** home folder.<br>
+
+**Q2**: How do I install Java11?
+**A**: 
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -572,6 +555,7 @@ Action | Format, Examples
 **Edit client** | `client edit CLIENT_INDEX (n/NAME) (p/PHONE) (e/EMAIL) (a/ADDRESS) (c/COUNTRY_CODE) (tz/TIMEZONE) (ce/CONTRACT_EXPIRY_DATE)`<br> e.g.,`client edit 3 c/JP tz/UTC+07:00`
 **View client** | `client view CLIENT_INDEX` <br> e.g., `client view 2`
 **Find client** | `client find KEYWORD [MORE_KEYWORDS]`<br> e.g., `client find Hans`
+**Client suggestions** | `client suggest by/SUGGESTION_TYPE [by/SUGGESTION_TYPE]...` <br> e.g., `client suggest by/available by/frequency`
 **Delete client** | `client delete CLIENT_INDEX`<br> e.g., `client delete 3`
 **Add client note** | `client note add CLIENT_INDEX nt/NOTE_STRING [t/TAG]...` <br> e.g., `client note add 4 t/meeting nt/need to slowly convince him to sign the contract`
 **Delete client note** | `client note delete CLIENT_INDEX CLIENT_NOTE_INDEX` <br> e.g., `client note delete 3 2`
@@ -581,7 +565,6 @@ Action | Format, Examples
 **Add country note** | `country note add c/COUNTRY_CODE nt/NOTE_STRING [t/TAG]...` <br> e.g., `country note add c/SG nt/has one of the lowest coporate taxes in the world t/tax`
 **Edit country note** | `country note edit COUNTRY_NOTE_INDEX (nt/NOTE_STRING) (t/TAG)...` <br> e.g., `country note edit 1 nt/has one of the lowest coporate taxes in the world t/tax`
 **Delete country note** | `country note delete COUNTRY_NOTE_INDEX` <br> e.g., `country note delete 1`
-**Get suggestions** | `client suggest by/SUGGESTION_TYPE [by/SUGGESTION_TYPE]...` <br> e.g., `client suggest by/available by/frequency`
 **Clear** | `clear`
 **Exit** | `exit`
 **Help** | `help`
@@ -590,19 +573,20 @@ Action | Format, Examples
 
 ## **Parameter Constraints Summary**
 
-Parameter | Prefix | Constraints, Examples
---------|------------------| ----------
-**NAME** | `n/` | Names should only contain alphanumeric characters and spaces, and it should not be blank. <br> e.g. `n/John Doe`
-**PHONE_NUMBER** | `p/` | Phone numbers should have at least 3 digits and at most 15 digits. <br> Please refer to [Appendix B](#appendix-b-international-standards-followed) for a comprehensive description. <br> e.g. `p/81867752` or `p/+65 81867752` 
-**EMAIL** | `e/` | Emails should be of the format local-part@domain. <br> e.g. `e/katya@yahoo.com`
-**ADDRESS** |`a/` | Addresses can take any values, and it should not be blank. <br> e.g. `Vladivostok, Nevelskogo, bld. 15, appt. 256`
-**COUNTRY_CODE** | `c/` | A 2-letter country code that follows the ISO3166 specification <br> This [finding tool](https://www.countrycode.org/) can be used. <br> e.g. `c/SG` (Singapore) 
-**TIMEZONE** | `tz/` | Timezone should be given in offsets relative to [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) in the format `UTC+HH:MM` where `HH` refers to the offset in hours and `MM` refers to the offset in minutes. The full list of valid timezones can be found [here](https://www.timeanddate.com/time/current-number-time-zones.html) <br> e.g. `tz/UTC+08:00
-**CONTRACT_EXPIRY_DATE** | `ce/` | Date should be given in the format "DD-MM-YYYY". <br> e.g. `ce/10-10-2020`
-**NOTE_STRING** | `nt/` | Notes can take any values, and it should not be blank. <br> e.g. `nt/Likes cats`
-**TAG** | `t/` | Tags names should be alphanumeric and have a maximum of 45 characters. <br> e.g. `t/important`
-**SUGGESTION_TYPE** | `by/` | Suggestion types can only be either `available`, `contract` or `frequency`. <br> e.g. `by/available`
-**CLIENT_INDEX / CLIENT_NOTE_INDEX / COUNTRY_NOTE_INDEX** | - | Index is a number greater than 0 that is based on the numberings beside each client or note. <br> e.g. `1` would refer to the first client or note.
+
+| Parameter | Prefix | Constraints, Examples|
+|--------|------------------| ----------|
+|**NAME** | `n/` | Names should only contain alphanumeric characters and spaces, and it should not be blank. <br> e.g. `n/John Doe` |
+|**PHONE_NUMBER** | `p/` | Phone numbers should have at least 3 digits and at most 15 digits. <br> Please refer to [Appendix B](#appendix-b-international-standards-followed) for a comprehensive description. <br> e.g. `p/81867752` or `p/+65 81867752` |
+|**EMAIL** | `e/` | Emails should be of the format local-part@domain. <br> e.g. `e/katya@yahoo.com` |
+|**ADDRESS** |`a/` | Addresses can take any values, and it should not be blank. <br> e.g. `Vladivostok, Nevelskogo, bld. 15, appt. 256` |
+|**COUNTRY_CODE** | `c/` | A 2-letter country code that follows the ISO3166 specification <br> This [finding tool](https://www.countrycode.org/) can be used. <br> e.g. `c/SG` (Singapore) |
+|**TIMEZONE** | `tz/` | Timezone should be given in offsets relative to [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) in the format `UTC+HH:MM` where `HH` refers to the offset in hours and `MM` refers to the offset in minutes. The full list of valid timezones can be found [here](https://www.timeanddate.com/time/current-number-time-zones.html) <br> e.g. `tz/UTC+08:00` |
+|**CONTRACT_EXPIRY_DATE** | `ce/` | Date should be given in the format "DD-MM-YYYY". <br> e.g. `ce/10-10-2020` |
+|**NOTE_STRING** | `nt/` | Notes can take any values, and it should not be blank. <br> e.g. `nt/Likes cats` |
+|**TAG** | `t/` | Tags names should be alphanumeric and have a maximum of 45 characters. <br> e.g. `t/important` |
+|**SUGGESTION_TYPE** | `by/` | Suggestion types can only be either `available`, `contract` or `frequency`. <br> e.g. `by/available` |
+|**CLIENT_INDEX / CLIENT_NOTE_INDEX / COUNTRY_NOTE_INDEX** | - | Index is a number greater than 0 that is based on the numberings beside each client or note. <br> e.g. `1` would refer to the first client or note. |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -688,8 +672,6 @@ Here are the alternative stylistic choices that you might make when writing out 
           * `+65.81867742` with a "." character is also a valid phone number.
             
          These options have been provided because we know that such delimiting is a matter of _cultural preference_.
-    
-
 
 <p align="center">
    <strong><i>{End of Appendix B, please return to the <a href="#table-of-contents">Table of Contents</a>}</i></strong> 
@@ -748,6 +730,18 @@ As we can see, the client's number has changed from `87438807` to `12345678`.
 
 [Back to command](#13-editing-a-client-client-edit)
 
+### Viewing all clients
+
+Let's say that you have filtered and viewed a client, and your TBM looks something like this:
+
+<img src="images/viewing_all_clients_before.png" alt="Before viewing all clients" width="800" height="600">
+
+If you want to reset the filtering and list all clients, you can execute the `client list` command, which will cause TBM to go back to its default view, like so:
+
+<img src="images/viewing_all_clients_after.png" alt="After viewing all clients" width="800" height="600">
+
+[Back to command](#14-viewing-_all_-your-clients-client-list)
+
 ### Viewing a client
 
 In the initial state of TBM below, we have multiple clients in our client list panel. Currently, the display panel on the left is showing the default home screen.
@@ -762,23 +756,87 @@ Command: `client view 2`
 
 The client's information will appear in the display panel on the left where we can view more information regarding the client such as the time in his timezone as well as our notes for that client.
 
-[Back to command](#15-viewing-_a-particular_-client-client-view)
+[Back to command](#15-viewing-a-particular-client-client-view)
+
+### Finding clients
+
+Before executing the find command, here is what the initial state of TBM looks like:
+
+<img src="images/client_find_before.png" alt="Before client find" width="800" height="600">
+
+After executing the find command, we see that the client list has been filtered to only those clients with names that contain the supplied keyword:
+
+<img src="images/client_find_after.png" alt="After client find" width="800" height="600">
+
+[Back to command](#16-finding-clients-client-find)
 
 ### **Filtering by country**
 
 Before filtering, here is what it looks like,
 
-<img src="images/country_filter_before_ss.png" alt="Before filter" width="800" height="600">
+![country filter before](images/country_filter_before_ss.png)
 
 After filtering for clients from Spain,
 
-<img src="images/country_filter_after_ss.png" alt="Before filter" width="800" height="600">
+![country filter after](images/country_filter_after_ss.png)
 
 [Back to command](#17-filtering-clients-by-country-country-filter).
 
+### **Adding client notes**
+
+Adding client notes can be done at any time regardless of which window you're seeing at that moment. In the following, we add a client note from the default start page itself. 
+
+![client note add before](images/client_note_add_before.png)
+
+We wish to add the following tagged note: 
+
+`client note add 2 nt/prefers emails to calls t/preference t/busyBee`
+
+Upon issuing the command, you'll be notified of the addition, but it won't disturb the current view you're in and will do so behind the scenes. 
+
+![client note add after invisible](images/client_note_add_after_invisible.png)
+
+If you want to read off the note, you'll have to enter `client view 2`, which shall show you the client's details and notes in a scrollable display panel. Please note that when the display panel has more contents, a scrollbar shall appear for your use.
+
+![client note add after visible](images/client_note_add_after_visible.png)
+
+[Back to command](#211-adding-client-notes-client-note-add).
+
+### **Deleting client notes**
+
+Just like adding you may delete the client note from any window, but here, we show issue the command when we are already viewing a particular client. For example, in the following situation, you want to delete Lauren's note that is labelled as index 1. Notice that Laurent is client #2. 
+
+![client note delete before](images/client_note_delete_before.png)
+
+Issue the following command: 
+
+`client note delete 2 1` and you'll see that the note will be deleted: 
+
+![client note delete after](images/client_note_delete_after.png)
+
+[Back to command](#212-deleting-client-notes-client-note-delete).
+
+### **Editing client notes**
+
+Let's say we want to change an existing note for Lauren because we realise that she prefers face to face meetings to emails, specifically italian restaurants. 
+Here's how it looks like beforehand: 
+
+![client note edit before](images/client_note_edit_before.png)
+
+Note that the note has note index 1 and Lauren's client index is 2.
+
+We can edit this information by issuing the command: `client note edit 2 1 nt/prefers face-to-face meetings to calls t/ItalianRestaurants`.
+Immediately, the note card will update to reflect the newly edited note like so:
+
+![client note edit after](images/client_note_edit_after.png)
+
+Please note that you could have edited only the tags or only the note contents if you so wished, instead of editing both the note contents and the tags.
+
+[Back to command](#213-editing-client-notes-client-note-edit).
+
 ### **Viewing country note**
 
-Below is a screenshot of what happenss when you enter the command: `country note view c/SG` to view Singapore notes,
+Below is a screenshot of what happens when you enter the command: `country note view c/SG` to view Singapore notes,
 
 <img src="images/country_note_view_ss.jpg" alt="Viewing country note" width="800" height="600">
 
@@ -812,43 +870,34 @@ After editing, you will see the display update to show the new note,
 
 Initially, this is how the country notes panel will look like after issuing the command `country note view`.
 
-<<BEFORE PIC...>>
+<img src="images/country_note_delete_before.png" alt="Before issuing the country note delete command" width="800" height="600">
 
 After issuing the command `country note delete 1`, notice that the country note belonging to **Japan** with the content, **"A high-context country, hence building relationships is important for doing business"**, was deleted.
 
-<<AFTER PIC...>>
+<img src="images/country_note_delete_after.png" alt="After issuing the country note delete command" width="800" height="600">
 
-Back to [command](#224-deleting-notes-for-a-country-country-note-delete).
+[Back to command](#224-deleting-notes-for-a-country-country-note-delete).
 
 ### **Getting client suggestions**
 
 Initially this is how the client list panel will look like after issuing the command `client list`.
 
-<<BEFORE PIC...>>
+<img src="images/client_suggest_before.png" alt="Before issuing the suggest command" width="800" height="600">
 
 After issuing the command `client suggest by/contract`, notice that clients whose contract expiry date ends earlier would be displayed higher in the client list panel. 
 
-<<AFTER PIC...>>
+<img src="images/client_suggest_after.png" alt="After issuing the suggest command" width="800" height="600">
 
-Back to [command](#3-getting-suggested-clients).
+[Back to command](#3-getting-suggested-clients).
 
 ### **Clearing all data**
 
 This is how **_TBM_** looks like with existing data. 
 
-<<BEFORE PIC...>>
+<img src="images/clear_before.png" alt="Before issuing the clear command" width="800" height="600">
 
 After issuing the command `clear`, notice that all existing data will be cleared from **_TBM_**.
 
-<<AFTER PIC...>>
+<img src="images/clear_after.png" alt="After issuing the clear command" width="800" height="600">
 
-Back to [command](#4-clearing-all-your-entries).
-
-### **Dummy Command Template **
-
-before ss and after ss 
-
-each ss window  size to be 800x600px
-
-link the command description above to this section so users can navigate to here easily 
-link a return link back to the description as well
+[Back to command](#4-clearing-all-your-entries).
