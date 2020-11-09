@@ -48,5 +48,5 @@ Given below are my contributions to the project.
 * **Community**: 
   * PRs reviewed, some with changes requested (noteworthy ones): [#118](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/118), [#149](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/149), [#161](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/161), [#185](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/185), [#352](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/352)
   * Added a tip on **JVM shutdown hook** on the module page [#85](https://github.com/nus-cs2103-AY2021S1/forum/issues/85)
-  * Reported bugs in other teams' products from a module-coordinated bug bounty. [issues](https://github.com/rtshkmr/ped/issues)
+  * Reported bugs in other teams' products from a module-coordinated bug bounty. [Issues created here](https://github.com/rtshkmr/ped/issues).
   
