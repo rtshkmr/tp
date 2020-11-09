@@ -407,17 +407,9 @@ _{more aspects and alternatives to be added}_
 
 The use of `TagNoteMap` as an association class to keep track of the many-to-many relationship between `Tag` and `Note` allows for easy addition of a "Find by Tags" feature. `TagNoteMap` has `tagToNotesMap` and `noteToTagsMap` which map a single entity to a collection of all the other associated objects of the other entity. 
 
-Hence a valid command syntax of `find byTag/TAG_NAME` would be a minimal change to the 
-
--- insert common tagnote map implementation uml class diagram -- 
-
+Hence a valid command syntax of `find byTag/TAG_NAME` would be a minimal change to the parsing methods that already exist.
 
 The complication lies in the GUI implementation to display the output of the find by tag. This is because the return values will be both country and client notes (which themselves are associated to countries and clients) so while we might reuse the Display Panel area, we would still a modification of cards to indicate the entity type (`Client` or `Country`). 
-
-
-### \[Proposed\] Data archiving
-
-_{Explain here how the data archiving feature will be implemented}_
 
 
 
