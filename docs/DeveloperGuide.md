@@ -281,7 +281,7 @@ The following sequence diagram shows how the suggest operation works:
 A command history greatly optimises the user's productivity by removing the need to repetitively type out similar commands.
 Furthermore, it allows backwards viewing of previous commands given, which is similar to the CLI experience. 
 
-However, the difference between the traditional CLI history and TBM's CLI history is that TBM's history only accepts valid commands. Invalid commands entered will not be included will not appear in the command history.
+However, the difference between the traditional CLI history and **_TBM_**'s CLI history is that **_TBM_**'s history only accepts valid commands. Invalid commands entered will not be included will not appear in the command history.
 Furthermore, the modification of previous commands in the history do not override the current command as well. The current input being edited is stored in a separate variable as the user scrolls through the command history. This is proposed upgrade for the CLI history feature.
 
 The implementation of command history is backed by a list of strings `history`. Upon the entering of a valid command, the command history, `CommandHistory`.
@@ -476,7 +476,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is the `TBM` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is the `**_TBM_**` and the **Actor** is the `user`, unless specified otherwise)
 
 #### UC1 - Adding a Client
 
@@ -678,29 +678,20 @@ testers are expected to do more *exploratory* testing.
    1. Prerequisites: List all clients using the `client list` command. Multiple clients in the list.
 
    1. Test case: `client delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the results display is updated.
 
    1. Test case: `client delete 0`<br>
-      Expected: No client is deleted. Error details shown in the status message. Status bar remains the same.
+      Expected: No client is deleted. Error details shown in the status message. Results display remains the same.
 
    1. Other incorrect delete commands to try: `client delete`, `client delete x`, `...` (where x is larger than the list size)<br>
       Expected: Similar to previous.
 
-1. _{ more test cases …​ }_
-
-### Saving data
-
-1. Dealing with missing/corrupted data files
-
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
-
-1. _{ more test cases …​ }_
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Appendix C: Effort**
 
-With an estimate value of **100** to be the level of effort required to develop **AB3**, we would place the effort required to deliver the current version of **TBM** at **205**.
+With an estimate value of **100** to be the level of effort required to develop **AB3**, we would place the effort required to deliver the current version of ****_TBM_**** at **205**.
 
 Major changes are changes that required a significant amount of effort (an estimate minimum of 68 man-hours per change) from the team to coordinate, plan, implement, review, and optimize, while minor changes are changes that required a moderate amount of effort (an estimated minimum of 20 man-hours per change).
 
@@ -710,11 +701,11 @@ Major changes are changes that required a significant amount of effort (an estim
 
 To give users the ability to write notes capable of being handled in a generic manner for the entities of `Client` and `Country`, a `Note` class was created and a `CountryNote` class extended from it. Client notes could be stored easily by allowing clients to contain client-specific notes and country notes had to be managed by the `CountryNotesManager` controller class to handle the mapping between unique `Country` objects and their associated Notes. 
 
-Unique`Tag` objects were implemented by having a `TagNoteMap` class that keeps track of the association between unique `Note` and `Tag` objects. Storage of this many-to-many relationship required effort in circumventing the no-DBMS constraint imposed by the module. We chose to programmatically generate the `TagNoteMap` object upon TBM's start-up with the aim of reducing file-size of the JSON data files on the user's hard-drive.
+Unique`Tag` objects were implemented by having a `TagNoteMap` class that keeps track of the association between unique `Note` and `Tag` objects. Storage of this many-to-many relationship required effort in circumventing the no-DBMS constraint imposed by the module. We chose to programmatically generate the `TagNoteMap` object upon **_TBM_**'s start-up with the aim of reducing file-size of the JSON data files on the user's hard-drive.
 
 **2. Additional Client Fields**
 
-We refactored the codebase as well as the documentation from `Person` in AB3 to `Client` in TBM with additional fields to fit our target audience. Adding of simple tags was moved to a new note package that allowed more freedom and flexibility in adding data to clients. We added new fields in `Country`, `Timezone`, `ContractExpiryDate`, `LastModifiedInstant`. `Country` and `Timezone` required non-trivial validation and testing to verify their correctness. `Timezone`, `ContractExpiryDate` and `LastModifiedInstant` are necessary for suggestions. The `LastModifiedInstant` class serves as metadata that is not directly exposed to the user but is only updated upon any logical modifications to a client object.
+We refactored the codebase as well as the documentation from `Person` in AB3 to `Client` in **_TBM_** with additional fields to fit our target audience. Adding of simple tags was moved to a new note package that allowed more freedom and flexibility in adding data to clients. We added new fields in `Country`, `Timezone`, `ContractExpiryDate`, `LastModifiedInstant`. `Country` and `Timezone` required non-trivial validation and testing to verify their correctness. `Timezone`, `ContractExpiryDate` and `LastModifiedInstant` are necessary for suggestions. The `LastModifiedInstant` class serves as metadata that is not directly exposed to the user but is only updated upon any logical modifications to a client object.
 
 **3. Client Suggestion**
 
@@ -722,7 +713,7 @@ A `ClientSuggestionType` class was created which acts as a controller class that
 
 **4. GUI**
 
-In line with human-centric UX design, TBM's GUI was changed to be visually appealing, intuitive, informative, smooth, and have a flexible layout. We made effort to ensure that the layout was consistent and eliminated weird behaviours resulting from limitations of JavaFX. One challenge was that the client cards in **AB3** had an undefined behaviour where they changed sizes when being clicked on, even though there is no expected response upon clicking. We fixed this by setting `ListViewCell` to `disabled`.
+In line with human-centric UX design, **_TBM_**'s GUI was changed to be visually appealing, intuitive, informative, smooth, and have a flexible layout. We made effort to ensure that the layout was consistent and eliminated weird behaviours resulting from limitations of JavaFX. One challenge was that the client cards in **AB3** had an undefined behaviour where they changed sizes when being clicked on, even though there is no expected response upon clicking. We fixed this by setting `ListViewCell` to `disabled`.
 
 **5. Automated GUI Testing**
 
@@ -738,7 +729,7 @@ We made sure to write rigorous tests for every piece of code we added, expanded 
 
 **1. Command Format**
 
-The command format of TBM had to be modified from AB3 to account for client-related, client-note-related and country-note-related commands.
+The command format of **_TBM_** had to be modified from AB3 to account for client-related, client-note-related and country-note-related commands.
 
 **2. Command Parsing**
 
@@ -746,7 +737,7 @@ Extending on the original parsing of AB3, we modified the command parsing to acc
 
 **3. Command History**
 
-Keeping in line with TBM's time-conscious target users who prefer using CLIs, we implemented a command history to provide an authentic CLI experience and to increase user-friendliness.
+Keeping in line with **_TBM_**'s time-conscious target users who prefer using CLIs, we implemented a command history to provide an authentic CLI experience and to increase user-friendliness.
 
 **4. Code Clean-up**
 
