@@ -612,8 +612,7 @@ never have to worry about not being able to see all your important clients at a 
    
 ### **UI when Viewing Clients**
 
-The diagram below is what you should see upon viewing a particular client (i.e. firing up the command `client view 1
-`). It shows how to identify a particular client's `CLIENT_INDEX`, and an associated note's `CLIENT_NOTE_INDEX`.
+The diagram below is what you should see upon viewing a particular client (i.e. firing up the command `client view 1`). It shows how to identify a particular client's `CLIENT_INDEX`, and an associated note's `CLIENT_NOTE_INDEX`.
 
   ![Annotated Client View UI Layout](images/command-screenshots/client_view_annotated.png)
   <p align="center"><i>Figure 4. Client View</i></p>
