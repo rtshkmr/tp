@@ -808,9 +808,11 @@ Just like adding you may delete the client note from any window, but here, we sh
 
 Issue the following command: 
 
-`client note delete 2 1` and you'll see that the note will be deleted: 
+`client note delete 1 2` and you'll see that the 2nd note from client 1 will be deleted: 
 
 ![client note delete after](images/client_note_delete_after.png)
+
+Note that the list immediately refreshes and indices of the other notes will be updated accordingly.
 
 [Back to command](#212-deleting-client-notes-client-note-delete).
 
