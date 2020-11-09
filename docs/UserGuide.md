@@ -162,6 +162,11 @@ For a visual example on how the command works, refer to [Appendix C: Expected Co
 
 Edits a client's information by their index in the list view. Only edits the fields that have been passed in as parameters.
 
+<div markdown="block" class="alert alert-info">
+
+**:information_source:** Changing a client's country will not automatically update their timezone and vice versa.
+</div>
+
 Format: `client edit CLIENT_INDEX (n/NAME) (p/PHONE) (e/EMAIL) (a/ADDRESS) (c/COUNTRY_CODE) (tz/TIMEZONE) (ce/CONTRACT_EXPIRY)`
 
 Examples:
@@ -199,7 +204,7 @@ For a visual example on how the command works, refer to [Appendix C: Expected Co
 Views the client specified by the `CLIENT_INDEX` parameter. All the details for this client as well as notes related to this client will be shown in the Display Panel.
 <div markdown="block" class="alert alert-info">
 
-**:information_source:** Please refer to [this](#ui-when-viewing-clients) if you need to be re-acquainted with the UI for client related commands
+**:information_source:** Please refer to [this](#ui-when-viewing-clients) if you need to be re-acquainted with the UI for client related commands.
 </div>
 
 Format: `client view CLIENT_INDEX`
@@ -349,7 +354,7 @@ For a visual example on how the command works, refer to [Appendix C: Expected Co
 
 <div markdown="block" class="alert alert-info">
 
-**:information_source:** Please refer to [this](#ui-when-viewing-country) if you need to be re-acquainted with the UI for country note related commands
+**:information_source:** Please refer to [this](#ui-when-viewing-country) if you need to be re-acquainted with the UI for country note related commands.
 </div>
 
 Views the list of country notes that are associated with the country corresponding to the country code supplied.
