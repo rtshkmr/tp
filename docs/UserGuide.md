@@ -756,7 +756,7 @@ After executing the find command, we see that the client list has been filtered 
 
 [Back to command](#16-finding-clients-client-find)
 
-### **Filtering by country**
+### Filtering by country
 
 Before filtering, here is what it looks like,
 
@@ -768,7 +768,7 @@ After filtering for clients from Spain,
 
 [Back to command](#17-filtering-clients-by-country-country-filter).
 
-### **Adding client notes**
+### Adding client notes
 
 Adding client notes can be done at any time regardless of which window you're seeing at that moment. In the following, we add a client note from the default start page itself. 
 
@@ -788,7 +788,7 @@ If you want to read off the note, you'll have to enter `client view 2`, which sh
 
 [Back to command](#211-adding-client-notes-client-note-add).
 
-### **Deleting client notes**
+### Deleting client notes
 
 Just like adding you may delete the client note from any window, but here, we show issue the command when we are already viewing a particular client. For example, in the following situation, you want to delete Lauren's note that is labelled as index 1. Notice that Laurent is client #2. 
 
@@ -802,7 +802,7 @@ Issue the following command:
 
 [Back to command](#212-deleting-client-notes-client-note-delete).
 
-### **Editing client notes**
+### Editing client notes
 
 Let's say we want to change an existing note for Lauren because we realise that she prefers face to face meetings to emails, specifically italian restaurants. 
 Here's how it looks like beforehand: 
@@ -820,7 +820,7 @@ Please note that you could have edited only the tags or only the note contents i
 
 [Back to command](#213-editing-client-notes-client-note-edit).
 
-### **Viewing country note**
+### Viewing country note
 
 Below is a screenshot of what happens when you enter the command: `country note view c/SG` to view Singapore notes,
 
@@ -828,7 +828,7 @@ Below is a screenshot of what happens when you enter the command: `country note 
 
 [Back to command](#221-viewing-notes-for-a-country-country-note-view).
 
-### **Adding country note**
+### Adding country note
 
 Before adding a note to Singapore, there is only one note for Singapore,
 
@@ -840,7 +840,7 @@ After adding the note, the display automatically updates,
 
 [Back to command](#222-adding-notes-for-a-country-country-note-add).
 
-### **Editing country note**
+### Editing country note
 
 Before editing note 1 of Singapore, ensure that you first view the country notes of Singapore with `country note view c/SG`,
 
@@ -852,7 +852,7 @@ After editing, you will see the display update to show the new note,
 
 [Back to command](#223-editing-notes-for-a-country-country-note-edit).
 
-### **Deleting country note**
+### Deleting country note
 
 Initially, this is how the country notes panel will look like after issuing the command `country note view`.
 
@@ -864,7 +864,7 @@ After issuing the command `country note delete 1`, notice that the country note 
 
 [Back to command](#224-deleting-notes-for-a-country-country-note-delete).
 
-### **Getting client suggestions**
+### Getting client suggestions
 
 Initially this is how the client list panel will look like after issuing the command `client list`.
 
@@ -876,7 +876,7 @@ After issuing the command `client suggest by/contract`, notice that clients whos
 
 [Back to command](#3-getting-suggested-clients).
 
-### **Clearing all data**
+### Clearing all data
 
 This is how **_TBM_** looks like with existing data. 
 
