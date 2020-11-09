@@ -10,6 +10,7 @@ Travelling BusinessMan is a desktop application that manages notes and clients a
 Given below are my contributions to the project.
 
 * **New features**: 
+  * Updated help window display and contents (Pull requests [\#117](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/117), [\#317](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/317))
   * Added option to close help window using the Esc key (Pull request [\#133](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/133))
   * Created the `NoteCard` UI component to view client and country notes in a user-friendly way and implemented a better GUI display for `country note view` and `country note view c/COUNTRY` (Pull request [\#247](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/247))
   * Co-authored pull request [\#197](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/197) to implement GUI testing and integrate into GitHub Continuous Integration workflow
@@ -35,9 +36,13 @@ Given below are my contributions to the project.
 * **Documentation**:
   * User Guide:
     * Added documentation for the features `country note`, `clear`, and `exit` [\#31](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/31)
+    * Added screenshots for the commands `help`, `client list`, and `client find` [\#351](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/351)
+    *  
   * Developer Guide:
     * Added the list of user stories and labelled their priorities [\#38](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/38)
     * Added the use case for `clearing all entries` [\#53](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/53)
+    * Added implementation section with UML diagrams for `client suggest by/contract` [\#204](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/204)
+    * Updated UML diagrams for sections `Model component`, `Inner workings`, and `Storage component` [\#351](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/351)
 <br/><br/>
 * **Community**:
   * PRs reviewed (with non-trivial review comments): [\#51](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/51), [\#121](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/121), [\#131](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/131), [\#134](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/134), [\#137](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/137), [\#144](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/144), [\#146](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/146), [\#150](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/150), [\#164](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/164), [\#198](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/198), [\#199](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/199), [\#223](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/223), [\#244](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/244), [\#252](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/252), [\#256](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/256), [\#259](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/259), [\#266](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/266), [\#268](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/268), [\#337](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/337))
