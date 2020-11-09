@@ -12,7 +12,7 @@ Given below are my contributions to the project.
 <br/><br/>
 * **New Features Implemented**:
   * `Client Notes`: Added [Create](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/134), Read, [Update](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/259), [Destroy](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/203) functionality for `Note` objects associated to clients along with required documentation and tests.  
-  * `TagNoteMap`: Created unique `Tag` Objects and established the many-to-many relationship between `Tag` and `Note` objects to circumvent "no-DBMS constraint" imposed by the mod (Initial implementation in PR [#150](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/150)). Also added storage for `Note` [#235](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/235)
+  * `TagNoteMap`: Created unique `Tag` Objects and established the many-to-many relationship between `Tag` and `Note` objects to circumvent "no-DBMS constraint" imposed by the mod (Initial implementation in PR [#150](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/150)). Also added storage for `Note` [#235](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/235), [#164](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/164), 
 <br/><br/>
 * **Code contributed:** [RepoSense link](https://nus-cs2103-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=rtshkmr&sort=groupTitle&sortWithin=title&since=2020-08-14&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other)
 
@@ -42,3 +42,7 @@ Given below are my contributions to the project.
       * Added PUML Sequence diagram to explain how `TagNoteMap` is initialised
 <br/><br/>   
 * **Community** 
+  * PRs reviewed, some with changes requested (noteworthy ones): [#118](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/118), [#149](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/149), [#161](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/161), [#185](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/185), [#352](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/352)
+  * Added a tip on **JVM shutdown hook** on the module page [#85](https://github.com/nus-cs2103-AY2021S1/forum/issues/85)
+  * Reported bugs in other teams' products from a module-coordinated bug bounty. [issues](https://github.com/rtshkmr/ped/issues)
+  
