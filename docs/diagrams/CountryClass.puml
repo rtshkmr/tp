@@ -15,6 +15,7 @@ Interface Model <<Interface>>
 Class ModelManager
 }
 
+
 ModelManager .up.|> Model
 ModelManager -down-> "1" TbmManager
 TbmManager --> "1" CountryNotesManager

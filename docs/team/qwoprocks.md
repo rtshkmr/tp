@@ -18,6 +18,7 @@ Given below are my contributions to the project.
   * Added `ContractExpiryDate` field to `Client` (Pull request [\#191](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/191))
   * `client suggest by/contract` command
   * Implemented sorting for client list for `SuggestCommand` purposes (Pull request [\#221](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/221))
+  * Helped with designing the TBM logo
 <br/><br/>
 * **Code contributed**: [RepoSense link](https://nus-cs2103-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=qwoprocks&sort=groupTitle&sortWithin=title&since=2020-08-14&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other&tabOpen=true&tabType=authorship&zFR=false&tabAuthor=qwoprocks&tabRepo=AY2021S1-CS2103T-F11-4%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code)
 
@@ -36,13 +37,17 @@ Given below are my contributions to the project.
 * **Documentation**:
   * User Guide:
     * Added documentation for the features `country note`, `clear`, and `exit` [\#31](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/31)
-    * Added screenshots for the commands `help`, `client list`, and `client find` [\#351](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/351)
-    *  
+    * Defined a new syntax for commands with multiple parameters that require at least one parameter to be supplied [\257](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/257/files)
+    * Added screenshots and descriptions under `Appendix C: Expected Command Behaviour Screenshots` for the commands `help`, `client list`, and `client find` [\#351](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/351)
+    * Updated the FAQ [\#351](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/351)
   * Developer Guide:
     * Added the list of user stories and labelled their priorities [\#38](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/38)
-    * Added the use case for `clearing all entries` [\#53](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/53)
+    * Added the use case for `Clearing all entries from TBM` [\#53](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/53)
+    * Added the use case for `Noting down information about a client` [\#351](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/351)
     * Added implementation section with UML diagrams for `client suggest by/contract` [\#204](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/204)
     * Updated UML diagrams for sections `Model component`, `Inner workings`, and `Storage component` [\#351](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/351)
+    * Updated activity diagram under implementation section of `Switching between displaying Country Note List Panel, the Client View, and the default view` [\#351](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/351)
+
 <br/><br/>
 * **Community**:
   * PRs reviewed (with non-trivial review comments): [\#51](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/51), [\#121](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/121), [\#131](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/131), [\#134](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/134), [\#137](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/137), [\#144](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/144), [\#146](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/146), [\#150](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/150), [\#164](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/164), [\#198](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/198), [\#199](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/199), [\#223](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/223), [\#244](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/244), [\#252](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/252), [\#256](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/256), [\#259](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/259), [\#266](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/266), [\#268](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/268), [\#337](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/337))

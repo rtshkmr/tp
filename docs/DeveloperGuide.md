@@ -225,7 +225,7 @@ Hence, `CountryNoteAddCommand` stores a `CountryNote` object. For brevity, the a
 
 ![Country Note Add Sequence Diagram](images/CountryNoteAddSeqDiag.png)
 
-### Switching between displaying Country Note List Panel, the Client View, and the default view.
+### Switching between displaying Country Note List Panel, the Client View, and the default view
 
 #### Implementation
 
