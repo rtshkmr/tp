@@ -45,8 +45,8 @@ You can reach us at the email `team4@emerald.pink`.
 * Responsibilities:
   - Implementing the View command and relevant functionalities associated
   - Modification of GUI to fit the theme of TBM
-  - Add tests for View command
-  - Maintain a showcase of MVP funcationalities
+  - Add GUI tests
+  - CLI optimisation
 
 ### Rayson Koh
 
