@@ -614,6 +614,7 @@ never have to worry about not being able to see all your important clients at a 
      <p align="center"><i>Figure 3. Error Display</i></p>
      
 * **Display Panel** shall render *Client Cards* or *Country Cards* when relevant commands are sent. The default view shows you your local time to the precise second, as well as your current location.
+* **Local Time** indicates the local date and time based on where you are currently. 
    
 ### **UI when Viewing Clients**
 
