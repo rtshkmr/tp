@@ -9,7 +9,7 @@ end box
 
 box Model MODEL_COLOR_T1
 participant ":ModelManager" as Model MODEL_COLOR
-participant ":TagNoteMap" as TagNoteMap MODEL_COLOR_T2
+participant ":TagNoteMap" as TagNoteMap MODEL_COLOR
 end box
 
 [-> MainApp : init()
@@ -31,12 +31,12 @@ deactivate TagNoteMap
 Model -> Model : initialiseTagNoteMap()
 activate Model
 
-Model -> TagNoteMap : initTagNoteMapFromClients(List<Client> clients)
+Model -> TagNoteMap : initTagNoteMapFromClients(clients)
 activate TagNoteMap
 Model <-- TagNoteMap
 deactivate TagNoteMap
 
-Model -> TagNoteMap : initTagNoteMapFromCountryNotes(List<Note> countryNotes)
+Model -> TagNoteMap : initTagNoteMapFromCountryNotes(countryNotes)
 activate TagNoteMap
 Model <-- TagNoteMap
 deactivate TagNoteMap
@@ -47,6 +47,8 @@ Model --> MainApp
 deactivate Model
 
 MainApp --> MainApp
+deactivate MainApp
+[<-- MainApp
 deactivate MainApp
 
 
