@@ -492,18 +492,18 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1.  User meets secures a new business deal/client
-2.  User attempts to add the all associated parties and their information into **_TBM_**.
-3.  User successfully adds the all new information into **_TBM_**.
-
-    Use case ends.
+1. User meets secures a new business deal/client
+2. User attempts to add the all associated parties and their information into **_TBM_**.
+3. User successfully adds the all new information into **_TBM_**.
+  
+  Use case ends.
 
 **Extensions**
 
 * 2a. A party has a prior entry in **_TBM_**, which shows that User has a previous professional encounter with the party.
 
-    * 2a1. User does not add the new party as it will duplicate entries in the **_TBM_**.
-    * 2a2. User can choose to update/edit the client information instead.
+  * 2a1. User does not add the new party as it will duplicate entries in the **_TBM_**.
+  * 2a2. User can choose to update/edit the client information instead.
 
   Use case ends.
 
@@ -511,10 +511,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1.  User requests to find a client.
-2.  **_TBM_** shows a list of clients that match user's query.
+1. User requests to find a client.
+2. **_TBM_** shows a list of clients that match user's query.
 
-    Use case ends.
+  Use case ends.
 
 **Extensions**
 
@@ -526,18 +526,19 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1.  User enters a valid command that alters data (E.g. <u>`adding a client (UC1)`</u>).
-2.  Modified data gets stored in the existing data file.
-3.  **_TBM_** shows a message indicating command has been executed successfully.
+1. User enters a valid command that alters data (E.g. <u>`adding a client (UC1)`</u>).
+2. Modified data gets stored in the existing data file.
+3. **_TBM_** shows a message indicating command has been executed successfully.
 
-    Use case ends.
+  Use case ends.
 
 **Extensions**
 
 * 2a. An error occurred while saving the modified data to the existing data file.
 
-    * 2a1. **_TBM_** reloads the data from the existing data file.
-    * 2a2. **_TBM_** shows an error message.
+  * 2a1. **_TBM_** reloads the data from the existing data file.
+
+  * 2a2. **_TBM_** shows an error message.
 
   Use case ends.
 
@@ -554,20 +555,20 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 1a. Invalid country is given.
 
-    * 1a1. **_TBM_** shows an error message.
+  * 1a1. **_TBM_** shows an error message.
 
-      Use case ends.
+  Use case ends.
 
 #### **UC5 - Clearing all entries from **_TBM_****
 
 **MSS**
 
-1.  User requests to clear all entries.
-2.  **_TBM_** asks the user to confirm.
-3.  User confirms that they want to clear all entries.
-4.  **_TBM_** clears all entries.
+1. User requests to clear all entries.
+2. **_TBM_** asks the user to confirm.
+3. User confirms that they want to clear all entries.
+4. **_TBM_** clears all entries.
 
-    Use case ends.
+  Use case ends.
 
 **Extensions**
 
@@ -579,21 +580,42 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
+
+
+#### UC7 - Noting down information about a client
+
+**MSS**
+
+1. User requests to add a note to a client.
+2. **_TBM_** adds the note to the client specified.
+3. **_TBM_** displays that note.
+
+  Use case ends.
+
+**Extensions**
+
+* 1a. The note is not a valid note.
+  
+  * 1a1. **_TBM_** shows an error message.
+  
+  Use case ends.
+  
+
 ### Non-Functional Requirements
 
 1.  **_TBM_** should work on any _mainstream OS_ as long as it has Java `11` or above installed.
-2.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
-4.  **_TBM_** should be able to recover its previous stable state from the data file if it crashes.
-3.  The data file should be stored locally in a human-editable text file.
-4.  **_TBM_** should be used by a single user.
-5.  **_TBM_** should be able to hold up to 1000 business contacts without a noticeable sluggishness in performance for typical usage.
-6.  **_TBM_** should be able to hold up to 5000 total client notes without a noticeable sluggishness in performance for typical usage.
-7.  **_TBM_** can handle at most 10000 business contacts and at most 50000 total client notes.
-8.  **_TBM_** will only accept countries that are specified by the [ISO3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) specification.
-9.  **_TBM_** will only accept the UTC offsets defined in this [list](https://www.timeanddate.com/time/current-number-time-zones.html).
-10. **_TBM_** is not required to validate that the timezone of a business contact correctly matches his/her country.
-11. **_TBM_** should retain all functionalities even when it is not connected to the internet.
-12. The size of the **_TBM_** _JAR_ file should not exceed 100Mb.
+1.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+1.  **_TBM_** should be able to recover its previous stable state from the data file if it crashes.
+1.  The data file should be stored locally in a human-editable text file.
+1.  **_TBM_** should be used by a single user.
+1.  **_TBM_** should be able to hold up to 1000 business contacts without a noticeable sluggishness in performance for typical usage.
+1.  **_TBM_** should be able to hold up to 5000 total client notes without a noticeable sluggishness in performance for typical usage.
+1.  **_TBM_** can handle at most 10000 business contacts and at most 50000 total client notes.
+1.  **_TBM_** will only accept countries that are specified by the [ISO3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) specification.
+1.  **_TBM_** will only accept the UTC offsets defined in this [list](https://www.timeanddate.com/time/current-number-time-zones.html).
+1. **_TBM_** is not required to validate that the timezone of a business contact correctly matches his/her country.
+1. **_TBM_** should retain all functionalities even when it is not connected to the internet.
+1. The size of the **_TBM_** _JAR_ file should not exceed 100Mb.
 
 ### Glossary
 
