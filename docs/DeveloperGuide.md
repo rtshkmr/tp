@@ -3,7 +3,7 @@ layout: page
 title: Developer Guide
 ---
 <div>
-    <img src="images/TBM_BRAND.png" width="500px" height="500px">
+    <img style="-webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none;" src="images/TBM_BRAND.png" width="500px" height="500px">
 </div>
 
 ## **Introduction**
