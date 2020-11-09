@@ -19,6 +19,9 @@ div > img, p > img {
 
 img.emoji {
   display: inline !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 table {
