@@ -507,6 +507,11 @@ For a visual example on how the command works, refer to [Appendix C: Expected Co
 
 Deletes all existing information from the application. The end result will be an application with no client/note/country data. The left display panel will be reset to its default view.
 
+<div markdown="block" class="alert alert-info">
+
+**:information_source:** Adding additional words after the command will still work. E.g. `clear all` is still valid. It's a feature, not a bug!
+</div>
+
 Format: `clear`
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#clearing-all-data).
@@ -516,6 +521,11 @@ For a visual example on how the command works, refer to [Appendix C: Expected Co
 ### **5. Exiting the Program**
 
 Exits the program.
+
+<div markdown="block" class="alert alert-info">
+
+**:information_source:** Adding additional words after the command will still work. E.g. `exit TBM` is still valid. It's a feature, not a bug!
+</div>
 
 Format: `exit`
 
@@ -572,6 +582,11 @@ If the `tbmManager.json` file gets corrupted, for example, if some fields were c
 ### **7. Viewing Help**
 
 **_TBM_**'s commands are easy to use and remember, but in the case you need to see a list of commonly used commands, simply type `help` or press the `F1` key to access this list in the [new help window](#help-window). Pressing the `Esc` key will close this window.
+
+<div markdown="block" class="alert alert-info">
+
+**:information_source:** Adding additional words after the command will still work. E.g. `help me` is still valid. It's a feature, not a bug!
+</div>
 
 Format: `help`
 
