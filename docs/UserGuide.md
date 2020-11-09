@@ -129,7 +129,6 @@ Certain commands require parameters. A quick summary of these parameters as well
 
 **_TBM_**'s commands are easy to use and remember, but in the case you need to see a list of commonly used commands, simply type `help` or press the `F1` key to access this list in the [new help window](#help-window). Pressing the `Esc` key will close this window.
 
-
 Format: `help`
 
 --------------------------------------------------------------------------------------------------------------------
@@ -191,10 +190,13 @@ For a visual example on how the command works, refer to [Appendix C: Expected Co
 
 #### 1.4: Viewing _All_ your Clients: `client list`
 
-Shows a list of all clients in **_TBM_**. Client Cards are intended to display the most important details succinctly. Therefore, if a particular data field is too long, you should view them view them in full using the [`client view`](#viewing-a-client--client-view) command.
+Shows a list of all clients in **_TBM_**. Client Cards are intended to display the most important details succinctly. Therefore, if a particular data field is too long, you should view them in full using the [`client view`](#viewing-a-client--client-view) command.
+
 This command will also reset the left display panel to its default view. 
 
 Format: `client list`
+
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#viewing-all-clients)
 
 #### 1.5: Viewing _a Particular_ Client: `client view`
 
@@ -725,6 +727,18 @@ Command: `client edit 1 p/12345678`
 As we can see, the client's number has changed from `87438807` to `12345678`.
 
 [Back to command](#13-editing-a-client-client-edit)
+
+### Viewing all clients
+
+Let's say that you have filtered and viewed a client, and your TBM looks something like this:
+
+![Before viewing all clients](images/viewing_all_clients_before.png)
+
+If you want to reset the filtering and list all clients, you can execute the `client list` command, which will cause TBM to go back to its default view, like so:
+
+![After viewing all clients](images/viewing_all_clients_after.png)
+
+[Back to command](#14-viewing-_all_-your-clients-client-list)
 
 ### Viewing a client
 
