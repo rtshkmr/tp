@@ -37,7 +37,7 @@ Given below are my contributions to the project.
       * Updated Client Note features
       * Updated Help Instruction on command syntax
       * Contextualised UG to the Target User, added appendices and screenshots to wrap up v1.3 milestone submission [#276](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/276) 
-        * Added `Appendix A - Introduction to the UI` for First-Time users of the application
+        * Added `Appendix A: Introduction to the UI` for First-Time users of the application
         * Added `Appendix B: International Standards Followed` to clarify our syntax related decisions and added useful external links to aid users
   * Developer Guide:
       * Added Proposed Implementation for Finding by Tags to utilise the many-to-many relationship tracked by `TagNoteMap`
