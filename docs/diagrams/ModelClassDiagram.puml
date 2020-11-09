@@ -33,6 +33,7 @@ Class Timezone
 Class UniqueClientList
 Class ContractExpiryDate
 Class Timezone
+Class LastModifiedInstant
 }
 
 Package Note {
@@ -53,8 +54,8 @@ TbmManager .up.|> ReadOnlyTbmManager
 
 ModelManager .up.|> Model
 Model .right.> ObservableList
-ModelManager o--> "1" TbmManager
-ModelManager o-left-> "1" UserPrefs
+ModelManager *--> "1" TbmManager
+ModelManager *-left-> "1" UserPrefs
 ModelManager *-right->"1" WidgetModel
 TbmManager -right-> Country
 TbmManager -right-> Tag
@@ -62,13 +63,14 @@ TbmManager -right-> Tag
 UserPrefs .up.|> ReadOnlyUserPrefs
 
 TbmManager *--> "1" UniqueClientList
-UniqueClientList o--> "*" Client
+UniqueClientList *--> "*" Client
 Client *--> Name
 Client *--> Phone
 Client *--> Email
 Client *--> Address
 Client *--> ContractExpiryDate
 Client *--> Timezone
+Client *--> LastModifiedInstant
 Client --> Note
 Client -right-> Country
 
@@ -81,5 +83,6 @@ Name -[hidden]right-> Phone
 Phone -[hidden]right-> Address
 Address -[hidden]right-> Email
 
-ModelManager -->"1" Client : filtered list
+ModelManager -->"*" Client : filtered list
+
 @enduml

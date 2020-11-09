@@ -7,13 +7,14 @@ skinparam classBackgroundColor MODEL_COLOR
 
 Package Client {
 Class Client
+Class Name
 Class Address
 Class Email
-Class Name
 Class Phone
 Class UniqueClientList
 Class ContractExpiryDate
 Class Timezone
+Class LastModifiedInstant
 }
 
 Package Country {
@@ -45,8 +46,9 @@ Client *-->"1" Email
 Client *-->"1" Address
 Client *-->"0..1" ContractExpiryDate
 Client *-->"1" Timezone
-Client -->"1" Country
 Client *-->"*" Note
+Client *-->"1" LastModifiedInstant
+Client -->"1" Country
 
 Country ..> CountryCodeVerifier
 
