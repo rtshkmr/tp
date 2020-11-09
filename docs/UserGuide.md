@@ -80,7 +80,7 @@ Before you start using **_TBM_**,
   
 You should see the following display:
 
-![Default view](images/default_view.png) 
+![Default view](images/default_view.png)
 <p align="center"><i>Figure 1. TBM Application</i></p>
 
 Now that you have started **_TBM_**,
@@ -192,7 +192,7 @@ For a visual example on how the command works, refer to [Appendix C: Expected Co
 
 #### 1.4: Viewing _all_ your Clients: `client list`
 
-Shows a list of all clients in **_TBM_**. Client Cards are intended to display the most important details succinctly. Therefore, if a particular data field is too long, you should view them in full using the [`client view`](#viewing-a-client--client-view) command.
+Shows a list of all clients in **_TBM_**. Client Cards are intended to display the most important details succinctly. Therefore, if a particular data field is too long, you should view them in full using the [`client view`](#15-viewing-a-particular-client-client-view) command.
 
 This command will also reset the left display panel to its default view. 
 
@@ -742,7 +742,7 @@ If you want to reset the filtering and list all clients, you can execute the `cl
 
 <img src="images/viewing_all_clients_after.png" alt="After viewing all clients" width="800" height="600">
 
-[Back to command](#14-viewing-_all_-your-clients-client-list)
+[Back to command](#14-viewing-all-your-clients-client-list)
 
 ### Viewing a client
 
