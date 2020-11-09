@@ -21,7 +21,7 @@ activate Model
 Model --> ClientSuggestCommand
 deactivate Model
 
-ClientSuggestCommand -> Model : sortClientFilteredList(Comparator)
+ClientSuggestCommand -> Model : updateSortedFilteredClientList(Comparator)
 activate Model
 
 Model --> ClientSuggestCommand

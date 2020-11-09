@@ -44,7 +44,7 @@ Given below are my contributions to the project.
     * Added the list of user stories and labelled their priorities [\#38](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/38)
     * Added the use case for `Clearing all entries from TBM` [\#53](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/53)
     * Added the use case for `Noting down information about a client` [\#351](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/351)
-    * Added implementation section with UML diagrams for `client suggest by/contract` [\#204](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/204)
+    * Co-authored implementation section with UML diagrams for `client suggest` [\#204](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/204) [\#351](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/351)
     * Updated UML diagrams for sections `Model component`, `Inner workings`, and `Storage component` [\#351](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/351)
     * Updated activity diagram under implementation section of `Switching between displaying Country Note List Panel, the Client View, and the default view` [\#351](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/351)
 
