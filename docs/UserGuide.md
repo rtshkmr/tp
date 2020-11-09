@@ -36,15 +36,17 @@ title: User Guide
 {:.no_toc}
 
 This User Guide has been structured such that users can easily find and understand what they need.
-  - [About](#about) contains useful tips and information on reading this document.
-  - [Quickstart](#quickstart) consists of instructions to set up this application
-  - [TBM Features](#tbms-features) includes the details of the main features of **_TBM_**, such as managing your clients and keeping track of important information.
+* The [Table of Contents](#table-of-contents) has links that allow you to quickly navigate around this document.
+* [Quickstart](#quickstart) consists of instructions to set up **_TBM_** and get yourself started. 
+* [TBM Features](#tbms-features) include the details of the main features of **_TBM_**, such as managing your clients and keeping track of important information.
+  * For each feature, we give a brief description of how you might use it, the command format as well as some useful examples.
+  * We also provide a link that **leads to a specific part of [Appendix C: Expected Command Behaviour](#appendix-c-expected-command-behaviour-screenshots)** so you can see the before and after status of running these commands. There are **return links back to the command** for you to quickly return from the Appendix.  
+
 
 ### Tips
 {:.no_toc}
 
 <div markdown="block" class="alert alert-info">
-
 **:information_source:** This is a tip for users.
 </div> 
 
