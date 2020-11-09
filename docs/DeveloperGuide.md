@@ -240,7 +240,7 @@ The following activity diagram illustrates what happens to the Display Panel whe
 
 ![Switching Country Note Panel, Client View, and default view](images/CountryNotePanelClientViewActDiag.png)
 
-### Suggesting contacts
+### Suggesting clients
 
 #### Implementation
 
