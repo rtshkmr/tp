@@ -595,7 +595,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1. User wants to view clients who are available for a quick call.
+
 2. User passes this criteria via a command.
+
 3. **_TBM_** filters the clients, only showing clients who are available.
 
     Use case ends.
@@ -605,6 +607,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 1a. User wishes to obtain suggestions based on a different criteria (E.g. clients whose contracts are expiring).
     
     * 1a1. User passes in a different criteria via the command.
+    
     * 1a2. **_TBM_** filters and sorts the clients, showing those whose contracts are expiring first.
     
         Use case ends.
