@@ -529,17 +529,13 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1. User enters a valid command that alters data (E.g. <u>`adding a client (UC1)`</u>).
 2. Modified data gets stored in the existing data file.
 3. **_TBM_** shows a message indicating command has been executed successfully.
-
-  Use case ends.
+Use case ends.
 
 **Extensions**
 
-* 2a. An error occurred while saving the modified data to the existing data file.
-
-  * 2a1. **_TBM_** reloads the data from the existing data file.
-
-  * 2a2. **_TBM_** shows an error message.
-
+2a. An error occurred while saving the modified data to the existing data file.
+  2a1. **_TBM_** reloads the data from the existing data file.
+  2a2. **_TBM_** shows an error message.
   Use case ends.
 
 #### UC4 - Filtering by country
@@ -548,15 +544,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 1. User inputs a country as filter.
 2. **_TBM_** shows all clients belonging to that country.
-
-   Use case ends.
+Use case ends.
 
 **Extensions**
 
-* 1a. Invalid country is given.
-
-  * 1a1. **_TBM_** shows an error message.
-
+1a. Invalid country is given.
+  1a1. **_TBM_** shows an error message.
   Use case ends.
 
 #### UC5 - Clearing all entries from **_TBM_**
@@ -567,15 +560,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 2. **_TBM_** asks the user to confirm.
 3. User confirms that they want to clear all entries.
 4. **_TBM_** clears all entries.
-
-  Use case ends.
+Use case ends.
 
 **Extensions**
 
-* 1a. There are no entries.
+1a. There are no entries.
+Use case ends.
 
-  Use case ends.
-
+<<<<<<< HEAD
 * 3a. User decides not to clear all entries.
 
   Use case ends.
@@ -604,6 +596,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 2a1. **_TBM_** shows an error message.
 
     Use case ends.
+=======
+3a. User decides not to clear all entries.
+Use case ends.
+>>>>>>> b143da3b05787bda73c8c14a210ab4ffa60d0121
 
 
 
@@ -614,15 +610,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1. User requests to add a note to a client.
 2. **_TBM_** adds the note to the client specified.
 3. **_TBM_** displays that note.
-
-  Use case ends.
+Use case ends.
 
 **Extensions**
 
-* 1a. The note is not a valid note.
-  
-  * 1a1. **_TBM_** shows an error message.
-  
+1a. The note is not a valid note.
+  1a1. **_TBM_** shows an error message.
   Use case ends.
   
 
