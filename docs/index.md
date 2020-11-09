@@ -6,7 +6,7 @@ title: Travelling BusinessMan
 [![CI Status](https://github.com/AY2021S1-CS2103T-F11-4/tp/workflows/Java%20CI/badge.svg)](https://github.com/AY2021S1-CS2103T-F11-4/tp/actions)
 [![codecov](https://codecov.io/gh/AY2021S1-CS2103T-F11-4/tp/branch/master/graph/badge.svg)](https://codecov.io/gh/AY2021S1-CS2103T-F11-4/tp)
 
-![Ui](./images/UI.png)
+![Ui](images/Ui.png)
 
 **Travelling BusinessMan is a desktop application for managing your client contact details, organized with a focus on their country of residence.** While it has a GUI, most of the user interactions happen using a CLI (Command Line Interface).
 
