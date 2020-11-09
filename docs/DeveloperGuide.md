@@ -595,7 +595,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1. User wants to view clients who are available for a quick call.
+
 2. User passes this criteria via a command.
+
 3. **_TBM_** filters the clients, only showing clients who are available.
 
     Use case ends.
