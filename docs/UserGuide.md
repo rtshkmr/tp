@@ -552,6 +552,7 @@ Action | Format, Examples
 **Edit client** | `client edit CLIENT_INDEX (n/NAME) (p/PHONE) (e/EMAIL) (a/ADDRESS) (c/COUNTRY_CODE) (tz/TIMEZONE) (ce/CONTRACT_EXPIRY_DATE)`<br> e.g.,`client edit 3 c/JP tz/UTC+07:00`
 **View client** | `client view CLIENT_INDEX` <br> e.g., `client view 2`
 **Find client** | `client find KEYWORD [MORE_KEYWORDS]`<br> e.g., `client find Hans`
+**Client suggestions** | `client suggest by/SUGGESTION_TYPE [by/SUGGESTION_TYPE]...` <br> e.g., `client suggest by/available by/frequency`
 **Delete client** | `client delete CLIENT_INDEX`<br> e.g., `client delete 3`
 **Add client note** | `client note add CLIENT_INDEX nt/NOTE_STRING [t/TAG]...` <br> e.g., `client note add 4 t/meeting nt/need to slowly convince him to sign the contract`
 **Delete client note** | `client note delete CLIENT_INDEX CLIENT_NOTE_INDEX` <br> e.g., `client note delete 3 2`
@@ -561,7 +562,6 @@ Action | Format, Examples
 **Add country note** | `country note add c/COUNTRY_CODE nt/NOTE_STRING [t/TAG]...` <br> e.g., `country note add c/SG nt/has one of the lowest coporate taxes in the world t/tax`
 **Edit country note** | `country note edit COUNTRY_NOTE_INDEX (nt/NOTE_STRING) (t/TAG)...` <br> e.g., `country note edit 1 nt/has one of the lowest coporate taxes in the world t/tax`
 **Delete country note** | `country note delete COUNTRY_NOTE_INDEX` <br> e.g., `country note delete 1`
-**Get suggestions** | `client suggest by/SUGGESTION_TYPE [by/SUGGESTION_TYPE]...` <br> e.g., `client suggest by/available by/frequency`
 **Clear** | `clear`
 **Exit** | `exit`
 **Help** | `help`
@@ -669,8 +669,6 @@ Here are the alternative stylistic choices that you might make when writing out 
           * `+65.81867742` with a "." character is also a valid phone number.
             
          These options have been provided because we know that such delimiting is a matter of _cultural preference_.
-    
-
 
 <p align="center">
    <strong><i>{End of Appendix B, please return to the <a href="#table-of-contents">Table of Contents</a>}</i></strong> 
@@ -797,12 +795,9 @@ Upon issuing the command, you'll be notified of the addition, but it won't distu
 
 If you want to read off the note, you'll have to enter `client view 2`, which shall show you the client's details and notes in a scrollable display panel. Please note that when the display panel has more contents, a scrollbar shall appear for your use.
 
-
-
 ![client note add after visible](images/client_note_add_after_visible.png)
 
 [Back to command](#211-adding-client-notes-client-note-add).
-
 
 ### **Deleting client notes**
 
@@ -815,7 +810,6 @@ Issue the following command:
 `client note delete 2 1` and you'll see that the note will be deleted: 
 
 ![client note delete after](images/client_note_delete_after.png)
-
 
 [Back to command](#212-deleting-client-notes-client-note-delete).
 
@@ -904,12 +898,3 @@ After issuing the command `clear`, notice that all existing data will be cleared
 <img src="images/clear_after.png" alt="After issuing the clear command" width="800" height="600">
 
 [Back to command](#4-clearing-all-your-entries).
-
-### **Dummy Command Template **
-
-before ss and after ss 
-
-each ss window  size to be 800x600px
-
-link the command description above to this section so users can navigate to here easily 
-link a return link back to the description as well
