@@ -624,7 +624,7 @@ The diagram below is what you should see upon viewing a particular client (i.e. 
 
 Here, the **Client Note Card** displaying the note that's tagged as `hobbies` is referred to by the `CLIENT_INDEX` of `1`.
 
-Being able to identify these is key to adding, deleting and editing client notes as well as editing clients.
+Being able to identify these is key to adding, deleting and editing client notes as well as editing clients. The time displayed here is the Client's local time!
 
 ### **UI when Viewing Country**
 
