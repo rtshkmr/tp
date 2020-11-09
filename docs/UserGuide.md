@@ -188,7 +188,7 @@ Examples:
 
 For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#editing-a-client)
 
-#### 1.4: Viewing _All_ your Clients: `client list`
+#### 1.4: Viewing _all_ your Clients: `client list`
 
 Shows a list of all clients in **_TBM_**. Client Cards are intended to display the most important details succinctly. Therefore, if a particular data field is too long, you should view them in full using the [`client view`](#viewing-a-client--client-view) command.
 
@@ -243,6 +243,7 @@ Examples:
 
    Finds all clients whose names contain either **Katya** or **Hans**.
 
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#finding-clients)
 
 #### 1.7: Filtering clients by country: `country filter`
 
@@ -732,11 +733,11 @@ As we can see, the client's number has changed from `87438807` to `12345678`.
 
 Let's say that you have filtered and viewed a client, and your TBM looks something like this:
 
-![Before viewing all clients](images/viewing_all_clients_before.png)
+<img src="images/viewing_all_clients_before.png" alt="Before viewing all clients" width="800" height="600">
 
 If you want to reset the filtering and list all clients, you can execute the `client list` command, which will cause TBM to go back to its default view, like so:
 
-![After viewing all clients](images/viewing_all_clients_after.png)
+<img src="images/viewing_all_clients_after.png" alt="After viewing all clients" width="800" height="600">
 
 [Back to command](#14-viewing-_all_-your-clients-client-list)
 
@@ -756,12 +757,23 @@ The client's information will appear in the display panel on the left where we c
 
 [Back to command](#15-viewing-a-particular-client-client-view)
 
+### Finding clients
+
+Before executing the find command, here is what the initial state of TBM looks like:
+
+<img src="images/client_find_before.png" alt="Before client find" width="800" height="600">
+
+After executing the find command, we see that the client list has been filtered to only those clients with names that contain the supplied keyword:
+
+<img src="images/client_find_after.png" alt="After client find" width="800" height="600">
+
+[Back to command](#16-finding-clients-client-find)
+
 ### **Filtering by country**
 
 Before filtering, here is what it looks like,
 
 ![country filter before](images/country_filter_before_ss.png)
-
 
 After filtering for clients from Spain,
 
