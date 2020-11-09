@@ -1,7 +1,7 @@
 [![CI Status](https://github.com/AY2021S1-CS2103T-F11-4/tp/workflows/Java%20CI/badge.svg)](https://github.com/AY2021S1-CS2103T-F11-4/tp/actions)
 [![codecov](https://codecov.io/gh/AY2021S1-CS2103T-F11-4/tp/branch/master/graph/badge.svg)](https://codecov.io/gh/AY2021S1-CS2103T-F11-4/tp)
 
-![Ui](docs/images/UI.png)
+![Ui](docs/images/Ui.png)
 
 - This is a **brownfield team project done under NUS's CS2103T: Software Engineering**.<br>
   - It has been built up from an ongoing software project for a desktop application (called _AddressBook_) used for managing contact details. This provides a **reasonably well-written** code base **bigger** (around 6 KLoC) than what students usually write in beginner-level SE modules, without being overwhelmingly big.
