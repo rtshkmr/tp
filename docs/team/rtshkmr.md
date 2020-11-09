@@ -17,8 +17,6 @@ Given below are my contributions to the project.
 * **Code contributed:** [RepoSense link](https://nus-cs2103-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=rtshkmr&sort=groupTitle&sortWithin=title&since=2020-08-14&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other)
 
 * **Project management:**
-  * PR reviews: #153 #149 #148 #131 #121
-  * PR approvals:
   * Managed project v1.1 to v1.4 on GitHub
   * Created Last-Sprint documentation PR with Templates and Descriptions to facilitate collaborative work between all members of the group (Pull Request[#351](https://github.com/AY2021S1-CS2103T-F11-4/tp/pull/351))
    
