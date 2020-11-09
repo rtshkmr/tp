@@ -7,7 +7,7 @@ show members
 
 title Predicate and Comparator applied
 
-package filteredClients {
+package sortedFilteredClients {
     object "__:Client__" as alice  {
         name = "alice"
         contract_expiry = "20-01-2024"
