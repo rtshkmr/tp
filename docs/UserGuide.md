@@ -802,7 +802,7 @@ If you want to read off the note, you'll have to enter `client view 2`, which sh
 
 ### Deleting client notes
 
-Just like adding you may delete the client note from any window, but here, we show issue the command when we are already viewing a particular client. For example, in the following situation, you want to delete Lauren's note that is labelled as index 1. Notice that Laurent is client #2. 
+Just like adding you may delete the client note from any window, but here, we show issue the command when we are already viewing a particular client. For example, in the following situation, you want to delete Alex's note that is labelled as index 2. Notice that Alex is client #1. 
 
 ![client note delete before](images/client_note_delete_before.png)
 
