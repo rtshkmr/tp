@@ -42,7 +42,7 @@ Given below are my contributions to the project.
 
   * Improve GUI
   
-  * GUI theme and styling change
+    - GUI theme and styling change
   
     - First MVP: Change to fit the aspirational design model proposed in the main website.
   
