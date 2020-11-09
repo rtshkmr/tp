@@ -532,7 +532,7 @@ Format: `help`
 
 ## **Frequently Asked Questions (FAQ)**
 
-**Q1**: How do I transfer my data to another Computer?<br>
+**Q1**: How do I transfer my data to another computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous **_TBM_** home folder.<br>
 
 **Q2**: How do I know if Java 11 is already installed on my computer?<br>
