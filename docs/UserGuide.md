@@ -498,15 +498,26 @@ The location for this file is `./data/tbmManager.json` (indicated at the bottom 
     "email" : "alexyeoh@example.com",
     "address" : "Blk 30 Geylang Street 29, #06-40",
     "country" : "SG",
-    "timezone" : "GMT+8",
+    "timezone" : "UTC+08:00",
     "contractExpiryDate" : "21-4-2022",
-    "lastModifiedInstant" : "2020-01-01T00:00:00Z",
+    "lastModifiedInstant" : "2020-11-09T10:07:41.177807Z",
     "clientNotes" : [ {
       "contents" : "Wants to take his wife to Norway for New Years' Day",
       "countryCode" : "NULL_CC",
-      "tags" : [ "romantic", "holidayPlans", "travel" ]
+      "tags" : [ "romantic", "holidayPlans" ]
+    }, {
+      "contents" : "Prefers to meet up at his office, not that much of a public spaces guy",
+      "countryCode" : "NULL_CC",
+      "tags" : [ "workPreferences", "meetings" ]
+    }, {
+      "contents" : "Need to meet him to see his vintage Honda with a side-car.He really loves old cars",
+      "countryCode" : "NULL_CC",
+      "tags" : [ "hobbies" ]
+    }, {
+      "contents" : "Birthday tomorrow",
+      "countryCode" : "NULL_CC",
+      "tags" : [ "reminder" ]
     } ]
-  } ]
   . . .
 }
 ```
