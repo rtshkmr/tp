@@ -492,20 +492,21 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. User meets secures a new business deal/client
-2. User attempts to add the all associated parties and their information into **_TBM_**.
-3. User successfully adds the all new information into **_TBM_**.
-  
+<pre>
+  1. User meets secures a new business deal/client
+  2. User attempts to add the all associated parties and their information into <strong><i>TBM</i></strong>.
+  3. User successfully adds the all new information into <strong><i>TBM</i></strong>.
   Use case ends.
+</pre>
 
 **Extensions**
 
-* 2a. A party has a prior entry in **_TBM_**, which shows that User has a previous professional encounter with the party.
-
-  * 2a1. User does not add the new party as it will duplicate entries in the **_TBM_**.
-  * 2a2. User can choose to update/edit the client information instead.
-
-  Use case ends.
+<pre>
+  2a. A party has a prior entry in <strong><i>TBM</i></strong>, which shows that user has a previous professional encounter with the party.
+    2a1. User does not add the new party as it will duplicate entries in the <strong><i>TBM</i></strong>.
+    2a2. User can choose to update/edit the client information instead.
+    Use case ends.
+</pre>
 
 #### UC2 - Finding Clients
 
@@ -513,13 +514,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 1. User requests to find a client.
 2. **_TBM_** shows a list of clients that match user's query.
-
   Use case ends.
 
 **Extensions**
 
-* 1a. The list of clients is empty.
-
+1a. The list of clients is empty.
   Use case ends.
 
 #### UC3 - Saving data
