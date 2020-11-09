@@ -536,10 +536,10 @@ Format: `help`
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous **_TBM_** home folder.<br>
 
 **Q2**: How do I know if Java 11 is already installed on my computer?<br>
-**A**: Open up your favourite command line application and run the command `java --version`. The output should contain `java 11` if Java 11 is installed. 
+**A**: Open up your favourite command line application and run the command `java --version`. The output should contain `java 11` if Java 11 is installed.<br>
 
 **Q3**: How do I install Java 11 on my computer?<br>
-**A**: Head to the official download page [here](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html), then download and run the installer for your operating system.
+**A**: Head to the official download page [here](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html), then download and run the installer for your operating system.<br>
 
 --------------------------------------------------------------------------------------------------------------------
 
