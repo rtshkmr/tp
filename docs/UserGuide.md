@@ -297,32 +297,19 @@ Examples:
 
     Adds a **note** with a **tag** to the **fourth** client in the list.
 
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#adding-client-notes)
+
 ##### 2.1.2: Deleting client notes: `client note delete`
 
 Deletes a note of a client (denoted by a client's index) by the note's index.
 
 Format: `client note delete CLIENT_INDEX CLIENT_NOTE_INDEX`
 
-Examples:
+Examples: 
+* `client note delete 2 1`
+* `client note delete 1 12` i.e. 12th note of client 1
 
-Given a list of notes:
-
-```
-Client: 3
-Notes:
-1. Loves dogs [tag: pref]
-2. Hates cats [tag: pref]
-```
-
-Command: `client note delete 3 2`
-
-The above command deletes the note regarding "Hates cats". The resulting information will look like:
-
-```
-Client: 3
-Notes:
-1. Loves dogs [tag: pref]
-```
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#deleting-client-notes)
 
 ##### 2.1.3: Editing client notes: `client note edit`
 
@@ -332,27 +319,17 @@ Format: `client note edit CLIENT_INDEX CLIENT_NOTE_INDEX (nt/NOTE_STRING) (t/TAG
 
 Examples:
 
-Given a list of notes:
+* `client note edit 2 1 nt/prefers face-to-face meetings to calls`
+  Just edits the note contents. The existing tags will be preserved.
 
-```
-Client: 3
-Notes:
-1. Loves dogs [tag: pref]
-2. Hates cats [tag: pref]
-3. Apprehensive of resigning contract [tag: meeting]
-```
+* `client note edit 2 1 t/ItalianRestaurants`
+  Just adds a new tag `t/ItalianRestaurants`. Existing tags and the note contents will be unchanged.
 
-Command: `client note edit 3 2 nt/Loves cats t/important`
 
-The original note containing "Hates cats" will be changed to "Loves cats" with an additional tag (on top of the existing one). The resulting list will look like:
+* `client note edit 2 1 nt/prefers face-to-face meetings to calls t/ItalianRestaurants`
+  Edits the note contents as well as adds a new tag `t/ItalianRestaurants`
 
-```
-Client: 3
-Notes:
-1. Loves dogs [tag: pref]
-2. Loves cats [tag: pref, important]
-3. Apprehensive of resigning contract [tag: meeting]
-```
+For a visual example on how the command works, refer to [Appendix C: Expected Command Behaviour Screenshots](#editing-client-notes)
 
 #### 2.2: Country Notes
 
@@ -769,13 +746,70 @@ The client's information will appear in the display panel on the left where we c
 
 Before filtering, here is what it looks like,
 
-<img src="images/country_filter_before_ss.png" alt="Before filter" width="800" height="600">
+![country filter before](images/country_filter_before_ss.png)
+
 
 After filtering for clients from Spain,
 
-<img src="images/country_filter_after_ss.png" alt="Before filter" width="800" height="600">
+![country filter after](images/country_filter_after_ss.png)
 
 [Back to command](#17-filtering-clients-by-country-country-filter).
+
+### **Adding client notes**
+
+Adding client notes can be done at any time regardless of which window you're seeing at that moment. In the following, we add a client note from the default start page itself. 
+
+![client note add before](images/client_note_add_before.png)
+
+We wish to add the following tagged note: 
+
+`client note add 2 nt/prefers emails to calls t/preference t/busyBee`
+
+Upon issuing the command, you'll be notified of the addition, but it won't disturb the current view you're in and will do so behind the scenes. 
+
+![client note add after invisible](images/client_note_add_after_invisible.png)
+
+If you want to read off the note, you'll have to enter `client view 2`, which shall show you the client's details and notes in a scrollable display panel. Please note that when the display panel has more contents, a scrollbar shall appear for your use.
+
+
+
+![client note add after visible](images/client_note_add_after_visible.png)
+
+[Back to command](#211-adding-client-notes-client-note-add).
+
+
+### **Deleting client notes**
+
+Just like adding you may delete the client note from any window, but here, we show issue the command when we are already viewing a particular client. For example, in the following situation, you want to delete Lauren's note that is labelled as index 1. Notice that Laurent is client #2. 
+
+![client note delete before](images/client_note_delete_before.png)
+
+Issue the following command: 
+
+`client note delete 2 1` and you'll see that the note will be deleted: 
+
+![client note delete after](images/client_note_delete_after.png)
+
+
+[Back to command](#212-deleting-client-notes-client-note-delete).
+
+### **Editing client notes**
+
+Let's say we want to change an existing note for Lauren because we realise that she prefers face to face meetings to emails, specifically italian restaurants. 
+Here's how it looks like beforehand: 
+
+![client note edit before](images/client_note_edit_before.png)
+
+Note that the note has note index 1 and Lauren's client index is 2.
+
+We can edit this information by issuing the command: `client note edit 2 1 nt/prefers face-to-face meetings to calls t/ItalianRestaurants`.
+Immediately, the note card will update to reflect the newly edited note like so:
+
+![client note edit after](images/client_note_edit_after.png)
+
+Please note that you could have edited only the tags or only the note contents if you so wished, instead of editing both the note contents and the tags.
+
+[Back to command](#213-editing-client-notes-client-note-edit).
 
 ### **Viewing country note**
 
