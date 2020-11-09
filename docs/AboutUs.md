@@ -57,8 +57,9 @@ You can reach us at the email `team4@emerald.pink`.
 
 * Role: In charge of testing
 * Responsibilities:
+  - Fill in implementation for Country and CountryNotesManager class
   - Implement country-note-related commands
-  - Implement `country filter` command
+  - Implement filtering clients by country command
   - Enhance save functionality to include saving country notes
 
 ### Ritesh Kumar
