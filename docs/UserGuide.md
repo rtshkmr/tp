@@ -31,13 +31,17 @@ title: User Guide
 --------------------------------------------------------------------------------------------------------------------
 
 ## **About**
+
 ### Using this User Guide
+{:.no_toc}
+
 This User Guide has been structured such that users can easily find and understand what they need.
   - [About](#about) contains useful tips and information on reading this document.
   - [Quickstart](#quickstart) consists of instructions to set up this application
   - [TBM Features](#tbms-features) includes the details of the main features of **_TBM_**, such as managing your clients and keeping track of important information.
 
 ### Tips
+{:.no_toc}
 
 <div markdown="block" class="alert alert-info">
 
